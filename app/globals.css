@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafafa;
+  --foreground: #0f0f11;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --font-sans: var(--font-poppins), sans-serif;
+
+  --animate-orbit-clockwise: orbit-cw 8s linear infinite;
+  --animate-pulse-slow: pulse-slow 3s ease-in-out infinite;
+  --animate-hero-rotation: hero-rotation 12s linear infinite;
+
+  --color-brand-blue: #093cad;
+  --color-brand-dark: #09090d;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes hero-rotation {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes orbit-cw {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Smooth transition utility classes */
+.premium-transition {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Gradient text: black at bottom → blue at top */
+.text-gradient {
+  background: linear-gradient(180deg, #07A7E1 0%, #093cad 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, #093cad 0%, #061f6e 100%);
+}
+
+/* Header scroll shrink */
+.header-scrolled {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 1px 24px rgba(0, 0, 0, 0.07);
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+/* Custom Swiper Bullet Pagination Styles */
+.custom-swiper-pagination .swiper-pagination-bullet {
+  background: #e4e4e7 !important;
+  opacity: 1 !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 9999px !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  margin: 0 4px !important;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+  background: #0066ff !important;
+  width: 24px !important;
+  border-radius: 9999px !important;
+}
+
+/* Custom Testimonials Swiper Bullet Pagination Styles */
+.custom-testimonials-pagination .swiper-pagination-bullet {
+  background: #e4e4e7 !important;
+  opacity: 1 !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 9999px !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  margin: 0 4px !important;
+}
+
+.custom-testimonials-pagination .swiper-pagination-bullet-active {
+  background: #0066ff !important;
+  width: 24px !important;
+  border-radius: 9999px !important;
+}
+
+/* Custom Accolades Swiper Bullet Pagination Styles */
+.custom-accolades-pagination .swiper-pagination-bullet {
+  background: #e4e4e7 !important;
+  opacity: 1 !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 9999px !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  margin: 0 4px !important;
+}
+
+.custom-accolades-pagination .swiper-pagination-bullet-active {
+  background: #0066ff !important;
+  width: 24px !important;
+  border-radius: 9999px !important;
 }
