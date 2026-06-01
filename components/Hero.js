@@ -82,7 +82,7 @@ function OrbitalCircle() {
               <InfinityIcon
                 size="12"
                 strokeWidth={3}
-                className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 rotate-90"
+                className="w-2.5 h-2.5 md:w-3.5 md:h-3.5"
               />
             </div>
           </div>
@@ -107,7 +107,7 @@ function OrbitalCircle() {
               <InfinityIcon
                 size="12"
                 strokeWidth={3}
-                className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 rotate-90"
+                className="w-2.5 h-2.5 md:w-3.5 md:h-3.5"
               />
             </div>
           </div>
@@ -132,7 +132,7 @@ function OrbitalCircle() {
               <InfinityIcon
                 size="12"
                 strokeWidth={3}
-                className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 rotate-90"
+                className="w-2.5 h-2.5 md:w-3.5 md:h-3.5"
               />
             </div>
           </div>
@@ -187,7 +187,7 @@ function BreathingBlob() {
           ease: 'linear',
         }}
       >
-        <InfinityIcon size="0.5em" strokeWidth={3} />
+        <InfinityIcon size="0.5em" strokeWidth={3} className="rotate-90" />
       </motion.div>
     </motion.div>
   );
