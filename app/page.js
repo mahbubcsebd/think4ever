@@ -27,6 +27,24 @@ export default function Home() {
 
         {/* Build Motion - Developer Section */}
         <BuildMotionDeveloper />
+
+        {/* Multiple Starting Points Section */}
+        {/* <MultipleStartingPoints /> */}
+
+        {/* Extend Motion Section */}
+        {/* <ExtendMotion /> */}
+
+        {/* Pricing Section */}
+        {/* <Pricing /> */}
+
+        {/* Portfolio Showcase Image Accordion */}
+        {/* <PortfolioAccordion /> */}
+
+        {/* Client Testimonials Slider */}
+        {/* <Testimonials /> */}
+
+        {/* Accolades Honors and Recognition Section */}
+        {/* <Accolades /> */}
       </main>
     </div>
   );

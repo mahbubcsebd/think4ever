@@ -56,7 +56,7 @@ function MotionTextLoop() {
  */
 function OrbitalCircle() {
   return (
-    // Circle ring — rotates via animate-hero-rotation (defined in globals.css @theme)
+    // Circle ring — rotates via animate-hero-rotation
     <div
       className="
       absolute
@@ -68,41 +68,76 @@ function OrbitalCircle() {
       animate-hero-rotation
       pointer-events-none
       will-change-transform
+      z-10
     "
     >
-      {/* scad1 — top center, sits on the ring */}
-      <span
-        className="
-        absolute
-        w-[10px] h-[10px]
-        rounded-full bg-brand-blue
-        top-[-5.5px] left-0 right-0
-        mx-auto
-        z-[1]
-      "
-      />
+      {/* Ball 1 - Top Center (0 degrees) */}
+      <div className="absolute inset-0 flex justify-center z-10">
+        <div className="w-[20px] h-[20px] md:w-[28px] md:h-[28px] rounded-full bg-brand-blue flex items-center justify-center -translate-y-1/2 shadow-lg drop-shadow-md border-[2px] border-white">
+          <div className="w-full h-full flex items-center justify-center">
+            <div
+              className="text-white flex items-center justify-center"
+              style={{ animation: 'hero-rotation 12s linear infinite reverse' }}
+            >
+              <InfinityIcon
+                size="12"
+                strokeWidth={3}
+                className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 rotate-90"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
 
-      {/* scad2 — lower right on the ring */}
-      <span
-        className="
-        absolute
-        w-[10px] h-[10px]
-        rounded-full bg-brand-blue
-        right-[30.5px] bottom-[285px]
-        z-[1]
-      "
-      />
+      {/* Ball 2 - Bottom Right (120 degrees) */}
+      <div
+        className="absolute inset-0 flex justify-center z-10"
+        style={{ transform: 'rotate(120deg)' }}
+      >
+        <div className="w-[20px] h-[20px] md:w-[28px] md:h-[28px] rounded-full bg-brand-blue flex items-center justify-center -translate-y-1/2 shadow-lg drop-shadow-md border-[2px] border-white">
+          {/* Static counter-rotation of 120deg */}
+          <div
+            className="w-full h-full flex items-center justify-center"
+            style={{ transform: 'rotate(-120deg)' }}
+          >
+            <div
+              className="text-white flex items-center justify-center"
+              style={{ animation: 'hero-rotation 12s linear infinite reverse' }}
+            >
+              <InfinityIcon
+                size="12"
+                strokeWidth={3}
+                className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 rotate-90"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
 
-      {/* scad3 — lower left on the ring */}
-      <span
-        className="
-        absolute
-        w-[10px] h-[10px]
-        rounded-full bg-brand-blue
-        left-[30.5px] bottom-[285px]
-        z-[1]
-      "
-      />
+      {/* Ball 3 - Bottom Left (240 degrees) */}
+      <div
+        className="absolute inset-0 flex justify-center z-10"
+        style={{ transform: 'rotate(240deg)' }}
+      >
+        <div className="w-[20px] h-[20px] md:w-[28px] md:h-[28px] rounded-full bg-brand-blue flex items-center justify-center -translate-y-1/2 shadow-lg drop-shadow-md border-[2px] border-white">
+          {/* Static counter-rotation of 240deg */}
+          <div
+            className="w-full h-full flex items-center justify-center"
+            style={{ transform: 'rotate(-240deg)' }}
+          >
+            <div
+              className="text-white flex items-center justify-center"
+              style={{ animation: 'hero-rotation 12s linear infinite reverse' }}
+            >
+              <InfinityIcon
+                size="12"
+                strokeWidth={3}
+                className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 rotate-90"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -141,7 +176,7 @@ function BreathingBlob() {
           ease: 'linear',
         }}
       />
-      
+
       {/* Infinity Icon animating */}
       <motion.div
         className="relative z-10 text-white/95 drop-shadow-md flex items-center justify-center"
@@ -249,11 +284,11 @@ export default function Hero() {
               href="#about"
               className="group inline-flex items-center cursor-pointer select-none"
             >
-              {/* Circle: border turns blue on hover, bg expands in */}
+              {/* Circle: border turns transparent on hover, gradient bg expands in */}
               <div
                 className="
                 w-11 h-11 rounded-full
-                border border-zinc-300 group-hover:border-brand-blue
+                border border-zinc-300 group-hover:border-transparent
                 flex items-center justify-center
                 relative overflow-hidden
                 transition-all duration-500 ease-out
@@ -263,7 +298,7 @@ export default function Hero() {
                 <span
                   className="
                   absolute inset-0
-                  bg-brand-blue rounded-full
+                  bg-gradient-to-r from-[#07A7E1] to-[#093cad] rounded-full
                   scale-0 group-hover:scale-100
                   transition-transform duration-500 ease-out origin-center
                 "

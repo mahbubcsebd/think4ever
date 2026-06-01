@@ -2,16 +2,16 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import GradientText from './GradientText';
 import SplitSection from './SplitSection';
 import VideoPlayer from './VideoPlayer';
-import GradientText from './GradientText';
 
 export default function ModernizeMotion() {
   const listItems = [
-    "Maps your entire legacy system from a cold start — dependencies, architecture debt, undocumented relationships",
-    "Generates a structured modernization plan with fully linked requirements",
-    "Produces the first working sprint output with requirements, architecture, and code in sync throughout",
-    "Every change propagates — upstream and downstream — automatically"
+    'Maps your entire legacy system from a cold start — dependencies, architecture debt, undocumented relationships',
+    'Generates a structured modernization plan with fully linked requirements',
+    'Produces the first working sprint output with requirements, architecture, and code in sync throughout',
+    'Every change propagates — upstream and downstream — automatically',
   ];
 
   return (
@@ -30,7 +30,7 @@ export default function ModernizeMotion() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  transition={{ duration: 0.5, delay: 0.2 + (idx * 0.1) }}
+                  transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
                   className="text-[14px] lg:text-[15px] text-[#353B3E] font-medium leading-[1.6]"
                 >
                   {text}
@@ -73,9 +73,9 @@ export default function ModernizeMotion() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             className="w-full"
           >
-            <VideoPlayer 
-              videoId="CQpIODqNFek" 
-              className="aspect-video bg-zinc-900" 
+            <VideoPlayer
+              videoId="CQpIODqNFek"
+              className="aspect-video bg-zinc-900"
             />
           </motion.div>
         </div>
@@ -89,8 +89,10 @@ export default function ModernizeMotion() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         className="text-[40px] md:text-[60px] font-bold text-[#09090D] leading-[1.1] md:leading-[65px] tracking-tight"
       >
-        <GradientText>Refactor</GradientText> Took 94 <br className="hidden md:block" />
-        percent off Motion.
+        A 6 – month <br />
+        <GradientText>Refactor</GradientText> Took 94{' '}
+        <br className="hidden md:block" />
+        minutes.
       </motion.h2>
     </SplitSection>
   );
