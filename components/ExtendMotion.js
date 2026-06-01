@@ -56,14 +56,14 @@ export default function ExtendMotion() {
               >
                 {/* Circle: border turns blue on hover, bg expands in */}
                 <div className="w-11 h-11 rounded-full border border-zinc-300 group-hover:border-brand-blue flex items-center justify-center relative overflow-hidden transition-all duration-500 ease-out shrink-0">
-                  <span className="absolute inset-0 bg-brand-blue rounded-full scale-0 group-hover:scale-100 transition-transform duration-500 ease-out origin-center" />
+                  <span className="absolute inset-0 bg-gradient-to-r from-[#07A7E1] to-[#093cad] rounded-full scale-0 group-hover:scale-100 transition-transform duration-500 ease-out origin-center" />
                   {/* Dot: brand-blue → white when bg fills */}
                   <span className="relative z-10 w-2 h-2 rounded-full bg-brand-blue group-hover:bg-white transition-colors duration-500 ease-out" />
                 </div>
 
                 {/* Text: black, semibold, slides right on hover */}
                 <span className="font-semibold text-base text-zinc-950 relative z-10 ml-2">
-                  Extend something free
+                  Get Early Access
                 </span>
               </Link>
             </motion.div>

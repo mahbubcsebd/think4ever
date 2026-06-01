@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRightLeft, RefreshCw, Save, Target } from 'lucide-react';
-import SplitSection from './SplitSection';
 import GradientText from './GradientText';
+import SplitSection from './SplitSection';
 
 export default function Architecture() {
   const cards = [

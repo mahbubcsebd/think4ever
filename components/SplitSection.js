@@ -28,7 +28,7 @@ export default function SplitSection({
       )}
 
       {/* Main Container */}
-      <div className="container mx-auto max-w-7xl w-full flex flex-col gap-12 relative z-20">
+      <div className="container mx-auto max-w-[1400px] w-full flex flex-col gap-12 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12 items-start">
           {/* Left Side Column: Title */}
           {leftTitle && (

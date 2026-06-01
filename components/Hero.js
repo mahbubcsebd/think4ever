@@ -1,17 +1,12 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { Infinity as InfinityIcon } from 'lucide-react';
+import { ArrowRight, Infinity as InfinityIcon } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import VideoPlayer from './VideoPlayer';
 
-const rotatingWords = [
-  'Outcome.',
-  'Refactoring.',
-  'Rapid Prototyping.',
-  'Build and Extend.',
-  'Modernize.',
-];
+const rotatingWords = ['Prototype.', 'Refactor.', 'Scale.', 'Build.', 'Ship.'];
 
 function MotionTextLoop() {
   const [index, setIndex] = useState(0);
@@ -199,7 +194,7 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden bg-white pt-20"
     >
-      {/* ── Orbital Circle ── */}
+      {/* ── Orbital Circle Background ── */}
       <OrbitalCircle />
 
       {/* ── Vertical Watermark "THINK4EVER" ──
@@ -227,66 +222,53 @@ export default function Hero() {
         THINK4EVER
       </div>
 
-      {/* ── Scroll indicator ──
-          rotate-90 makes the horizontal line + text read vertically on the right edge */}
-      <div
-        className="
-        absolute
-        right-[calc(100vw/2-1250px/2)]
-        top-[700px]
-        rotate-90
-        select-none pointer-events-none z-10
-      "
-      >
-        <p
-          className="
-          text-xs uppercase font-normal
-          tracking-[.4em]
-          flex items-center whitespace-nowrap
-          text-[#353B3E]
-        "
-        >
-          <span className="h-px w-10 min-w-10 bg-[#D0D0D0] inline-block mr-3" />
-          SCROLL
-        </p>
-      </div>
-
       {/* ── Page Container ── */}
-      <div className="container mx-auto px-4 md:px-12 max-w-7xl w-full z-20 relative">
-        <div className="flex flex-col gap-8 py-12">
-          {/* Headline */}
-          <div className="flex flex-col gap-2">
-            <h1
-              className="
-              text-[32px] sm:text-[48px] md:text-[72px] lg:text-[95px]
+      <div className="container mx-auto px-4 md:px-12 max-w-[1400px] w-full z-20 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center py-12 lg:py-24">
+          {/* Left Side: Text Content */}
+          <div className="flex flex-col gap-8">
+            {/* Headline */}
+            <div className="flex flex-col gap-2">
+              <h1
+                className="
+              text-[28px] sm:text-[40px] md:text-[54px] lg:text-[68px] xl:text-[80px]
               leading-[1.08]
               font-bold text-black
-              flex flex-col
+              flex flex-col gap-1 sm:gap-2
             "
-            >
-              <div className="flex items-center gap-3 md:gap-5">
-                <BreathingBlob />
-                <span>From Idea</span>
-              </div>
-              <MotionTextLoop />
-            </h1>
+              >
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 md:gap-4">
+                  <BreathingBlob className="shrink-0" />
+                  <span className="inline-flex flex-wrap items-center gap-x-2 md:gap-3">
+                    <span>From Code or</span>
+                    <span className="inline-flex items-center gap-2 md:gap-3">
+                      Concept
+                      <ArrowRight
+                        className="w-[0.6em] h-[0.6em] text-black shrink-0"
+                        strokeWidth={3}
+                      />
+                    </span>
+                  </span>
+                </div>
+                <MotionTextLoop />
+              </h1>
 
-            <p className="max-w-lg text-base md:text-lg text-zinc-500 leading-relaxed font-normal mt-3">
-              The only AI platform that coordinates your entire software
-              lifecycle — requirements, architecture, code, tests, and docs — in
-              sync, in both directions, from the first idea to deployed output.
-            </p>
-          </div>
+              <p className="max-w-lg text-base md:text-lg text-zinc-500 leading-relaxed font-normal mt-3">
+                The first AI-native SDLC platform that keeps your architecture,
+                code, and every dependency connected — so a change anywhere
+                propagates everywhere.
+              </p>
+            </div>
 
-          {/* CTA */}
-          <div className="flex items-center gap-5 mt-2">
-            <Link
-              href="https://portal.think4ever.com"
-              className="group inline-flex items-center cursor-pointer select-none"
-            >
-              {/* Circle: border turns transparent on hover, gradient bg expands in */}
-              <div
-                className="
+            {/* CTA */}
+            <div className="flex items-center gap-5 mt-2">
+              <Link
+                href="https://portal.think4ever.com"
+                className="group inline-flex items-center cursor-pointer select-none"
+              >
+                {/* Circle: border turns transparent on hover, gradient bg expands in */}
+                <div
+                  className="
                 w-11 h-11 rounded-full
                 border border-zinc-300 group-hover:border-transparent
                 flex items-center justify-center
@@ -294,37 +276,51 @@ export default function Hero() {
                 transition-all duration-500 ease-out
                 shrink-0
               "
-              >
-                <span
-                  className="
+                >
+                  <span
+                    className="
                   absolute inset-0
                   bg-gradient-to-r from-[#07A7E1] to-[#093cad] rounded-full
                   scale-0 group-hover:scale-100
                   transition-transform duration-500 ease-out origin-center
                 "
-                />
-                {/* Dot: brand-blue → white when bg fills */}
-                <span
-                  className="
+                  />
+                  {/* Dot: brand-blue → white when bg fills */}
+                  <span
+                    className="
                   relative z-10
                   w-2 h-2 rounded-full
                   bg-brand-blue group-hover:bg-white
                   transition-colors duration-500 ease-out
                 "
-                />
-              </div>
+                  />
+                </div>
 
-              {/* Text: black, semibold, slides right on hover */}
-              <span
-                className="
-                font-semibold text-base text-zinc-950
-                relative z-10
-                ml-2
-              "
-              >
-                Start free - no card required
-              </span>
-            </Link>
+                {/* Text: black, semibold, slides right on hover */}
+                <span className="font-semibold text-base text-zinc-950 relative z-10 ml-2">
+                  Get Early Access
+                </span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Side: Video Player */}
+          <div className="w-full relative mt-8 lg:mt-0">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                ease: [0.16, 1, 0.3, 1],
+                delay: 0.3,
+              }}
+              className="w-full rounded-[20px] md:rounded-[24px] overflow-hidden border border-zinc-200 shadow-2xl shadow-zinc-200/50"
+            >
+              <VideoPlayer
+                videoId="CQpIODqNFek"
+                className="aspect-video bg-zinc-900"
+              />
+            </motion.div>
           </div>
         </div>
       </div>

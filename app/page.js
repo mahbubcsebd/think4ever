@@ -2,8 +2,10 @@ import About from '@/components/About';
 import Architecture from '@/components/Architecture';
 import BuildMotionDeveloper from '@/components/BuildMotionDeveloper';
 import Hero from '@/components/Hero';
+import HowItWorks from '@/components/HowItWorks';
 import Impacts from '@/components/Impacts';
 import ModernizeMotion from '@/components/ModernizeMotion';
+import ProofBar from '@/components/ProofBar';
 
 export default function Home() {
   return (
@@ -13,11 +15,17 @@ export default function Home() {
         {/* Hero Section */}
         <Hero />
 
+        {/* Proof Bar */}
+        <ProofBar />
+
         {/* About Section with Scroll Animations */}
         <About />
 
         {/* Impacts Section with Overlapping Circles */}
         <Impacts />
+
+        {/* How It Works Section */}
+        <HowItWorks />
 
         {/* Modernize Motion Section with Video Player */}
         <ModernizeMotion />

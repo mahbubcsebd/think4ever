@@ -102,8 +102,7 @@ export default function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.1 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            // 4 Column Grid on extra large screens, 2 on tablet, 1 on mobile
-            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 relative z-10 max-w-7xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 relative z-10 max-w-[1400px] mx-auto"
           >
             {plans.map((plan, idx) => (
               <div

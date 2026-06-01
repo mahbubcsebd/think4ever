@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { Blocks, Link2, Zap } from 'lucide-react';
-import SplitSection from './SplitSection';
 import GradientText from './GradientText';
+import SplitSection from './SplitSection';
 
 export default function MultipleStartingPoints() {
   const cards = [
@@ -26,7 +26,8 @@ export default function MultipleStartingPoints() {
       iconBg: 'bg-amber-50',
       title: 'Modernize',
       text: "Start from legacy. T4E maps the system, surfaces what's undocumented, generates a structured modernization plan, and executes it sprint by sprint — keeping everything in sync.",
-      bottomText: 'Enterprise architecture · CTO office · Digital transformation',
+      bottomText:
+        'Enterprise architecture · CTO office · Digital transformation',
     },
   ];
 
@@ -99,8 +100,8 @@ export default function MultipleStartingPoints() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           className="text-[15px] lg:text-[16px] text-[#353B3E] leading-[1.6] font-medium max-w-[500px]"
         >
-          The same platform serves every software lifecycle need — no editions, no
-          feature fragmentation, no complexity.
+          The same platform serves every software lifecycle need — no editions,
+          no feature fragmentation, no complexity.
         </motion.p>
       </div>
     </SplitSection>
