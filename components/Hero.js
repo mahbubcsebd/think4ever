@@ -6,11 +6,11 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const rotatingWords = [
-  'Outcome',
-  'Refactoring',
-  'Rapid Prototyping',
-  'Build and Extend',
-  'Modernize',
+  'Outcome.',
+  'Refactoring.',
+  'Rapid Prototyping.',
+  'Build and Extend.',
+  'Modernize.',
 ];
 
 function MotionTextLoop() {
