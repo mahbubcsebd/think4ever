@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRightLeft, RefreshCw, Save, Target } from 'lucide-react';
 import SplitSection from './SplitSection';
+import GradientText from './GradientText';
 
 export default function Architecture() {
   const cards = [
@@ -134,7 +135,7 @@ export default function Architecture() {
           className="text-[40px] md:text-[54px] lg:text-[60px] font-bold text-[#09090D] leading-[1.1] tracking-tight"
         >
           Layer 5. The <br />
-          <span className="text-gradient">Outcome</span> layer.
+          <GradientText>Outcome</GradientText> layer.
         </motion.h2>
 
         <motion.p

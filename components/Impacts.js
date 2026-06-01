@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import SplitSection from './SplitSection';
+import GradientText from './GradientText';
 
 export default function Impacts() {
   const circles = [
@@ -67,7 +68,7 @@ export default function Impacts() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         className="text-[40px] md:text-[60px] font-bold text-[#09090D] leading-[1.1] md:leading-[65px] tracking-tight"
       >
-        End-to-End <span className="text-[#07A7E1]">SDLC</span>{' '}
+        End-to-End <GradientText>SDLC</GradientText>{' '}
         <br className="hidden md:block" />
         Pipeline
       </motion.h2>

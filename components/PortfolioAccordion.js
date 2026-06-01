@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import GradientText from "./GradientText";
 
 export default function PortfolioAccordion() {
   const [activeIndex, setActiveIndex] = useState(0); // First case study is active initially
@@ -55,7 +56,7 @@ export default function PortfolioAccordion() {
             Featured Projects
           </h2>
           <h3 className="text-4xl md:text-6xl font-extrabold tracking-tight text-zinc-900 leading-tight">
-            Case <span className="text-brand-blue">Studies</span>.
+            Case <GradientText>Studies</GradientText>.
           </h3>
         </div>
 

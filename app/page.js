@@ -1,12 +1,9 @@
 import About from '@/components/About';
 import Architecture from '@/components/Architecture';
 import BuildMotionDeveloper from '@/components/BuildMotionDeveloper';
-import ExtendMotion from '@/components/ExtendMotion';
 import Hero from '@/components/Hero';
 import Impacts from '@/components/Impacts';
 import ModernizeMotion from '@/components/ModernizeMotion';
-import MultipleStartingPoints from '@/components/MultipleStartingPoints';
-import Pricing from '@/components/Pricing';
 
 export default function Home() {
   return (
@@ -30,24 +27,6 @@ export default function Home() {
 
         {/* Build Motion - Developer Section */}
         <BuildMotionDeveloper />
-
-        {/* Multiple Starting Points Section */}
-        <MultipleStartingPoints />
-
-        {/* Extend Motion Section */}
-        <ExtendMotion />
-
-        {/* Pricing Section */}
-        <Pricing />
-
-        {/* Portfolio Showcase Image Accordion */}
-        {/* <PortfolioAccordion /> */}
-
-        {/* Client Testimonials Slider */}
-        {/* <Testimonials /> */}
-
-        {/* Accolades Honors and Recognition Section */}
-        {/* <Accolades /> */}
       </main>
     </div>
   );

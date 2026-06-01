@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Blocks, Link2, Zap } from 'lucide-react';
 import SplitSection from './SplitSection';
+import GradientText from './GradientText';
 
 export default function MultipleStartingPoints() {
   const cards = [
@@ -87,7 +88,7 @@ export default function MultipleStartingPoints() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-[40px] md:text-[54px] lg:text-[60px] font-bold text-[#09090D] leading-[1.1] tracking-tight"
         >
-          Build. <span className="text-gradient">Extend.</span> <br />
+          Build. <GradientText>Extend.</GradientText> <br />
           Modernize.
         </motion.h2>
 

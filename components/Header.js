@@ -113,12 +113,12 @@ export default function Header() {
             <button
               id="menu-toggle"
               onClick={toggleMenu}
-              className="w-10 h-10 rounded-full border border-zinc-200 bg-white/70 backdrop-blur-sm flex flex-col justify-center items-center gap-[5px] hover:bg-zinc-50 transition-all duration-300 relative z-[55]"
+              className="w-10 h-10 rounded-full border border-zinc-200 bg-white/70 backdrop-blur-sm flex flex-col justify-center items-center gap-[5px] hover:bg-zinc-50 transition-all duration-300 relative z-[55] cursor-pointer"
               aria-label="Toggle menu"
             >
               <span
                 className={`w-4 h-0.5 rounded-full bg-zinc-800 transition-all duration-300 ${
-                  isOpen ? 'rotate-45 translate-y-[6.5px]' : ''
+                  isOpen ? 'rotate-45 translate-y-[7px]' : ''
                 }`}
               />
               <span
@@ -128,7 +128,7 @@ export default function Header() {
               />
               <span
                 className={`w-4 h-0.5 rounded-full bg-zinc-800 transition-all duration-300 ${
-                  isOpen ? '-rotate-45 -translate-y-[6.5px]' : ''
+                  isOpen ? '-rotate-45 -translate-y-[7px]' : ''
                 }`}
               />
             </button>
@@ -158,7 +158,7 @@ export default function Header() {
                   transition: { duration: 0.2 },
                 },
               }}
-              className="flex-1 container mx-auto px-6 md:px-12 max-w-7xl w-full flex flex-col justify-center pb-20 overflow-y-auto"
+              className="flex-1 container mx-auto px-6 md:px-12 max-w-7xl w-full flex flex-col justify-center pb-20 overflow-y-auto no-scrollbar"
             >
               {/* Menu Content Links */}
               <div className="flex flex-col gap-5 md:gap-7 justify-center items-start mt-12 md:mt-0">

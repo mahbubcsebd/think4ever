@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import SplitSection from './SplitSection';
 import VideoPlayer from './VideoPlayer';
+import GradientText from './GradientText';
 
 export default function ExtendMotion() {
   const listItems = [
@@ -57,7 +58,7 @@ export default function ExtendMotion() {
                 </div>
 
                 {/* Text: black, semibold, slides right on hover */}
-                <span className="font-semibold text-base text-zinc-950 relative z-10 -translate-x-2 group-hover:translate-x-3 transition-transform duration-500 ease-out">
+                <span className="font-semibold text-base text-zinc-950 relative z-10 ml-2">
                   Extend something free
                 </span>
               </Link>
@@ -80,7 +81,7 @@ export default function ExtendMotion() {
         </div>
       }
     >
-      {/* Main Heading (Top Section) */}
+      {/* Main Heading */}
       <motion.h2
         initial={{ x: 100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -88,10 +89,9 @@ export default function ExtendMotion() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         className="text-[40px] md:text-[60px] font-bold text-[#09090D] leading-[1.1] md:leading-[65px] tracking-tight"
       >
-        Describe the Change. <br />
-        Everything that depends <br />
-        on it <span className="text-gradient">Updates</span> in real <br className="hidden md:block" />
-        time.
+        We are working <br className="hidden md:block" />
+        on it <GradientText>Updates</GradientText> in real <br className="hidden md:block" />
+        time Motion.
       </motion.h2>
     </SplitSection>
   );

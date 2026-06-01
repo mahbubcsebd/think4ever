@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import SplitSection from './SplitSection';
+import GradientText from './GradientText';
 
 export default function Pricing() {
   const plans = [
@@ -166,7 +167,7 @@ export default function Pricing() {
           className="text-[40px] md:text-[54px] lg:text-[60px] font-bold text-[#09090D] leading-[1.1] tracking-tight"
         >
           Build something real. <br />
-          <span className="text-gradient">Start Free.</span> Scale as <br className="hidden md:block" />
+          <GradientText>Start Free.</GradientText> Scale as <br className="hidden md:block" />
           you go.
         </motion.h2>
 

@@ -269,8 +269,7 @@ export default function Hero() {
                 className="
                 font-semibold text-base text-zinc-950
                 relative z-10
-                -translate-x-2 group-hover:translate-x-3
-                transition-transform duration-500 ease-out
+                ml-2
               "
               >
                 Get To Know Us

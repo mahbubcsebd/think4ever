@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import SplitSection from './SplitSection';
 import VideoPlayer from './VideoPlayer';
+import GradientText from './GradientText';
 
 export default function BuildMotionDeveloper() {
   const listItems = [
@@ -57,7 +58,7 @@ export default function BuildMotionDeveloper() {
                 </div>
 
                 {/* Text: black, semibold, slides right on hover */}
-                <span className="font-semibold text-base text-zinc-950 relative z-10 -translate-x-2 group-hover:translate-x-3 transition-transform duration-500 ease-out">
+                <span className="font-semibold text-base text-zinc-950 relative z-10 ml-2">
                   Build something
                 </span>
               </Link>
@@ -88,7 +89,7 @@ export default function BuildMotionDeveloper() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         className="text-[40px] md:text-[60px] font-bold text-[#09090D] leading-[1.1] md:leading-[65px] tracking-tight"
       >
-        <span className="text-gradient">Voice Memo</span> <br />
+        <GradientText>Voice Memo</GradientText> <br />
         Working <br className="hidden md:block" />
         Prototype.
       </motion.h2>
