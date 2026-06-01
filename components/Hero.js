@@ -1,6 +1,7 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
+import { Infinity as InfinityIcon } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -114,7 +115,7 @@ function BreathingBlob() {
   return (
     // Outer wrapper: breathing scale animation
     <motion.div
-      className="absolute bottom-[30px] left-[30px] w-[129px] h-[129px] rounded-full pointer-events-none select-none overflow-hidden z-10"
+      className="hidden md:block absolute top-[25%] left-[5%] md:left-[8%] w-[129px] h-[129px] rounded-full pointer-events-none select-none overflow-hidden z-10"
       animate={{ scale: [0.88, 1.06, 0.88] }}
       transition={{
         duration: 5.5,
@@ -122,9 +123,9 @@ function BreathingBlob() {
         ease: 'easeInOut',
       }}
     >
-      {/* Inner: animated gradient color cycling */}
+      {/* Inner: animated gradient color cycling AND container for the icon */}
       <motion.div
-        className="w-full h-full rounded-full"
+        className="w-full h-full rounded-full flex items-center justify-center"
         animate={{
           background: [
             'linear-gradient(135deg, #07A7E1 0%, #093cad 60%, #3730a3 100%)',
@@ -139,7 +140,20 @@ function BreathingBlob() {
           repeat: Infinity,
           ease: 'linear',
         }}
-      />
+      >
+        {/* Infinity Icon animating */}
+        <motion.div
+          className="text-white/90 drop-shadow-md z-10"
+          animate={{ rotate: 360 }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: 'linear',
+          }}
+        >
+          <InfinityIcon size={56} strokeWidth={2} />
+        </motion.div>
+      </motion.div>
     </motion.div>
   );
 }
@@ -222,9 +236,9 @@ export default function Hero() {
             </h1>
 
             <p className="max-w-lg text-base md:text-lg text-zinc-500 leading-relaxed font-normal mt-3">
-              We are creative strategists with really great taste. And
-              analytical too. We&apos;re always looking to deliver a splendid
-              experience to your customers.
+              The only AI platform that coordinates your entire software
+              lifecycle — requirements, architecture, code, tests, and docs — in
+              sync, in both directions, from the first idea to deployed output.
             </p>
           </div>
 
@@ -272,7 +286,7 @@ export default function Hero() {
                 ml-2
               "
               >
-                Get To Know Us
+                Start free - no card required
               </span>
             </Link>
           </div>
