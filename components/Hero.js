@@ -41,7 +41,7 @@ function MotionTextLoop() {
             damping: 18,
             mass: 1,
           }}
-          className="text-gradient block absolute inset-x-0"
+          className="text-gradient block absolute inset-x-0 whitespace-nowrap"
         >
           {rotatingWords[index]}
         </motion.span>
@@ -252,13 +252,13 @@ export default function Hero() {
       </div>
 
       {/* ── Page Container ── */}
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl w-full z-10 relative">
+      <div className="container mx-auto px-4 md:px-12 max-w-7xl w-full z-20 relative">
         <div className="flex flex-col gap-8 py-12">
           {/* Headline */}
           <div className="flex flex-col gap-2">
             <h1
               className="
-              text-[clamp(2.8rem,6.5vw,5.5rem)] text-[95px]
+              text-[32px] sm:text-[48px] md:text-[72px] lg:text-[95px]
               leading-[1.08]
               font-bold text-black
               flex flex-col
@@ -281,7 +281,7 @@ export default function Hero() {
           {/* CTA */}
           <div className="flex items-center gap-5 mt-2">
             <Link
-              href="#about"
+              href="https://portal.think4ever.com"
               className="group inline-flex items-center cursor-pointer select-none"
             >
               {/* Circle: border turns transparent on hover, gradient bg expands in */}

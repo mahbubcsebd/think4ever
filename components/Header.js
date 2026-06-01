@@ -110,7 +110,7 @@ export default function Header() {
         }`}
       >
         {/* Inner container — keeps content aligned with rest of page */}
-        <div className="container mx-auto px-6 md:px-12 max-w-7xl flex justify-between items-center shrink-0">
+        <div className="container mx-auto px-4 md:px-12 max-w-7xl flex justify-between items-center shrink-0">
           {/* Brand Logo */}
           <Link href="#home" onClick={() => isOpen && toggleMenu()} className="flex items-center gap-1.5 group shrink-0">
             <Image src={Logo} alt="Logo" className="w-[120px] md:w-[150px] h-auto object-contain" />
@@ -171,7 +171,7 @@ export default function Header() {
                   transition: { duration: 0.2 },
                 },
               }}
-              className="flex-1 container mx-auto px-6 md:px-12 max-w-7xl w-full flex flex-col justify-center pb-20 overflow-y-auto no-scrollbar"
+              className="flex-1 container mx-auto px-4 md:px-12 max-w-7xl w-full flex flex-col justify-center pb-20 overflow-y-auto no-scrollbar"
             >
               {/* Menu Content Links */}
               <div className="flex flex-col gap-5 md:gap-7 justify-center items-start mt-12 md:mt-0">

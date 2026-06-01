@@ -58,7 +58,7 @@ export default function Accolades() {
   return (
     <section
       id="insights"
-      className="min-h-[70vh] flex flex-col justify-center bg-zinc-50/50 px-6 md:px-16 py-20 relative overflow-hidden border-t border-zinc-100"
+      className="min-h-[70vh] flex flex-col justify-center bg-zinc-50/50 px-4 md:px-16 py-20 relative overflow-hidden border-t border-zinc-100"
     >
       {/* Giant Background Watermark "ACCOLADES" - Positioned at bottom, lighter and faint */}
       <div className="absolute inset-x-0 bottom-[-5%] select-none pointer-events-none z-0 flex items-end justify-center overflow-hidden h-[50%]">

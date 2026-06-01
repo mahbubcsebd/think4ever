@@ -41,7 +41,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="min-h-[60vh] bg-white flex flex-col justify-center px-6 md:px-16 py-20 relative overflow-hidden border-t border-zinc-100"
+      className="min-h-[60vh] bg-white flex flex-col justify-center px-4 md:px-16 py-20 relative overflow-hidden border-t border-zinc-100"
     >
       {/* Top Right Floating Gradient Decal Ball */}
       <div className="absolute top-12 right-[10%] w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-950 to-brand-blue shadow-lg shadow-indigo-950/20 select-none pointer-events-none" />

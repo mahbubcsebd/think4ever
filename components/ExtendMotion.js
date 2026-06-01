@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import SplitSection from './SplitSection';
 import VideoPlayer from './VideoPlayer';
@@ -25,16 +26,19 @@ export default function ExtendMotion() {
           <div className="flex flex-col gap-8 pr-0 lg:pr-8">
             <div className="flex flex-col gap-6">
               {listItems.map((text, idx) => (
-                <motion.p
+                <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
-                  className="text-[14px] lg:text-[15px] text-[#353B3E] font-medium leading-[1.6]"
+                  className="flex items-start gap-3"
                 >
-                  {text}
-                </motion.p>
+                  <ArrowRight className="w-5 h-5 text-brand-blue shrink-0 mt-[2px]" strokeWidth={2.5} />
+                  <p className="text-[14px] lg:text-[15px] text-[#353B3E] font-medium leading-[1.6]">
+                    {text}
+                  </p>
+                </motion.div>
               ))}
             </div>
 
@@ -47,7 +51,7 @@ export default function ExtendMotion() {
               className="mt-4"
             >
               <Link
-                href="#"
+                href="https://portal.think4ever.com"
                 className="group inline-flex items-center cursor-pointer select-none"
               >
                 {/* Circle: border turns blue on hover, bg expands in */}
@@ -87,7 +91,7 @@ export default function ExtendMotion() {
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-        className="text-[40px] md:text-[60px] font-bold text-[#09090D] leading-[1.1] md:leading-[65px] tracking-tight"
+        className="text-[28px] sm:text-[40px] md:text-[60px] font-bold text-[#09090D] leading-[1.1] md:leading-[65px] tracking-tight"
       >
         We are working <br className="hidden md:block" />
         on it <GradientText>Updates</GradientText> in real <br className="hidden md:block" />

@@ -1,10 +1,62 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { Plus, Minus } from 'lucide-react';
 import SplitSection from './SplitSection';
 import GradientText from './GradientText';
 
+function MobileAccordionCard({ circle, idx, isOpen, onToggle }) {
+  return (
+    <div 
+      className="bg-white rounded-[16px] shadow-sm border border-zinc-100 flex overflow-hidden cursor-pointer"
+      onClick={onToggle}
+    >
+      {/* Left Blue Strip */}
+      <div className="w-10 bg-brand-blue flex items-center justify-center shrink-0">
+        <span className="text-white font-bold text-[13px] -rotate-90 whitespace-nowrap tracking-[0.2em]">
+          {`0${idx + 1}`}
+        </span>
+      </div>
+      
+      {/* Content Area */}
+      <div className="flex-1 p-5 flex flex-col">
+        <div className="flex justify-between items-center">
+          <h3 className="font-bold text-[18px] text-[#09090D]">{circle.title}</h3>
+          <div className="text-zinc-400">
+            {isOpen ? <Minus strokeWidth={2} className="w-5 h-5" /> : <Plus strokeWidth={2} className="w-5 h-5" />}
+          </div>
+        </div>
+        
+        {/* Expanded Content */}
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="overflow-hidden"
+            >
+              <ul className="flex flex-col gap-2 mt-4 text-[14px] text-[#555B5E] font-medium">
+                {circle.items.map((item, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-blue/50 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
+
 export default function Impacts() {
+  const [activeIdx, setActiveIdx] = useState(0);
+
   const circles = [
     {
       title: 'Discovery',
@@ -30,34 +82,48 @@ export default function Impacts() {
       watermarkText="SDLC"
       leftTitle="Platform Capabilities"
       bottomContent={
-        /* Overlapping Circles Full Width */
-        <div className="mt-8 flex flex-col md:flex-row items-center justify-center -space-y-6 md:-space-y-0 md:-space-x-4 lg:-space-x-6 w-full pb-12">
-          {circles.map((circle, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{
-                duration: 0.8,
-                ease: [0.16, 1, 0.3, 1],
-                delay: 0.2 + idx * 0.15,
-              }}
-              // Transparent background so lines cross, reduced overlap, added hover scale
-              className="w-[240px] h-[240px] md:w-[200px] md:h-[200px] lg:w-[240px] lg:h-[240px] xl:w-[300px] xl:h-[300px] shrink-0 rounded-full flex flex-col justify-center items-center text-center border border-[#E0E0E0] bg-transparent relative select-none transition-transform duration-500 ease-out hover:border-brand-blue hover:z-30 hover:scale-110"
-              style={{ zIndex: 10 + idx }}
-            >
-              <h3 className="text-[26px] lg:text-[28px] font-bold text-[#07A7E1] tracking-tight mb-2">
-                {circle.title}
-              </h3>
-              <ul className="flex flex-col text-[14px] lg:text-[15px] text-[#353B3E] font-medium leading-[1.4]">
-                {circle.items.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
+        <>
+          {/* Desktop View: Overlapping Circles */}
+          <div className="mt-8 hidden md:flex flex-row items-center justify-center -space-x-4 lg:-space-x-6 w-full pb-12">
+            {circles.map((circle, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.16, 1, 0.3, 1],
+                  delay: 0.2 + idx * 0.15,
+                }}
+                className="md:w-[200px] md:h-[200px] lg:w-[240px] lg:h-[240px] xl:w-[300px] xl:h-[300px] shrink-0 rounded-full flex flex-col justify-center items-center text-center border border-[#E0E0E0] bg-transparent relative select-none transition-transform duration-500 ease-out hover:border-brand-blue hover:z-30 hover:scale-110"
+                style={{ zIndex: 10 + idx }}
+              >
+                <h3 className="text-[20px] lg:text-[28px] font-bold text-[#07A7E1] tracking-tight mb-2">
+                  {circle.title}
+                </h3>
+                <ul className="flex flex-col text-[13px] lg:text-[15px] text-[#353B3E] font-medium leading-[1.4]">
+                  {circle.items.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Mobile View: Accordion Cards */}
+          <div className="mt-12 flex flex-col md:hidden gap-4 w-full">
+            {circles.map((circle, idx) => (
+              <MobileAccordionCard
+                key={idx}
+                circle={circle}
+                idx={idx}
+                isOpen={activeIdx === idx}
+                onToggle={() => setActiveIdx(activeIdx === idx ? -1 : idx)}
+              />
+            ))}
+          </div>
+        </>
       }
     >
       {/* Main Heading */}
@@ -66,7 +132,7 @@ export default function Impacts() {
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-        className="text-[40px] md:text-[60px] font-bold text-[#09090D] leading-[1.1] md:leading-[65px] tracking-tight"
+        className="text-[28px] sm:text-[40px] md:text-[60px] font-bold text-[#09090D] leading-[1.1] md:leading-[65px] tracking-tight"
       >
         End-to-End <GradientText>SDLC</GradientText>{' '}
         <br className="hidden md:block" />
@@ -80,7 +146,7 @@ export default function Impacts() {
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          className="text-base md:text-[17px] text-[#353B3E] leading-relaxed font-normal"
+          className="text-base md:text-[17px] text-[#353B3E] leading-relaxed font-normal mt-2"
         >
           Bi-Directional software development. Approach as a developer or
           approach as a software engineer..

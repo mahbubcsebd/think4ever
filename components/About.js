@@ -16,7 +16,7 @@ export default function About() {
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-        className="text-[40px] md:text-[60px] font-bold text-[#09090D] leading-[1.1] md:leading-[65px] tracking-tight"
+        className="text-[28px] sm:text-[40px] md:text-[60px] font-bold text-[#09090D] leading-[1.1] md:leading-[65px] tracking-tight"
       >
         AI-powered <span className="text-gradient">Multi-</span><br className="hidden md:block" />
         <span className="text-gradient">Agent SDLC</span> platform.
