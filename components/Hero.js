@@ -113,19 +113,19 @@ function OrbitalCircle() {
  */
 function BreathingBlob() {
   return (
-    // Outer wrapper: breathing scale animation
+    // Outer wrapper: breathing scale animation relative to text size
     <motion.div
-      className="hidden md:block absolute top-[25%] left-[5%] md:left-[8%] w-[129px] h-[129px] rounded-full pointer-events-none select-none overflow-hidden z-10"
-      animate={{ scale: [0.88, 1.06, 0.88] }}
+      className="relative w-[0.9em] h-[0.9em] rounded-full pointer-events-none select-none z-10 flex items-center justify-center shadow-lg"
+      animate={{ scale: [0.95, 1.05, 0.95] }}
       transition={{
         duration: 5.5,
         repeat: Infinity,
         ease: 'easeInOut',
       }}
     >
-      {/* Inner: animated gradient color cycling AND container for the icon */}
+      {/* Inner: animated gradient color cycling */}
       <motion.div
-        className="w-full h-full rounded-full flex items-center justify-center"
+        className="absolute inset-0 w-full h-full rounded-full"
         animate={{
           background: [
             'linear-gradient(135deg, #07A7E1 0%, #093cad 60%, #3730a3 100%)',
@@ -140,19 +140,19 @@ function BreathingBlob() {
           repeat: Infinity,
           ease: 'linear',
         }}
+      />
+      
+      {/* Infinity Icon animating */}
+      <motion.div
+        className="relative z-10 text-white/95 drop-shadow-md flex items-center justify-center"
+        animate={{ rotate: 360 }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: 'linear',
+        }}
       >
-        {/* Infinity Icon animating */}
-        <motion.div
-          className="text-white/90 drop-shadow-md z-10"
-          animate={{ rotate: 360 }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-        >
-          <InfinityIcon size={56} strokeWidth={2} />
-        </motion.div>
+        <InfinityIcon size="0.5em" strokeWidth={3} />
       </motion.div>
     </motion.div>
   );
@@ -166,9 +166,6 @@ export default function Hero() {
     >
       {/* ── Orbital Circle ── */}
       <OrbitalCircle />
-
-      {/* ── Breathing Gradient Blob (bottom-left) ── */}
-      <BreathingBlob />
 
       {/* ── Vertical Watermark "THINK4EVER" ──
           writing-mode:vertical-rl makes text flow top→bottom.
@@ -229,9 +226,13 @@ export default function Hero() {
               text-[clamp(2.8rem,6.5vw,5.5rem)] text-[95px]
               leading-[1.08]
               font-bold text-black
+              flex flex-col
             "
             >
-              From Idea <br />
+              <div className="flex items-center gap-3 md:gap-5">
+                <BreathingBlob />
+                <span>From Idea</span>
+              </div>
               <MotionTextLoop />
             </h1>
 

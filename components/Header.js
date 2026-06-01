@@ -12,8 +12,14 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [openSubmenu, setOpenSubmenu] = useState(null);
 
-  const toggleMenu = () => setIsOpen((prev) => !prev);
+  const toggleMenu = () => {
+    setIsOpen((prev) => {
+      if (prev) setOpenSubmenu(null); // Reset submenu when closing menu
+      return !prev;
+    });
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -46,14 +52,21 @@ export default function Header() {
 
   const menuItems = [
     { label: 'Home', href: '#home', ids: ['home'] },
-    { label: 'About', href: '#about', ids: ['about'] },
-    { label: 'Capabilities', href: '#capabilities', ids: ['capabilities'] },
-    { label: 'Modernize', href: '#modernize', ids: ['modernize'] },
-    { label: 'Architecture', href: '#architecture', ids: ['architecture'] },
-    { label: 'Developer', href: '#build-motion-developer', ids: ['build-motion-developer'] },
-    { label: 'Starting Points', href: '#starting-points', ids: ['starting-points'] },
-    { label: 'Extend', href: '#extend-motion', ids: ['extend-motion'] },
-    { label: 'Pricing', href: '#pricing', ids: ['pricing'] },
+    { label: 'How it Works', href: '#how-it-works', ids: ['how-it-works'] },
+    { 
+      label: 'Docs', 
+      href: '#', 
+      ids: ['docs'],
+      submenu: [
+        { label: 'Customer Onboarding', href: 'https://think4ever.com/docs/onboarding.html' },
+        { label: 'Designer', href: 'https://think4ever.com/docs/manual_introduction.html' },
+        { label: 'Developer', href: 'https://think4ever.com/docs/dev/start_new_project.html' },
+        { label: 'Portal', href: 'https://think4ever.com/docs/portal/dashboard.html' },
+        { label: 'Reverse Engineering', href: 'https://think4ever.com/docs/reverse_engineering.html' },
+      ]
+    },
+    { label: 'Resources', href: '#resources', ids: ['resources'] },
+    { label: 'Contact Us', href: '#contact', ids: ['contact'] },
   ];
 
   const menuVariants = {
@@ -164,26 +177,92 @@ export default function Header() {
               <div className="flex flex-col gap-5 md:gap-7 justify-center items-start mt-12 md:mt-0">
                 {menuItems.map((item) => {
                   const isActive = item.ids.includes(activeSection);
+                  const hasSubmenu = !!item.submenu;
+                  const isSubmenuOpen = openSubmenu === item.label;
+
                   return (
-                    <motion.div key={item.label} variants={itemVariants}>
-                      <a
-                        href={item.href}
-                        onClick={toggleMenu}
-                        className={`text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight inline-flex items-center group transition-colors duration-300 ${
-                          isActive
-                            ? 'bg-gradient-to-r from-[#07A7E1] to-[#093cad] bg-clip-text text-transparent'
-                            : 'text-zinc-950 hover:text-[#093cad]'
-                        }`}
+                    <motion.div key={item.label} variants={itemVariants} className="flex flex-col w-full">
+                      <div
+                        className="flex items-center"
+                        onClick={(e) => {
+                          if (hasSubmenu) {
+                            e.preventDefault();
+                            setOpenSubmenu(isSubmenuOpen ? null : item.label);
+                          }
+                        }}
                       >
-                        <span
-                          className={`h-[3px] md:h-[4px] bg-gradient-to-r from-[#07A7E1] to-[#093cad] rounded-full transition-all duration-300 flex-shrink-0 ${
-                            isActive
-                              ? 'w-6 md:w-8 opacity-100 mr-4'
-                              : 'w-0 opacity-0 mr-0 group-hover:w-6 group-hover:md:w-8 group-hover:opacity-100 group-hover:mr-4'
+                        <a
+                          href={item.href}
+                          onClick={(e) => {
+                             if (!hasSubmenu) {
+                               toggleMenu();
+                             } else {
+                               e.preventDefault();
+                             }
+                          }}
+                          className={`text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight inline-flex items-center group transition-colors duration-300 w-full cursor-pointer ${
+                            isActive && !hasSubmenu
+                              ? 'bg-gradient-to-r from-[#07A7E1] to-[#093cad] bg-clip-text text-transparent'
+                              : 'text-zinc-950 hover:text-[#093cad]'
                           }`}
-                        />
-                        <span className={isActive ? '' : 'transition-colors duration-300 group-hover:text-[#093cad]'}>{item.label}</span>
-                      </a>
+                        >
+                          <span
+                            className={`h-[3px] md:h-[4px] bg-gradient-to-r from-[#07A7E1] to-[#093cad] rounded-full transition-all duration-300 flex-shrink-0 ${
+                              isActive && !hasSubmenu
+                                ? 'w-6 md:w-8 opacity-100 mr-4'
+                                : 'w-0 opacity-0 mr-0 group-hover:w-6 group-hover:md:w-8 group-hover:opacity-100 group-hover:mr-4'
+                            }`}
+                          />
+                          <span className={isActive && !hasSubmenu ? '' : 'transition-colors duration-300 group-hover:text-[#093cad]'}>{item.label}</span>
+                          {hasSubmenu && (
+                            <span className="ml-4 transition-transform duration-300 text-zinc-400 group-hover:text-[#093cad]" style={{ transform: isSubmenuOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                          )}
+                        </a>
+                      </div>
+
+                      {/* Submenu Accordion */}
+                      <AnimatePresence>
+                        {hasSubmenu && isSubmenuOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: 'easeInOut' }}
+                            className="overflow-hidden"
+                          >
+                            <div className="flex flex-col gap-3 pl-8 md:pl-12 pt-4 pb-2">
+                              {item.submenu.map((subItem, idx) => {
+                                const isSubActive = false; // Placeholder for active state logic later
+                                return (
+                                  <a
+                                    key={idx}
+                                    href={subItem.href}
+                                    onClick={toggleMenu}
+                                    className={`text-xl md:text-2xl lg:text-3xl font-bold tracking-tight inline-flex items-center group transition-colors duration-300 w-full cursor-pointer ${
+                                      isSubActive
+                                        ? 'bg-gradient-to-r from-[#07A7E1] to-[#093cad] bg-clip-text text-transparent'
+                                        : 'text-zinc-950 hover:text-[#093cad]'
+                                    }`}
+                                  >
+                                    <span
+                                      className={`h-[3px] md:h-[4px] bg-gradient-to-r from-[#07A7E1] to-[#093cad] rounded-full transition-all duration-300 flex-shrink-0 ${
+                                        isSubActive
+                                          ? 'w-5 md:w-6 opacity-100 mr-4'
+                                          : 'w-0 opacity-0 mr-0 group-hover:w-5 group-hover:md:w-6 group-hover:opacity-100 group-hover:mr-4'
+                                      }`}
+                                    />
+                                    <span className={isSubActive ? '' : 'transition-colors duration-300 group-hover:text-[#093cad]'}>
+                                      {subItem.label}
+                                    </span>
+                                  </a>
+                                );
+                              })}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </motion.div>
                   );
                 })}
