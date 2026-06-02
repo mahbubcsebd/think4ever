@@ -1,10 +1,10 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
-import SplitSection from './SplitSection';
+import Link from 'next/link';
 import GradientText from './GradientText';
+import SplitSection from './SplitSection';
 
 export default function Pricing() {
   const plans = [
@@ -14,7 +14,8 @@ export default function Pricing() {
       price: '$0/mo',
       subText: 'No card required',
       subTextColor: 'text-green-500 text-[10px]',
-      description: 'Free credits on signup. Build, extend, or modernize something real before spending a cent.',
+      description:
+        'Free credits on signup. Build, extend, or modernize something real before spending a cent.',
       features: [
         'Free OCU starter credits',
         '1 project',
@@ -29,15 +30,16 @@ export default function Pricing() {
       label: 'THINK NEW',
       name: 'Solo Builder',
       price: '$25/mo',
-      subText: 'per builder',
+      subText: 'per builder · 500 credits included',
       subTextColor: 'text-zinc-500 italic text-[10px]',
-      description: 'For solo developers, freelancers, founders, and small builders shipping AI-powered products.',
+      description:
+        'For solo developers, freelancers, and technical founders shipping AI-powered products.',
       features: [
-        '500 credits included (which equals $25)',
+        '500 credits/month ($0.05 per credit)',
         'Up to 3 projects',
-        'Structured system design + code generation',
+        'System design + code generation',
         'BYOK (bring your own model)',
-        'Add credits as needed 5 cents / credit',
+        'Add credits as needed',
       ],
       buttonText: 'Get Early Access',
       href: 'https://portal.think4ever.com',
@@ -48,13 +50,11 @@ export default function Pricing() {
       price: '$250/mo',
       subText: 'Up to 5 users',
       subTextColor: 'text-zinc-500 italic text-[10px]',
-      description: 'For developer teams, multi developer environments.',
+      description:
+        'For developer teams and multi-developer environments shipping together at speed.',
       features: [
-        'Up to 5 users included',
+        'Up to 5 users',
         'Up to 5 projects',
-        'Structured system design + code generation',
-        'BYOK (bring your own model)',
-        'Add credits as needed 5 cents / credit',
         'Shared project environments',
         'Usage pooling across team',
         'Admin controls + caps',
@@ -66,14 +66,16 @@ export default function Pricing() {
     {
       label: 'THINK BLUE',
       name: 'Enterprise',
-      price: 'Custom pricing',
+      price: 'Custom',
       subText: 'tailored to your scale',
       subTextColor: 'text-zinc-500 italic text-[10px]',
-      description: 'For organizations with more sophisticated environments, larger scale and tailored deployment models.',
+      description:
+        'For organisations with sophisticated environments, larger scale, and tailored deployment models.',
       features: [
         'Scales to enterprise teams',
         'Private deployment options',
         'Custom usage pools + cost controls',
+        'Stage gates + confidence scoring',
         'Dedicated support + onboarding',
       ],
       buttonText: 'Contact Sales',
@@ -82,10 +84,12 @@ export default function Pricing() {
   ];
 
   const getBorderRadius = (idx) => {
-    if (idx === 0) return 'rounded-t-[24px] md:rounded-t-none md:rounded-tl-[24px] xl:rounded-l-[24px] xl:rounded-tr-none';
+    if (idx === 0)
+      return 'rounded-t-[24px] md:rounded-t-none md:rounded-tl-[24px] xl:rounded-l-[24px] xl:rounded-tr-none';
     if (idx === 1) return 'md:rounded-tr-[24px] xl:rounded-none';
     if (idx === 2) return 'md:rounded-bl-[24px] xl:rounded-none';
-    if (idx === 3) return 'rounded-b-[24px] md:rounded-b-none md:rounded-br-[24px] xl:rounded-r-[24px] xl:rounded-bl-none';
+    if (idx === 3)
+      return 'rounded-b-[24px] md:rounded-b-none md:rounded-br-[24px] xl:rounded-r-[24px] xl:rounded-bl-none';
     return '';
   };
 
@@ -93,7 +97,8 @@ export default function Pricing() {
     if (idx === 0) return '';
     if (idx === 1) return '-mt-[1px] md:mt-0 md:-ml-[1px]';
     if (idx === 2) return '-mt-[1px] md:-mt-[1px] md:ml-0 xl:mt-0 xl:-ml-[1px]';
-    if (idx === 3) return '-mt-[1px] md:-mt-[1px] md:-ml-[1px] xl:mt-0 xl:-ml-[1px]';
+    if (idx === 3)
+      return '-mt-[1px] md:-mt-[1px] md:-ml-[1px] xl:mt-0 xl:-ml-[1px]';
     return '';
   };
 
@@ -131,9 +136,7 @@ export default function Pricing() {
                     <span className="text-[18px] font-bold text-[#09090D]">
                       {plan.price}
                     </span>
-                    <span className={plan.subTextColor}>
-                      {plan.subText}
-                    </span>
+                    <span className={plan.subTextColor}>{plan.subText}</span>
                   </div>
                 </div>
 
@@ -146,7 +149,10 @@ export default function Pricing() {
                 <ul className="flex flex-col gap-3 mb-12 flex-grow">
                   {plan.features.map((feature, fIdx) => (
                     <li key={fIdx} className="flex items-start gap-2">
-                      <Check className="w-[14px] h-[14px] text-[#07A7E1] shrink-0 mt-[3px]" strokeWidth={3} />
+                      <Check
+                        className="w-[14px] h-[14px] text-[#07A7E1] shrink-0 mt-[3px]"
+                        strokeWidth={3}
+                      />
                       <span className="text-[12px] text-[#555B5E] font-medium leading-snug">
                         {feature}
                       </span>
@@ -175,7 +181,8 @@ export default function Pricing() {
           className="text-[28px] sm:text-[40px] md:text-[54px] lg:text-[60px] font-bold text-[#09090D] leading-[1.1] tracking-tight"
         >
           Build something real. <br />
-          <GradientText>Start Free.</GradientText> Scale as <br className="hidden md:block" />
+          <GradientText>Start Free.</GradientText> Scale as{' '}
+          <br className="hidden md:block" />
           you go.
         </motion.h2>
 

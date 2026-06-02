@@ -55,25 +55,34 @@ export default function ExtendMotion() {
             >
               <div className="flex flex-col gap-3">
                 <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
-                  <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">Starting From</span>
+                  <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">
+                    Starting From
+                  </span>
                   <span className="text-[13px] sm:text-[14px] font-semibold text-[#093cad] flex items-center gap-1.5 cursor-pointer hover:underline group">
-                    open-source production app <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    open-source production app{' '}
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
                 <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
-                  <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">Feature Added</span>
+                  <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">
+                    Feature Added
+                  </span>
                   <span className="text-[13px] sm:text-[14px] font-semibold text-[#353B3E]">
                     OAuth 2.0 + session management
                   </span>
                 </div>
                 <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
-                  <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">Files Propagated</span>
+                  <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">
+                    Files Propagated
+                  </span>
                   <span className="text-[13px] sm:text-[14px] font-semibold text-[#353B3E]">
                     14 (code, tests, docs, config)
                   </span>
                 </div>
                 <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
-                  <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">Time</span>
+                  <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">
+                    Time
+                  </span>
                   <span className="text-[13px] sm:text-[14px] font-semibold text-[#353B3E]">
                     23 minutes
                   </span>
@@ -128,8 +137,9 @@ export default function ExtendMotion() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         className="text-[28px] sm:text-[40px] md:text-[60px] font-bold text-[#09090D] leading-[1.1] md:leading-[65px] tracking-tight"
       >
-        We are working <br className="hidden md:block" />
-        on it <GradientText>Updates</GradientText> in real{' '}
+        Describe the Change. Everything that depends{' '}
+        <br className="hidden md:block" />
+        on it. <GradientText>Updates</GradientText> in real{' '}
         <br className="hidden md:block" />
         time Motion.
       </motion.h2>
