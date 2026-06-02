@@ -1,4 +1,5 @@
 'use client';
+import { motion } from 'framer-motion';
 import {
   Boxes,
   Check,
@@ -207,13 +208,20 @@ export const Diagram = ({ activeIndex = 0, onStepClick = () => {} }) => {
             <HorizontalArrow className="top-[45%] left-[72.5%] w-[7%]" />
 
             {steps.slice(0, 4).map((step, idx) => (
-              <StepCard
+              <motion.div
                 key={step.id}
-                step={step}
-                isActive={activeIndex === idx}
-                onClick={() => onStepClick(idx)}
-                className="z-10"
-              />
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: idx * 0.1 }}
+                className="z-10 h-full"
+              >
+                <StepCard
+                  step={step}
+                  isActive={activeIndex === idx}
+                  onClick={() => onStepClick(idx)}
+                />
+              </motion.div>
             ))}
           </div>
 
@@ -234,13 +242,20 @@ export const Diagram = ({ activeIndex = 0, onStepClick = () => {} }) => {
             <HorizontalArrow className="top-[45%] left-[72.5%] w-[7%]" />
 
             {steps.slice(4, 8).map((step, idx) => (
-              <StepCard
+              <motion.div
                 key={step.id}
-                step={step}
-                isActive={activeIndex === idx + 4}
-                onClick={() => onStepClick(idx + 4)}
-                className="z-10"
-              />
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: idx * 0.1 }}
+                className="z-10 h-full"
+              >
+                <StepCard
+                  step={step}
+                  isActive={activeIndex === idx + 4}
+                  onClick={() => onStepClick(idx + 4)}
+                />
+              </motion.div>
             ))}
           </div>
         </div>

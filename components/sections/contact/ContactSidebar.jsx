@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
 import { 
   MapPin, 
   Mail, 
@@ -12,7 +13,13 @@ const ContactSidebar = () => {
   return (
     <div className="w-full lg:w-[360px] space-y-6">
       {/* Office Information */}
-      <div className="bg-white border border-gray-100 rounded-md p-6 shadow-sm">
+      <motion.div 
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+        className="bg-white border border-gray-100 rounded-md p-6 shadow-sm"
+      >
         <h3 className="text-[15px] font-bold text-[#1f2937] mb-6">Office Information</h3>
         <div className="space-y-6">
           <div className="flex gap-3 items-start group">
@@ -37,10 +44,16 @@ const ContactSidebar = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Help Card */}
-      <div className="bg-[#f5f8ff] border border-[#dbeafe] rounded-md p-6 flex flex-col items-center">
+      <motion.div 
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+        className="bg-[#f5f8ff] border border-[#dbeafe] rounded-md p-6 flex flex-col items-center"
+      >
         <div className="h-10 w-10 rounded-xl bg-white shadow-sm flex items-center justify-center mb-4 text-[#5c67f2]">
           <MessageCircle size={20} strokeWidth={2.5} />
         </div>
@@ -52,7 +65,7 @@ const ContactSidebar = () => {
           <MessageSquare size={14} />
           Start Live Chat
         </Button>
-      </div>
+      </motion.div>
     </div>
   );
 };

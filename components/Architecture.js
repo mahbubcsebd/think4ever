@@ -17,6 +17,7 @@ export default function Architecture() {
         { text: 'session 1' },
         { arrow: true },
         { text: 'session 2' },
+        { arrow: true },
         { text: 'session n' },
         { arrow: true },
         { text: 'context intact' },
@@ -113,7 +114,7 @@ export default function Architecture() {
                     return (
                       <span
                         key={itemIdx}
-                        className="px-3 py-1.5 text-[10px] md:text-[11px] font-bold text-[#555B5E] tracking-[0.05em] uppercase border border-[#E0E0E0] rounded-md bg-transparent group-hover:bg-white whitespace-nowrap transition-colors duration-500"
+                        className="w-[85px] xl:w-[95px] text-center px-1 py-1 text-[10px] md:text-[11px] font-medium text-[#555B5E] lowercase border border-[#E0E0E0] rounded-md bg-transparent group-hover:bg-white whitespace-nowrap transition-colors duration-500"
                       >
                         {item.text}
                       </span>

@@ -1,4 +1,7 @@
 'use client';
+import { motion } from 'framer-motion';
+import GradientText from '@/components/GradientText';
+import SplitSection from '@/components/SplitSection';
 import { Diagram } from '@/components/sections/Diagram';
 import {
   ArrowRight,
@@ -205,19 +208,33 @@ const ProductPage = () => {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="pt-12 sm:pt-24 pb-10 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-center">
-        <p className="text-[10px] sm:text-[12px] font-bold tracking-[0.2em] uppercase text-[#025da9] mb-3 sm:mb-4">
-          HOW IT WORKS
-        </p>
-        <h1 className="text-[1.75rem] sm:text-[2.75rem] lg:text-[3.25rem] font-bold text-[#1f2937] leading-[1.1] tracking-tight mb-4 sm:mb-5">
-          From idea to integrated system
-          <span className="text-[#025da9]">.</span>
-        </h1>
-        <p className="text-gray-500 text-[14px] sm:text-lg max-w-2xl mx-auto leading-relaxed px-2">
-          Eight connected steps. One continuous platform. Human-directed at
-          every stage.
-        </p>
-      </section>
+      <SplitSection
+        id="how-it-works-hero"
+        leftTitle="HOW IT WORKS"
+        className="!min-h-0 !pt-16 lg:!pt-24 !pb-4 lg:!pb-8"
+      >
+        <div className="flex flex-col gap-6">
+          <motion.h1
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+            className="text-[28px] sm:text-[40px] md:text-[54px] lg:text-[60px] font-bold text-[#09090D] leading-[1.1] tracking-tight"
+          >
+            From idea to <GradientText>Integrated System.</GradientText>
+          </motion.h1>
+          <motion.p
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            className="text-[15px] lg:text-[16px] text-[#353B3E] leading-[1.6] font-medium max-w-[500px]"
+          >
+            Eight connected steps. One continuous platform. Human-directed at
+            every stage.
+          </motion.p>
+        </div>
+      </SplitSection>
 
       {/* Main Diagram Component */}
       <section className="pb-10 lg:pb-16">
@@ -229,7 +246,13 @@ const ProductPage = () => {
         id="step-detail-section"
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 lg:pb-16 scroll-mt-20"
       >
-        <div className="bg-white rounded-2xl shadow-[0_4px_24px_-2px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.04)] border border-gray-200 overflow-hidden">
+        <motion.div 
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="bg-white rounded-2xl shadow-[0_4px_24px_-2px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.04)] border border-gray-200 overflow-hidden"
+        >
           <div className="flex flex-col lg:flex-row min-h-[500px]">
             {/* Left Sidebar / Top Bar for Mobile */}
             <div className="w-full lg:w-[300px] border-b lg:border-b-0 lg:border-r border-gray-200 bg-[#f8f9fb] p-3 sm:p-4 lg:p-5 shrink-0">
@@ -343,7 +366,7 @@ const ProductPage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
     </main>
   );

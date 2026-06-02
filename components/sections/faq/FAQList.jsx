@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { cn } from '@/lib/utils';
 import { Settings, CreditCard, Rocket, Headphones, ShieldCheck } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const catColors = {
   'Platform': { color: 'text-[#07A7E1]', bg: 'bg-[#07A7E1]/10', icon: <Settings size={18} /> },
@@ -27,10 +28,20 @@ export const FAQList = ({ data }) => {
 
   return (
     <section className="max-w-4xl mx-auto px-4 py-8 sm:py-12 space-y-12">
-      {data.map((section) => {
-        const styles = catColors[section.category] || catColors['Platform'];
-        return (section.items.length > 0 &&
-          <div key={section.category} className="space-y-5">
+      <AnimatePresence mode="popLayout">
+        {data.map((section, sectionIdx) => {
+          const styles = catColors[section.category] || catColors['Platform'];
+          return (section.items.length > 0 &&
+            <motion.div 
+              layout
+              key={section.category} 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="space-y-5"
+            >
             <div className="flex items-center justify-between border-b border-gray-50 pb-4">
               <div className="flex items-center gap-3">
                 <div className={cn("p-1.5 rounded-md", styles.bg, styles.color)}>
@@ -45,25 +56,33 @@ export const FAQList = ({ data }) => {
 
             <Accordion type="single" collapsible className="space-y-3">
               {section.items.map((item, idx) => (
-                <AccordionItem 
-                  key={idx} 
-                  value={`${section.category}-${idx}`}
-                  className="border border-gray-100 rounded-md bg-white hover:border-gray-200 transition-all duration-200 shadow-sm"
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: idx * 0.1 }}
                 >
-                  <AccordionTrigger className="px-5 py-4 hover:no-underline text-left group">
-                    <span className="text-[14px] font-medium text-gray-600 group-hover:text-[#093cad] transition-colors pr-2 leading-relaxed">
-                      {item.question}
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-5 pb-5 text-gray-500 text-[13.5px] leading-relaxed">
-                    {item.answer}
-                  </AccordionContent>
-                </AccordionItem>
+                  <AccordionItem 
+                    value={`${section.category}-${idx}`}
+                    className="border border-gray-100 rounded-md bg-white hover:border-gray-200 transition-all duration-200 shadow-sm"
+                  >
+                    <AccordionTrigger className="px-5 py-4 hover:no-underline text-left group">
+                      <span className="text-[14px] font-medium text-gray-600 transition-colors pr-2 leading-relaxed group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-b group-hover:from-[#07A7E1] group-hover:to-[#093cad] group-data-[state=open]:text-transparent group-data-[state=open]:bg-clip-text group-data-[state=open]:bg-gradient-to-b group-data-[state=open]:from-[#07A7E1] group-data-[state=open]:to-[#093cad]">
+                        {item.question}
+                      </span>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-5 pb-5 text-gray-500 text-[13.5px] leading-relaxed">
+                      {item.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                </motion.div>
               ))}
             </Accordion>
-          </div>
+          </motion.div>
         );
       })}
+      </AnimatePresence>
     </section>
   );
 };

@@ -141,7 +141,7 @@ export default function ExtendMotion() {
         <br className="hidden md:block" />
         on it. <GradientText>Updates</GradientText> in real{' '}
         <br className="hidden md:block" />
-        time Motion.
+        time.
       </motion.h2>
     </SplitSection>
   );

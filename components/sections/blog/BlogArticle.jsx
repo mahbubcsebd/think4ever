@@ -1,11 +1,18 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export const BlogArticle = ({ post }) => {
   return (
     <article className="bg-white rounded-3xl p-6 sm:p-10 lg:p-16 shadow-[0_4px_24px_-2px_rgba(0,0,0,0.04),0_1px_3px_rgba(0,0,0,0.02)] border border-gray-100">
-      <div className="mb-8">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+        className="mb-8"
+      >
         <span className="inline-block px-3 py-1 bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white text-[11px] font-bold tracking-widest rounded-md mb-6 uppercase">
           {post.category}
         </span>
@@ -27,10 +34,16 @@ export const BlogArticle = ({ post }) => {
             <span>{post.readTime}</span>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Featured Image */}
-      <div className="mb-12 relative aspect-[2/1] overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+        className="mb-12 relative aspect-[2/1] overflow-hidden rounded-2xl border border-gray-100 shadow-sm"
+      >
         <Image
           src={post.image}
           alt={post.title}
@@ -38,10 +51,14 @@ export const BlogArticle = ({ post }) => {
           className="object-cover"
           priority
         />
-      </div>
+      </motion.div>
 
       {/* Article Content */}
-      <div 
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
         className="prose prose-lg max-w-none prose-headings:text-[#1f2937] prose-headings:font-bold prose-p:text-gray-500 prose-p:leading-relaxed prose-strong:text-[#1f2937] prose-strong:font-bold"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />

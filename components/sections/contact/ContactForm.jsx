@@ -1,4 +1,5 @@
 'use client';
+import { motion } from 'framer-motion';
 import GlobalInput from '@/components/globals/GlobalInput';
 import GlobalSelect from '@/components/globals/GlobalSelect';
 import { Button } from '@/components/ui/button';
@@ -116,7 +117,13 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex-1 bg-white border border-gray-100 rounded-lg p-6 sm:p-10 shadow-sm">
+    <motion.div 
+      initial={{ opacity: 0, x: -100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="flex-1 bg-white border border-gray-100 rounded-lg p-6 sm:p-10 shadow-sm"
+    >
       <div className="mb-10">
         <h2 className="text-[28px] sm:text-[34px] font-bold text-[#1f2937] mb-3 tracking-tight uppercase inline-flex items-center gap-x-3">
           <BreathingBlob /> CONTACT US
@@ -311,7 +318,7 @@ const ContactForm = () => {
           {isSubmitting ? 'Sending...' : 'Contact Us'}
         </Button>
       </form>
-    </div>
+    </motion.div>
   );
 };
 
