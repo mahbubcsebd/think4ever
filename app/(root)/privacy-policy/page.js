@@ -1,8 +1,8 @@
 'use client';
 
 import PageBanner from '@/components/sections/PageBanner';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const PrivacyPolicy = () => {
   return (
@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
       {/* Content */}
       <article className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
         {/* Back Link */}
-        <Link
+        {/* <Link
           href="/"
           className="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-[#07A7E1] transition-colors mb-8 group"
         >
@@ -24,7 +24,7 @@ const PrivacyPolicy = () => {
             ←
           </span>
           Back to Home
-        </Link>
+        </Link> */}
 
         {/* Meta info */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-[13px] text-gray-400 mb-10 pb-8 border-b border-gray-100">
@@ -42,7 +42,7 @@ const PrivacyPolicy = () => {
         {/* Prose content */}
         <div className="space-y-14">
           {/* Intro */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.1 }}
