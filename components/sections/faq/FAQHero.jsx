@@ -1,5 +1,6 @@
 import React from 'react';
 import { Search } from 'lucide-react';
+import BreathingBlob from '@/components/ui/BreathingBlob';
 
 export const FAQHero = ({ searchQuery, setSearchQuery }) => {
   return (
@@ -10,9 +11,9 @@ export const FAQHero = ({ searchQuery, setSearchQuery }) => {
         <div className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[100%] bg-[#093cad]/5 blur-3xl transform -rotate-12 rounded-full" />
       </div>
 
-      <div className="max-w-4xl mx-auto relative z-10">
-        <h1 className="text-[32px] sm:text-[40px] md:text-[54px] font-bold text-[#09090D] mb-4 tracking-tight leading-[1.1]">
-          Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#07A7E1] to-[#093cad]">Questions</span>
+      <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
+        <h1 className="text-[32px] sm:text-[40px] md:text-[54px] font-bold text-[#09090D] mb-4 tracking-tight leading-[1.1] inline-flex flex-wrap justify-center items-center gap-x-3">
+          <BreathingBlob /> Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#07A7E1] to-[#093cad]">Questions</span>
         </h1>
         <p className="text-[#555B5E] text-[14px] sm:text-[15px] mb-10 font-medium tracking-wide">
           Find answers to common questions about our platform, pricing, onboarding, and support.

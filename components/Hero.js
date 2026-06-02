@@ -137,56 +137,7 @@ function OrbitalCircle() {
   );
 }
 
-/**
- * BreathingBlob — the gradient circle at bottom-left of the hero.
- * Framer Motion handles both the breathing scale and the color animation.
- */
-function BreathingBlob() {
-  return (
-    // Outer wrapper: breathing scale animation relative to text size
-    <motion.div
-      className="relative w-[0.9em] h-[0.9em] rounded-full pointer-events-none select-none z-10 flex items-center justify-center shadow-lg"
-      animate={{ scale: [0.95, 1.05, 0.95] }}
-      transition={{
-        duration: 5.5,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      }}
-    >
-      {/* Inner: animated gradient color cycling */}
-      <motion.div
-        className="absolute inset-0 w-full h-full rounded-full"
-        animate={{
-          background: [
-            'linear-gradient(135deg, #07A7E1 0%, #093cad 60%, #3730a3 100%)',
-            'linear-gradient(225deg, #3730a3 0%, #093cad 50%, #07A7E1 100%)',
-            'linear-gradient(315deg, #07A7E1 0%, #4338ca 40%, #093cad 100%)',
-            'linear-gradient(45deg,  #093cad 0%, #07A7E1 50%, #3730a3 100%)',
-            'linear-gradient(135deg, #07A7E1 0%, #093cad 60%, #3730a3 100%)',
-          ],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: 'linear',
-        }}
-      />
-
-      {/* Infinity Icon animating */}
-      <motion.div
-        className="relative z-10 text-white/95 drop-shadow-md flex items-center justify-center"
-        animate={{ rotate: 360 }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: 'linear',
-        }}
-      >
-        <InfinityIcon size="0.5em" strokeWidth={3} className="rotate-90" />
-      </motion.div>
-    </motion.div>
-  );
-}
+import BreathingBlob from './ui/BreathingBlob';
 
 export default function Hero() {
   return (

@@ -8,6 +8,7 @@ import { Check } from 'lucide-react';
 import Link from 'next/link';
 import { Controller, useForm } from 'react-hook-form';
 import * as z from 'zod';
+import BreathingBlob from '@/components/ui/BreathingBlob';
 
 const contactSchema = z.object({
   firstName: z.string().min(1, 'Required'),
@@ -117,8 +118,8 @@ const ContactForm = () => {
   return (
     <div className="flex-1 bg-white border border-gray-100 rounded-lg p-6 sm:p-10 shadow-sm">
       <div className="mb-10">
-        <h2 className="text-[28px] sm:text-[34px] font-bold text-[#1f2937] mb-3 tracking-tight uppercase">
-          CONTACT US
+        <h2 className="text-[28px] sm:text-[34px] font-bold text-[#1f2937] mb-3 tracking-tight uppercase inline-flex items-center gap-x-3">
+          <BreathingBlob /> CONTACT US
         </h2>
         <p className="text-gray-500 text-[15px] leading-relaxed max-w-2xl font-medium">
           Enter your details and a member of the Think4Ever team will follow up

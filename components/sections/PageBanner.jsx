@@ -1,3 +1,5 @@
+import BreathingBlob from '@/components/ui/BreathingBlob';
+
 const PageBanner = ({ title }) => {
   const words = title.split(' ');
   const lastWord = words.pop();
@@ -12,8 +14,9 @@ const PageBanner = ({ title }) => {
       </div>
 
       {/* Title */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h1 className="text-[32px] sm:text-[40px] md:text-[54px] font-bold text-[#09090D] tracking-tight leading-[1.1]">
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
+        <h1 className="text-[32px] sm:text-[40px] md:text-[54px] font-bold text-[#09090D] tracking-tight leading-[1.1] inline-flex flex-wrap justify-center items-center gap-x-3">
+          <BreathingBlob />
           {firstPart}{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#07A7E1] to-[#093cad]">
             {lastWord}
