@@ -55,7 +55,7 @@ function MobileAccordionCard({ circle, idx, isOpen, onToggle }) {
 }
 
 export default function Impacts() {
-  const [activeIdx, setActiveIdx] = useState(0);
+  const [activeIdx, setActiveIdx] = useState(-1);
 
   const circles = [
     {

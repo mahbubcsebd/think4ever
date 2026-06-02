@@ -3,11 +3,11 @@ import Link from 'next/link';
 export default function Footer() {
   const links = [
     { name: 'Home', href: '/' },
-    { name: 'How it Works', href: '/#how-it-works' },
-    { name: 'Solutions', href: '/#solutions' },
+    { name: 'How it Works', href: '/how-it-works' },
     { name: 'Pricing', href: '/#pricing' },
-    { name: 'FAQ', href: '/#faq' },
-    { name: 'Contact Us', href: '/#contact-us' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Contact Us', href: '/contact-us' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
   ];
 

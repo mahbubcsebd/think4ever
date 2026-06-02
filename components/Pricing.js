@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import SplitSection from './SplitSection';
@@ -22,22 +23,24 @@ export default function Pricing() {
         'BYOK (bring your own model)',
       ],
       buttonText: 'Start free',
+      href: 'https://portal.think4ever.com',
     },
     {
       label: 'THINK NEW',
       name: 'Solo Builder',
       price: '$25/mo',
-      subText: 'per builder - 500 credits included',
+      subText: 'per builder',
       subTextColor: 'text-zinc-500 italic text-[10px]',
-      description: 'For solo developers, freelancers, and technical founders shipping AI-powered products.',
+      description: 'For solo developers, freelancers, founders, and small builders shipping AI-powered products.',
       features: [
-        '500 credits/month ($0.05 per credit)',
+        '500 credits included (which equals $25)',
         'Up to 3 projects',
-        'System design + code generation',
+        'Structured system design + code generation',
         'BYOK (bring your own model)',
-        'Add credits as needed',
+        'Add credits as needed 5 cents / credit',
       ],
-      buttonText: 'Get early access',
+      buttonText: 'Get Early Access',
+      href: 'https://portal.think4ever.com',
     },
     {
       label: 'THINK BIG',
@@ -45,32 +48,36 @@ export default function Pricing() {
       price: '$250/mo',
       subText: 'Up to 5 users',
       subTextColor: 'text-zinc-500 italic text-[10px]',
-      description: 'For developer teams and multi-developer environments shipping together at speed.',
+      description: 'For developer teams, multi developer environments.',
       features: [
-        'Up to 5 users',
+        'Up to 5 users included',
         'Up to 5 projects',
+        'Structured system design + code generation',
+        'BYOK (bring your own model)',
+        'Add credits as needed 5 cents / credit',
         'Shared project environments',
         'Usage pooling across team',
         'Admin controls + caps',
         'Priority system orchestration',
       ],
-      buttonText: 'Get early access',
+      buttonText: 'Get Early Access',
+      href: 'https://portal.think4ever.com',
     },
     {
       label: 'THINK BLUE',
       name: 'Enterprise',
-      price: 'Custom',
+      price: 'Custom pricing',
       subText: 'tailored to your scale',
       subTextColor: 'text-zinc-500 italic text-[10px]',
-      description: 'For organizations with sophisticated environments, larger scale, and tailored deployment models.',
+      description: 'For organizations with more sophisticated environments, larger scale and tailored deployment models.',
       features: [
         'Scales to enterprise teams',
         'Private deployment options',
         'Custom usage pools + cost controls',
-        'Stage gates + confidence scoring',
         'Dedicated support + onboarding',
       ],
-      buttonText: 'Contact sales',
+      buttonText: 'Contact Sales',
+      href: '/contact-us',
     },
   ];
 
@@ -148,9 +155,11 @@ export default function Pricing() {
                 </ul>
 
                 {/* Bottom Button */}
-                <button className="w-full bg-gradient-to-r from-[#07A7E1] to-[#0089BA] hover:scale-[1.02] active:scale-95 text-white rounded-full py-3 px-4 font-semibold text-[13px] transition-transform duration-300 shadow-md shadow-blue-500/20 mt-auto">
-                  {plan.buttonText}
-                </button>
+                <Link href={plan.href || '#'} className="mt-auto block w-full">
+                  <button className="w-full bg-gradient-to-r from-[#07A7E1] to-[#0089BA] hover:scale-[1.02] active:scale-95 text-white rounded-full py-3 px-4 font-semibold text-[13px] transition-transform duration-300 shadow-md shadow-blue-500/20">
+                    {plan.buttonText}
+                  </button>
+                </Link>
               </div>
             ))}
           </motion.div>

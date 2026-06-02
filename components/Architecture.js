@@ -59,7 +59,7 @@ export default function Architecture() {
   return (
     <SplitSection
       id="architecture"
-      watermarkText="ARCHITECTURE"
+      watermarkText="ARCHITECT"
       leftTitle="The Architecture"
       bottomContent={
         <div className="w-full mt-12 pb-20">
@@ -105,8 +105,8 @@ export default function Architecture() {
                       return (
                         <ArrowRightLeft
                           key={itemIdx}
-                          className="w-3 h-3 xl:w-3.5 xl:h-3.5 text-[#07A7E1] shrink-0"
-                          strokeWidth={3}
+                          className="w-2.5 h-2.5 xl:w-3 xl:h-3 text-[#093cad] shrink-0"
+                          strokeWidth={2}
                         />
                       );
                     }

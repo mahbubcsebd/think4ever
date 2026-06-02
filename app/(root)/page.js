@@ -1,10 +1,13 @@
 import About from '@/components/About';
 import Architecture from '@/components/Architecture';
 import BuildMotionDeveloper from '@/components/BuildMotionDeveloper';
+import ExtendMotion from '@/components/ExtendMotion';
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
 import Impacts from '@/components/Impacts';
 import ModernizeMotion from '@/components/ModernizeMotion';
+import MultipleStartingPoints from '@/components/MultipleStartingPoints';
+import Pricing from '@/components/Pricing';
 import ProofBar from '@/components/ProofBar';
 
 export default function Home() {
@@ -37,13 +40,13 @@ export default function Home() {
         <BuildMotionDeveloper />
 
         {/* Multiple Starting Points Section */}
-        {/* <MultipleStartingPoints /> */}
+        <MultipleStartingPoints />
 
         {/* Extend Motion Section */}
-        {/* <ExtendMotion /> */}
+        <ExtendMotion />
 
         {/* Pricing Section */}
-        {/* <Pricing /> */}
+        <Pricing />
 
         {/* Portfolio Showcase Image Accordion */}
         {/* <PortfolioAccordion /> */}

@@ -1,5 +1,3 @@
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
 import { constructMetadata } from '@/lib/metadata';
 import { Poppins } from 'next/font/google';
 import './globals.css';
@@ -24,13 +22,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${poppins.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col font-sans">
-        {/* Navigation Header */}
-        <Header />
-        {children}
-        {/* Main Footer */}
-        <Footer />
-      </body>
+      <body className="min-h-full flex flex-col font-sans">{children}</body>
     </html>
   );
 }

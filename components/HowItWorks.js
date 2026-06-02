@@ -21,8 +21,8 @@ export default function HowItWorks() {
       desc: 'Drop your repo or start fresh. T4E maps your stack, dependencies and entry points automatically.',
       pill: 'BOTH PATHS',
       pillType: 'blue',
-      iconColor: 'text-indigo-500',
-      iconBg: 'bg-indigo-50',
+      iconColor: 'text-[#07A7E1]',
+      iconBg: 'bg-[#07A7E1]/10',
     },
     {
       num: '02',
@@ -31,8 +31,8 @@ export default function HowItWorks() {
       desc: 'Type, talk or paste a ticket. AI clarifies until the spec is unambiguous. No lost context between ticket and code.',
       pill: 'BOTH PATHS',
       pillType: 'blue',
-      iconColor: 'text-purple-500',
-      iconBg: 'bg-purple-50',
+      iconColor: 'text-[#093cad]',
+      iconBg: 'bg-[#093cad]/10',
     },
     {
       num: '03',
@@ -41,8 +41,8 @@ export default function HowItWorks() {
       desc: 'Live system map. Every module, service and dependency. Clickable, navigable, always current.',
       pill: 'BOTH PATHS',
       pillType: 'blue',
-      iconColor: 'text-pink-500',
-      iconBg: 'bg-pink-50',
+      iconColor: 'text-[#07A7E1]',
+      iconBg: 'bg-[#07A7E1]/10',
     },
     {
       num: '04',
@@ -50,9 +50,9 @@ export default function HowItWorks() {
       title: 'See dependencies',
       desc: 'Click any node. See every upstream and downstream impact before you write a line.',
       pill: 'EXISTING CODE',
-      pillType: 'orange',
-      iconColor: 'text-amber-500',
-      iconBg: 'bg-amber-50',
+      pillType: 'darkBlue',
+      iconColor: 'text-[#093cad]',
+      iconBg: 'bg-[#093cad]/10',
     },
     {
       num: '05',
@@ -61,8 +61,8 @@ export default function HowItWorks() {
       desc: 'Visual ERD synced across every stage. Change a schema — docs, code and tests update with it.',
       pill: 'BOTH PATHS',
       pillType: 'blue',
-      iconColor: 'text-emerald-500',
-      iconBg: 'bg-emerald-50',
+      iconColor: 'text-[#07A7E1]',
+      iconBg: 'bg-[#07A7E1]/10',
     },
     {
       num: '06',
@@ -71,8 +71,8 @@ export default function HowItWorks() {
       desc: 'Generate code, run tests, deploy. Docs auto-generated and versioned with every release.',
       pill: 'BOTH PATHS',
       pillType: 'blue',
-      iconColor: 'text-rose-500',
-      iconBg: 'bg-rose-50',
+      iconColor: 'text-[#093cad]',
+      iconBg: 'bg-[#093cad]/10',
     },
   ];
 
@@ -128,9 +128,9 @@ export default function HowItWorks() {
                 <div className="mt-10">
                   <span
                     className={`inline-block px-3 py-[6px] rounded border text-[11px] font-bold uppercase tracking-wider leading-none ${
-                      card.pillType === 'orange'
-                        ? 'border-orange-200 bg-orange-50 text-orange-600'
-                        : 'border-[#D9E6FF] bg-[#F2F8FF] text-[#4A72B2]'
+                      card.pillType === 'darkBlue'
+                        ? 'border-[#093cad]/20 bg-[#093cad]/5 text-[#093cad]'
+                        : 'border-[#07A7E1]/20 bg-[#07A7E1]/5 text-[#07A7E1]'
                     }`}
                   >
                     {card.pill}

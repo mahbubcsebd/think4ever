@@ -51,22 +51,31 @@ export default function Header() {
   }, []);
 
   const menuItems = [
-    { label: 'Home', href: '#home', ids: ['home'] },
-    { label: 'How it Works', href: '#how-it-works', ids: ['how-it-works'] },
+    { label: 'Home', href: '/', ids: ['home'] },
+    { label: 'How it Works', href: '/how-it-works', ids: ['how-it-works'] },
+    { label: 'Pricing', href: '/#pricing', ids: ['pricing'] },
     { 
       label: 'Docs', 
       href: '#', 
       ids: ['docs'],
       submenu: [
         { label: 'Customer Onboarding', href: 'https://think4ever.com/docs/onboarding.html' },
-        { label: 'Designer', href: 'https://think4ever.com/docs/manual_introduction.html' },
-        { label: 'Developer', href: 'https://think4ever.com/docs/dev/start_new_project.html' },
-        { label: 'Portal', href: 'https://think4ever.com/docs/portal/dashboard.html' },
+        { label: 'Think4ever Designer', href: 'https://think4ever.com/docs/manual_introduction.html' },
+        { label: 'Think4ever Developer', href: 'https://think4ever.com/docs/dev/start_new_project.html' },
+        { label: 'Think4ever Portal', href: 'https://think4ever.com/docs/portal/dashboard.html' },
         { label: 'Reverse Engineering', href: 'https://think4ever.com/docs/reverse_engineering.html' },
+        { label: 'Video Tutorials', href: 'https://think4ever.com/docs/tutorials/user_manual.html' },
       ]
     },
-    { label: 'Resources', href: '#resources', ids: ['resources'] },
-    { label: 'Contact Us', href: '#contact', ids: ['contact'] },
+    { 
+      label: 'Resources', 
+      href: '#', 
+      ids: ['resources'],
+      submenu: [
+        { label: 'Blog', href: '/blog' }
+      ]
+    },
+    { label: 'Contact Us', href: '/contact-us', ids: ['contact'] },
   ];
 
   const menuVariants = {
@@ -112,14 +121,14 @@ export default function Header() {
         {/* Inner container — keeps content aligned with rest of page */}
         <div className="container mx-auto px-4 md:px-12 max-w-[1400px] flex justify-between items-center shrink-0">
           {/* Brand Logo */}
-          <Link href="#home" onClick={() => isOpen && toggleMenu()} className="flex items-center gap-1.5 group shrink-0">
+          <Link href="/" onClick={() => isOpen && toggleMenu()} className="flex items-center gap-1.5 group shrink-0">
             <Image src={Logo} alt="Logo" className="w-[120px] md:w-[150px] h-auto object-contain" />
           </Link>
 
           {/* Header Right */}
           <div className="flex items-center gap-3">
-            <Button href="#contact" variant="primary" onClick={() => isOpen && toggleMenu()}>
-              Get Started
+            <Button href="https://portal.think4ever.com" variant="primary" onClick={() => isOpen && toggleMenu()}>
+              Get Early Access
             </Button>
 
             {/* Hamburger Toggle */}
@@ -191,7 +200,7 @@ export default function Header() {
                           }
                         }}
                       >
-                        <a
+                        <Link
                           href={item.href}
                           onClick={(e) => {
                              if (!hasSubmenu) {
@@ -219,7 +228,7 @@ export default function Header() {
                               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                             </span>
                           )}
-                        </a>
+                        </Link>
                       </div>
 
                       {/* Submenu Accordion */}
@@ -236,7 +245,7 @@ export default function Header() {
                               {item.submenu.map((subItem, idx) => {
                                 const isSubActive = false; // Placeholder for active state logic later
                                 return (
-                                  <a
+                                  <Link
                                     key={idx}
                                     href={subItem.href}
                                     onClick={toggleMenu}
@@ -256,7 +265,7 @@ export default function Header() {
                                     <span className={isSubActive ? '' : 'transition-colors duration-300 group-hover:text-[#093cad]'}>
                                       {subItem.label}
                                     </span>
-                                  </a>
+                                  </Link>
                                 );
                               })}
                             </div>
