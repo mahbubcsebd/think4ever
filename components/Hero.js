@@ -238,9 +238,10 @@ export default function Hero() {
             "
               >
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1 md:gap-4">
-                  <BreathingBlob className="shrink-0" />
                   <span className="inline-flex flex-wrap items-center gap-x-2 md:gap-3">
-                    <span>From Code or</span>
+                    <span className="inline-flex items-center gap-x-3">
+                      <BreathingBlob className="shrink-0" /> From Code or
+                    </span>
                     <span className="inline-flex items-center gap-2 md:gap-3">
                       Concept
                       <ArrowRight

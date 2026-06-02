@@ -18,7 +18,7 @@ export default function ModernizeMotion() {
   return (
     <SplitSection
       id="modernize"
-      watermarkText="MOTION"
+      watermarkText="REFACTOR"
       leftTitle="Modernize Motion"
       bottomContent={
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12 items-center w-full mt-8 md:mt-12">
@@ -34,7 +34,10 @@ export default function ModernizeMotion() {
                   transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
                   className="flex items-start gap-3"
                 >
-                  <ArrowRight className="w-5 h-5 text-brand-blue shrink-0 mt-[2px]" strokeWidth={2.5} />
+                  <ArrowRight
+                    className="w-5 h-5 text-[#07A7E1] shrink-0 mt-[2px]"
+                    strokeWidth={2.5}
+                  />
                   <p className="text-[14px] lg:text-[15px] text-[#353B3E] font-medium leading-[1.6]">
                     {text}
                   </p>

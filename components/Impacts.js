@@ -13,7 +13,7 @@ function MobileAccordionCard({ circle, idx, isOpen, onToggle }) {
       onClick={onToggle}
     >
       {/* Left Blue Strip */}
-      <div className="w-10 bg-brand-blue flex items-center justify-center shrink-0">
+      <div className="w-10 bg-gradient-to-b from-[#07A7E1] to-[#093cad] flex items-center justify-center shrink-0">
         <span className="text-white font-bold text-[13px] -rotate-90 whitespace-nowrap tracking-[0.2em]">
           {`0${idx + 1}`}
         </span>
@@ -96,11 +96,11 @@ export default function Impacts() {
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0.2 + idx * 0.15,
                 }}
-                className="md:w-[200px] md:h-[200px] lg:w-[240px] lg:h-[240px] xl:w-[300px] xl:h-[300px] shrink-0 rounded-full flex flex-col justify-center items-center text-center border border-[#E0E0E0] bg-transparent relative select-none transition-transform duration-500 ease-out hover:border-brand-blue hover:z-30 hover:scale-110"
+                className="md:w-[200px] md:h-[200px] lg:w-[240px] lg:h-[240px] xl:w-[300px] xl:h-[300px] shrink-0 rounded-full flex flex-col justify-start pt-12 lg:pt-16 xl:pt-[70px] items-center text-center border border-[#E0E0E0] bg-transparent relative select-none transition-transform duration-500 ease-out hover:border-brand-blue hover:z-30 hover:scale-110"
                 style={{ zIndex: 10 + idx }}
               >
-                <h3 className="text-[20px] lg:text-[28px] font-bold text-[#07A7E1] tracking-tight mb-2">
-                  {circle.title}
+                <h3 className="text-[20px] lg:text-[28px] font-bold tracking-tight mb-2">
+                  <GradientText>{circle.title}</GradientText>
                 </h3>
                 <ul className="flex flex-col text-[13px] lg:text-[15px] text-[#353B3E] font-medium leading-[1.4]">
                   {circle.items.map((item, i) => (

@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import GradientText from './GradientText';
 import SplitSection from './SplitSection';
 import VideoPlayer from './VideoPlayer';
-import GradientText from './GradientText';
 
 export default function ExtendMotion() {
   const listItems = [
@@ -34,7 +34,10 @@ export default function ExtendMotion() {
                   transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
                   className="flex items-start gap-3"
                 >
-                  <ArrowRight className="w-5 h-5 text-brand-blue shrink-0 mt-[2px]" strokeWidth={2.5} />
+                  <ArrowRight
+                    className="w-5 h-5 text-[#07A7E1] shrink-0 mt-[2px]"
+                    strokeWidth={2.5}
+                  />
                   <p className="text-[14px] lg:text-[15px] text-[#353B3E] font-medium leading-[1.6]">
                     {text}
                   </p>
@@ -94,7 +97,8 @@ export default function ExtendMotion() {
         className="text-[28px] sm:text-[40px] md:text-[60px] font-bold text-[#09090D] leading-[1.1] md:leading-[65px] tracking-tight"
       >
         We are working <br className="hidden md:block" />
-        on it <GradientText>Updates</GradientText> in real <br className="hidden md:block" />
+        on it <GradientText>Updates</GradientText> in real{' '}
+        <br className="hidden md:block" />
         time Motion.
       </motion.h2>
     </SplitSection>

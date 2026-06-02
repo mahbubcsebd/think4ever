@@ -59,7 +59,7 @@ export default function Architecture() {
   return (
     <SplitSection
       id="architecture"
-      watermarkText="ARCH"
+      watermarkText="ARCHITECTURE"
       leftTitle="The Architecture"
       bottomContent={
         <div className="w-full mt-12 pb-20">

@@ -79,7 +79,7 @@ export default function HowItWorks() {
   return (
     <SplitSection
       id="how-it-works"
-      watermarkText="WORKS"
+      watermarkText="IN SYNC"
       leftTitle="How It Works"
       bottomContent={
         <div className="w-full mt-8 md:mt-12 pb-20">
