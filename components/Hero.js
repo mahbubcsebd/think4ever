@@ -213,46 +213,32 @@ export default function Hero() {
             </div>
 
             {/* CTA */}
-            <div className="flex items-center gap-5 mt-2">
-              <Link
-                href="https://portal.think4ever.com"
-                className="group inline-flex items-center cursor-pointer select-none"
-              >
-                {/* Circle: border turns transparent on hover, gradient bg expands in */}
-                <div
-                  className="
-                w-11 h-11 rounded-full
-                border border-zinc-300 group-hover:border-transparent
-                flex items-center justify-center
-                relative overflow-hidden
-                transition-all duration-500 ease-out
-                shrink-0
-              "
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-6 mt-4">
+              {/* Free Path CTA */}
+              <div className="flex flex-col items-center sm:items-start gap-1.5">
+                <Link
+                  href="/start-free"
+                  className="w-full sm:w-auto text-center px-8 py-3.5 bg-[#e25d24] text-white font-semibold rounded-xl shadow-lg shadow-orange-500/10 hover:bg-[#c95320] hover:shadow-orange-500/20 active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer"
                 >
-                  <span
-                    className="
-                  absolute inset-0
-                  bg-gradient-to-r from-[#07A7E1] to-[#093cad] rounded-full
-                  scale-0 group-hover:scale-100
-                  transition-transform duration-500 ease-out origin-center
-                "
-                  />
-                  {/* Dot: brand-blue → white when bg fills */}
-                  <span
-                    className="
-                  relative z-10
-                  w-2 h-2 rounded-full
-                  bg-brand-blue group-hover:bg-white
-                  transition-colors duration-500 ease-out
-                "
-                  />
-                </div>
-
-                {/* Text: black, semibold, slides right on hover */}
-                <span className="font-semibold text-base text-zinc-950 relative z-10 ml-2">
-                  Get Early Access
+                  Start Free
+                </Link>
+                <span className="text-[12px] text-zinc-400 font-medium select-none">
+                  No credit card required
                 </span>
-              </Link>
+              </div>
+
+              {/* Paid Path CTA */}
+              <div className="flex flex-col items-center sm:items-start gap-1.5">
+                <Link
+                  href="/#pricing"
+                  className="w-full sm:w-auto text-center px-8 py-3.5 bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white font-semibold rounded-xl shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer"
+                >
+                  Get Early Access
+                </Link>
+                <span className="text-[12px] text-zinc-400 font-medium select-none">
+                  For Teams & Power Users
+                </span>
+              </div>
             </div>
           </div>
 

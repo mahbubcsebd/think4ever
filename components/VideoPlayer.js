@@ -1,15 +1,80 @@
 'use client';
+import React, { useState } from 'react';
+import { cn } from "@/lib/utils";
+import Image from 'next/image';
+import defaultLogo from '../public/images/logo.png';
 
-export default function VideoPlayer({ videoId, className = '' }) {
+export default function VideoPlayer({ url, videoId, className, thumbnail, title = "Watch how it works", ...props }) {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  // Translate youtube watch URL or videoId to embed URL
+  const getEmbedUrl = (videoUrl, autoplay = false) => {
+    if (!videoUrl && videoId) {
+      videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+    }
+    if (!videoUrl) return '';
+    const match = videoUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/);
+    let embedUrl = match && match[1] ? `https://www.youtube.com/embed/${match[1]}?rel=0` : videoUrl;
+    if (autoplay) {
+      embedUrl += embedUrl.includes('?') ? '&autoplay=1' : '?autoplay=1';
+    }
+    return embedUrl;
+  };
+
+  const videoUrl = url || (videoId ? `https://www.youtube.com/watch?v=${videoId}` : '');
+  const logoSrc = thumbnail || defaultLogo;
+
   return (
-    <div className={`relative w-full overflow-hidden rounded-[24px] shadow-2xl ${className}`}>
-      <iframe
-        className="absolute top-0 left-0 w-full h-full"
-        src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&playsinline=1`}
-        frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
+    <div className={cn("relative rounded-xl overflow-hidden shadow-xl border border-blue-900/10 bg-black group transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl", className)}>
+      {!isPlaying && logoSrc && (
+        <div 
+          className="absolute inset-0 z-10 flex flex-col items-center justify-center cursor-pointer bg-gradient-to-br from-[#4161a0] to-[#253965]"
+          onClick={() => setIsPlaying(true)}
+        >
+          {/* Logo Container */}
+          <div className="bg-white p-2 px-4 rounded-sm shadow-sm mb-6">
+            <div className="relative w-[120px] h-[30px] sm:w-[150px] sm:h-[40px]">
+               <Image 
+                 src={logoSrc} 
+                 alt="Logo" 
+                 fill 
+                 sizes="150px"
+                 className="object-contain" 
+                 priority
+               />
+            </div>
+          </div>
+
+          {/* Play Button */}
+          <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-[#6366f1]/80 backdrop-blur-sm rounded-full shadow-lg transition-transform group-hover:scale-110 mb-6">
+            <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+
+          {/* Title Text */}
+          {title && (
+            <p className="text-white/90 text-[10px] sm:text-[13px] font-bold tracking-tight px-4 text-center">
+              {title}
+            </p>
+          )}
+        </div>
+      )}
+
+      {(!logoSrc || isPlaying) && (
+        <iframe
+          src={getEmbedUrl(videoUrl, isPlaying && logoSrc)}
+          width="100%"
+          height="100%"
+          style={{ position: 'absolute', top: 0, left: 0 }}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title="Video player"
+          {...props}
+        />
+      )}
     </div>
   );
 }
+
