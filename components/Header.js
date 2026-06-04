@@ -1,27 +1,24 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
-import { 
-  Menu, 
-  X, 
-  BookOpen, 
-  Code, 
-  FileText, 
-  Palette, 
-  PlayCircle, 
-  Rocket, 
-  Settings, 
-  Users, 
+import {
+  BookOpen,
+  ChevronDown,
+  Code,
   HelpCircle,
-  ChevronDown
+  Palette,
+  PlayCircle,
+  Rocket,
+  Settings,
+  Users,
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Logo from '../public/images/logo.png';
 import Button from './Button';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
 
 const RESOURCES_DATA = [
   {
@@ -112,7 +109,10 @@ export default function Header() {
       });
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions,
+    );
     const sections = document.querySelectorAll('section[id]');
     sections.forEach((section) => observer.observe(section));
 
@@ -122,18 +122,18 @@ export default function Header() {
   const menuItems = [
     { label: 'How it Works', href: '/how-it-works', ids: ['how-it-works'] },
     { label: 'VS Code Plugin', href: '/vscode-plugin', ids: ['vscode-plugin'] },
-    { 
-      label: 'Docs', 
-      href: '#', 
+    {
+      label: 'Docs',
+      href: '#',
       ids: ['docs'],
-      submenu: DOCS_DATA
+      submenu: DOCS_DATA,
     },
     { label: 'Pricing', href: '/#pricing', ids: ['pricing'] },
-    { 
-      label: 'Resources', 
-      href: '#', 
+    {
+      label: 'Resources',
+      href: '#',
       ids: ['resources'],
-      submenu: RESOURCES_DATA
+      submenu: RESOURCES_DATA,
     },
     { label: 'Contact Us', href: '/contact-us', ids: ['contact'] },
   ];
@@ -168,7 +168,11 @@ export default function Header() {
 
   const isActive = (item) => {
     if (item.href === '/#pricing') {
-      return pathname === '/' && typeof window !== 'undefined' && window.location.hash === '#pricing';
+      return (
+        pathname === '/' &&
+        typeof window !== 'undefined' &&
+        window.location.hash === '#pricing'
+      );
     }
     return pathname === item.href;
   };
@@ -181,20 +185,106 @@ export default function Header() {
           isOpen
             ? 'h-[100dvh] overflow-hidden bg-white shadow-lg py-5'
             : scrolled
-            ? 'h-[72px] py-2.5 bg-white/98 shadow-[0_1px_24px_rgba(0,0,0,0.07)] backdrop-blur-md'
-            : 'h-[80px] py-5 bg-transparent'
+              ? 'h-[72px] py-2.5 bg-white/98 shadow-[0_1px_24px_rgba(0,0,0,0.07)] backdrop-blur-md'
+              : 'h-[80px] py-5 bg-transparent'
         }`}
       >
         {/* Inner container — keeps content aligned with rest of page */}
         <div className="container mx-auto px-4 md:px-12 max-w-[1400px] flex justify-between items-center shrink-0">
           {/* Brand Logo */}
-          <Link href="/" onClick={() => isOpen && toggleMenu()} className="flex items-center gap-1.5 group shrink-0">
-            <Image src={Logo} alt="Logo" className="w-[120px] md:w-[150px] h-auto object-contain" />
+          <Link
+            href="/"
+            onClick={() => isOpen && toggleMenu()}
+            className="flex items-center gap-1.5 group shrink-0"
+          >
+            <Image
+              src={Logo}
+              alt="Logo"
+              className="w-[120px] md:w-[150px] h-auto object-contain"
+            />
           </Link>
+
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 relative">
+            {menuItems.map((item) => {
+              const hasSubmenu = !!item.submenu;
+              const active = isActive(item);
+              return (
+                <div key={item.label} className="relative group">
+                  {hasSubmenu ? (
+                    <button
+                      className={cn(
+                        'flex items-center gap-1 text-sm font-semibold transition-colors cursor-pointer py-2',
+                        active
+                          ? 'text-[#093cad]'
+                          : 'text-zinc-600 hover:text-[#093cad]',
+                      )}
+                    >
+                      {item.label}
+                      <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180 text-zinc-400 group-hover:text-[#093cad]" />
+                    </button>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        'text-sm font-semibold transition-colors py-2 block',
+                        active
+                          ? 'text-[#093cad]'
+                          : 'text-zinc-600 hover:text-[#093cad]',
+                      )}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+
+                  {/* Dropdown Menu (on hover) */}
+                  {hasSubmenu && (
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50">
+                      <div className="bg-white border border-zinc-150 rounded-2xl shadow-xl p-4 flex flex-col gap-2 min-w-[320px] max-w-[420px]">
+                        <ul className="grid gap-2 outline-none">
+                          {item.submenu.map((subItem) => {
+                            const Icon = subItem.icon;
+                            return (
+                              <li key={subItem.title}>
+                                <a
+                                  href={subItem.href}
+                                  className="block select-none space-y-1 rounded-xl p-2.5 no-underline outline-none transition-all hover:bg-zinc-50 group/sub"
+                                >
+                                  <div className="flex items-center gap-3">
+                                    {Icon && (
+                                      <div className="h-9 w-9 shrink-0 flex items-center justify-center rounded-lg bg-zinc-50 border border-zinc-100 group-hover/sub:bg-white group-hover/sub:shadow-sm transition-all aspect-square">
+                                        <Icon className="h-4.5 w-4.5 text-zinc-400 group-hover/sub:text-[#093cad]" />
+                                      </div>
+                                    )}
+                                    <div className="flex-1 min-w-0">
+                                      <div className="text-[13px] font-bold leading-tight text-zinc-800 group-hover/sub:text-[#093cad] transition-colors mb-0.5">
+                                        {subItem.title}
+                                      </div>
+                                      <p className="text-[11px] leading-relaxed text-zinc-400 font-medium">
+                                        {subItem.desc}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </a>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </nav>
 
           {/* Header Right */}
           <div className="flex items-center gap-3">
-            <Button href="https://portal.think4ever.com" variant="primary" onClick={() => isOpen && toggleMenu()}>
+            <Button
+              href="https://portal.think4ever.com"
+              variant="primary"
+              onClick={() => isOpen && toggleMenu()}
+            >
               Get Early Access
             </Button>
 
@@ -202,7 +292,7 @@ export default function Header() {
             <button
               id="menu-toggle"
               onClick={toggleMenu}
-              className="w-10 h-10 rounded-full border border-zinc-200 bg-white/70 backdrop-blur-sm flex flex-col justify-center items-center gap-[5px] hover:bg-zinc-50 transition-all duration-300 relative z-[55] cursor-pointer"
+              className="w-10 h-10 rounded-full border border-zinc-200 bg-white/70 backdrop-blur-sm flex flex-col justify-center items-center gap-[5px] hover:bg-zinc-50 transition-all duration-300 relative z-[55] cursor-pointer lg:hidden"
               aria-label="Toggle menu"
             >
               <span
@@ -222,7 +312,8 @@ export default function Header() {
               />
             </button>
           </div>
-        </div>{/* end inner container */}
+        </div>
+        {/* end inner container */}
 
         {/* ── Expanding Menu Content (Mobile) ── */}
         <AnimatePresence>
@@ -257,7 +348,11 @@ export default function Header() {
                   const isSubmenuOpen = openSubmenu === item.label;
 
                   return (
-                    <motion.div key={item.label} variants={itemVariants} className="flex flex-col w-full">
+                    <motion.div
+                      key={item.label}
+                      variants={itemVariants}
+                      className="flex flex-col w-full"
+                    >
                       <div
                         className="flex items-center"
                         onClick={(e) => {
@@ -270,31 +365,57 @@ export default function Header() {
                         <Link
                           href={item.href}
                           onClick={(e) => {
-                             if (!hasSubmenu) {
-                               toggleMenu();
-                             } else {
-                               e.preventDefault();
-                             }
+                            if (!hasSubmenu) {
+                              toggleMenu();
+                            } else {
+                              e.preventDefault();
+                            }
                           }}
                           className={cn(
-                            "text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight inline-flex items-center group transition-colors duration-300 w-full cursor-pointer",
+                            'text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight inline-flex items-center group transition-colors duration-300 w-full cursor-pointer',
                             isActiveItem && !hasSubmenu
                               ? 'bg-gradient-to-r from-[#07A7E1] to-[#093cad] bg-clip-text text-transparent'
-                              : 'text-zinc-950 hover:text-[#093cad]'
+                              : 'text-zinc-950 hover:text-[#093cad]',
                           )}
                         >
                           <span
                             className={cn(
-                              "h-[3px] md:h-[4px] bg-gradient-to-r from-[#07A7E1] to-[#093cad] rounded-full transition-all duration-300 flex-shrink-0",
+                              'h-[3px] md:h-[4px] bg-gradient-to-r from-[#07A7E1] to-[#093cad] rounded-full transition-all duration-300 flex-shrink-0',
                               isActiveItem && !hasSubmenu
                                 ? 'w-6 md:w-8 opacity-100 mr-4'
-                                : 'w-0 opacity-0 mr-0 group-hover:w-6 group-hover:md:w-8 group-hover:opacity-100 group-hover:mr-4'
+                                : 'w-0 opacity-0 mr-0 group-hover:w-6 group-hover:md:w-8 group-hover:opacity-100 group-hover:mr-4',
                             )}
                           />
-                          <span className={isActiveItem && !hasSubmenu ? '' : 'transition-colors duration-300 group-hover:text-[#093cad]'}>{item.label}</span>
+                          <span
+                            className={
+                              isActiveItem && !hasSubmenu
+                                ? ''
+                                : 'transition-colors duration-300 group-hover:text-[#093cad]'
+                            }
+                          >
+                            {item.label}
+                          </span>
                           {hasSubmenu && (
-                            <span className="ml-4 transition-transform duration-300 text-zinc-400 group-hover:text-[#093cad]" style={{ transform: isSubmenuOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
-                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <span
+                              className="ml-4 transition-transform duration-300 text-zinc-400 group-hover:text-[#093cad]"
+                              style={{
+                                transform: isSubmenuOpen
+                                  ? 'rotate(180deg)'
+                                  : 'rotate(0deg)',
+                              }}
+                            >
+                              <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="3"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              >
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                              </svg>
                             </span>
                           )}
                         </Link>
