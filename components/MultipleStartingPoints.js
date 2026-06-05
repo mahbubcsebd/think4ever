@@ -35,7 +35,7 @@ export default function MultipleStartingPoints() {
     <SplitSection
       id="starting-points"
       watermarkText="EXTEND"
-      leftTitle="Multiple Starting Points"
+      leftTitle="What We Do"
       bottomContent={
         <div className="w-full mt-12 pb-20">
           <motion.div

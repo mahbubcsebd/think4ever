@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { Controller, useForm } from 'react-hook-form';
 import * as z from 'zod';
 import BreathingBlob from '@/components/ui/BreathingBlob';
+import { submitToHubSpot, HUBSPOT_CONTACT_FORM_ID } from '@/lib/hubspot';
 
 const contactSchema = z.object({
   firstName: z.string().min(1, 'Required'),
@@ -102,9 +103,7 @@ const ContactForm = () => {
           lastname: data.lastName,
           company: data.companyName,
           jobtitle: data.userRole,
-          // Custom properties
           company_size: data.companySize,
-          user_type: data.userType,
           message: data.interests,
         },
       ]);
@@ -112,7 +111,19 @@ const ContactForm = () => {
       window._hsq.push(['trackEvent', { id: 'contact_us_submission' }]);
     }
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // Submit data directly to HubSpot API
+    await submitToHubSpot(HUBSPOT_CONTACT_FORM_ID, {
+      firstname: data.firstName,
+      lastname: data.lastName,
+      email: data.email,
+      company: data.companyName,
+      company_size: data.companySize,
+      segment: data.segment,
+      jobtitle: data.userRole,
+      message: data.interests,
+      primary_needs: data.primaryNeeds,
+    });
+
     alert('Submitted Successfully!');
   };
 

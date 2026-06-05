@@ -64,7 +64,7 @@ export default function VSCodePluginPage() {
             <div className="flex flex-wrap items-center gap-4 mt-2">
               <Link
                 href="https://portal.think4ever.com"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#e25d24] text-white font-bold rounded-xl shadow-lg shadow-orange-500/10 hover:bg-[#c95320] active:scale-[0.98] transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white font-bold rounded-full shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300"
               >
                 Sign In to Download VSIX <ArrowRight className="w-4 h-4" />
               </Link>
@@ -72,7 +72,7 @@ export default function VSCodePluginPage() {
                 href="https://think4ever.com/docs/dev/start_new_project.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-zinc-200 text-zinc-700 font-semibold rounded-xl hover:border-zinc-350 hover:bg-zinc-50 transition-all duration-300 text-sm"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-zinc-200 text-zinc-700 font-semibold rounded-full hover:border-zinc-350 hover:bg-zinc-50 transition-all duration-300 text-sm"
               >
                 Developer Guide <ExternalLink className="w-4 h-4" />
               </a>

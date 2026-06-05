@@ -4,14 +4,34 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Check, Shield, Zap, Sparkles, Code } from 'lucide-react';
 import Link from 'next/link';
+import { submitToHubSpot, HUBSPOT_START_FREE_FORM_ID } from '@/lib/hubspot';
 
 export default function StartFreePage() {
   const [formData, setFormData] = useState({ name: '', email: '', workspace: '' });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.name && formData.email && formData.workspace) {
+      // 1. Identify client-side tracking session
+      if (typeof window !== 'undefined' && window._hsq) {
+        window._hsq.push([
+          'identify',
+          {
+            email: formData.email,
+            firstname: formData.name,
+          },
+        ]);
+        window._hsq.push(['trackEvent', { id: 'start_free_submission' }]);
+      }
+
+      // 2. Submit data directly to HubSpot API
+      await submitToHubSpot(HUBSPOT_START_FREE_FORM_ID, {
+        firstname: formData.name,
+        email: formData.email,
+        workspace_name: formData.workspace,
+      });
+
       setSubmitted(true);
     }
   };

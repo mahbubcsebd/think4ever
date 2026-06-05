@@ -138,20 +138,18 @@ function OrbitalCircle() {
 }
 
 import BreathingBlob from './ui/BreathingBlob';
+import ProofBar from './ProofBar';
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-white pt-20"
+      className="relative min-h-screen flex flex-col justify-between overflow-hidden bg-white pt-24 pb-8"
     >
       {/* ── Orbital Circle Background ── */}
       <OrbitalCircle />
 
-      {/* ── Vertical Watermark "THINK4EVER" ──
-          writing-mode:vertical-rl makes text flow top→bottom.
-          rotate-180 flips it so it reads bottom→top.
-          top-0 bottom-0 stretches it to full section height. */}
+      {/* ── Vertical Watermark "THINK4EVER" ── */}
       <div
         className="
         absolute
@@ -174,15 +172,15 @@ export default function Hero() {
       </div>
 
       {/* ── Page Container ── */}
-      <div className="container mx-auto px-4 md:px-12 max-w-[1400px] w-full z-20 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center py-12 lg:py-24">
+      <div className="container mx-auto px-4 md:px-12 max-w-[1400px] w-full z-20 relative flex flex-col justify-between flex-1 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-center py-4 lg:py-6">
           {/* Left Side: Text Content */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6">
             {/* Headline */}
             <div className="flex flex-col gap-2">
               <h1
                 className="
-              text-[28px] sm:text-[40px] md:text-[54px] lg:text-[68px] xl:text-[70px] 2xl:text-[80px]
+              text-[28px] sm:text-[40px] md:text-[54px] lg:text-[60px] xl:text-[62px] 2xl:text-[72px]
               leading-[1.08]
               font-bold text-black
               flex flex-col gap-1 sm:gap-2
@@ -205,7 +203,7 @@ export default function Hero() {
                 <MotionTextLoop />
               </h1>
 
-              <p className="max-w-lg text-base md:text-lg text-zinc-500 leading-relaxed font-normal mt-3">
+              <p className="max-w-lg text-sm md:text-base text-zinc-500 leading-relaxed font-normal mt-2">
                 The first AI-native SDLC platform that keeps your architecture,
                 code, and every dependency connected — so a change anywhere
                 propagates everywhere.
@@ -213,16 +211,16 @@ export default function Hero() {
             </div>
 
             {/* CTA */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-6 mt-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 mt-2">
               {/* Free Path CTA */}
               <div className="flex flex-col items-center sm:items-start gap-1.5">
                 <Link
                   href="/start-free"
-                  className="w-full sm:w-auto text-center px-8 py-3.5 bg-[#e25d24] text-white font-semibold rounded-xl shadow-lg shadow-orange-500/10 hover:bg-[#c95320] hover:shadow-orange-500/20 active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer"
+                  className="w-full sm:w-auto text-center px-8 py-3 bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white font-semibold rounded-full shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm"
                 >
                   Start Free
                 </Link>
-                <span className="text-[12px] text-zinc-400 font-medium select-none">
+                <span className="text-[11px] text-zinc-400 font-medium select-none">
                   No credit card required
                 </span>
               </div>
@@ -231,11 +229,11 @@ export default function Hero() {
               <div className="flex flex-col items-center sm:items-start gap-1.5">
                 <Link
                   href="/#pricing"
-                  className="w-full sm:w-auto text-center px-8 py-3.5 bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white font-semibold rounded-xl shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer"
+                  className="w-full sm:w-auto text-center px-8 py-3 bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white font-semibold rounded-full shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm"
                 >
                   Get Early Access
                 </Link>
-                <span className="text-[12px] text-zinc-400 font-medium select-none">
+                <span className="text-[11px] text-zinc-400 font-medium select-none">
                   For Teams & Power Users
                 </span>
               </div>
@@ -243,7 +241,7 @@ export default function Hero() {
           </div>
 
           {/* Right Side: Video Player */}
-          <div className="w-full relative mt-8 lg:mt-0">
+          <div className="w-full relative mt-4 lg:mt-0">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -260,6 +258,11 @@ export default function Hero() {
               />
             </motion.div>
           </div>
+        </div>
+
+        {/* Stats Proof Bar embedded directly */}
+        <div className="w-full">
+          <ProofBar className="px-0 pt-0 pb-0 bg-transparent" />
         </div>
       </div>
     </section>

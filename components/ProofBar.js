@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion';
 import GradientText from './GradientText';
 
-export default function ProofBar() {
+export default function ProofBar({ className = "px-4 md:px-12 pt-12 md:pt-16 bg-white" }) {
   return (
-    <section className="relative z-30 w-full px-4 md:px-12 pt-12 md:pt-16 flex justify-center bg-white">
+    <div className={`relative z-30 w-full flex justify-center ${className}`}>
       <div className="w-full max-w-5xl">
         <motion.div
           initial={{ y: 30, opacity: 0 }}
@@ -45,6 +45,6 @@ export default function ProofBar() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 }
