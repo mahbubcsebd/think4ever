@@ -13,12 +13,12 @@ export const BlogNewsletter = () => {
           <input
             type="email"
             placeholder="Email address"
-            className="flex-1 bg-white border border-gray-200 rounded-lg px-4 py-3 text-[14px] sm:text-[15px] focus:outline-none focus:border-blue-500 transition-colors h-11 sm:h-auto"
+            className="flex-1 bg-white border border-gray-200 rounded-full px-5 py-3 text-[14px] sm:text-[15px] focus:outline-none focus:border-blue-500 transition-colors h-11 sm:h-auto"
             required
           />
           <button
             type="submit"
-            className="bg-blue-600 text-white font-bold px-6 py-3 rounded-lg text-[14px] sm:text-[15px] hover:bg-blue-700 transition-all active:scale-95 shadow-md shadow-blue-500/10 h-11 sm:h-auto"
+            className="bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white font-bold px-6 py-3 rounded-full text-[14px] sm:text-[15px] hover:opacity-95 transition-all active:scale-95 shadow-md shadow-blue-500/10 h-11 sm:h-auto"
           >
             Subscribe
           </button>

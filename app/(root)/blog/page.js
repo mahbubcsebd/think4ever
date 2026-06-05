@@ -18,7 +18,7 @@ export default function BlogPage() {
         <BlogList view={view} posts={BLOG_POSTS} />
       </main>
 
-      <BlogNewsletter />
+      {/* <BlogNewsletter /> */}
     </div>
   );
 }
