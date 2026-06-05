@@ -1,23 +1,30 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Check, ArrowDown, ExternalLink, Code } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Check, ExternalLink, ShieldAlert, Cpu, Download, Key } from 'lucide-react';
 import Link from 'next/link';
 
 export default function VSCodePluginPage() {
-  const bulletPoints = [
+  const [activeStep, setActiveStep] = useState(1);
+
+  const steps = [
     {
-      title: "See Live Architecture",
-      desc: "Visualize your entire codebase, APIs, and data models instantly as an interactive system map directly inside your workspace."
+      number: 1,
+      title: "Locate the Integration Button",
+      desc: "Inside your Think4ever Portal project dashboard, look at the top-right navigation bar and click the 'VS Code' integration button.",
+      image: "/images/vs-extension/vs-1.jpg"
     },
     {
-      title: "Track Dependencies",
-      desc: "Instantly check which files and modules depend on each other before editing to avoid regression bugs."
+      number: 2,
+      title: "Download VSIX & Copy Keys",
+      desc: "Click 'Download .vsix' to grab the extension package. Copy your unique Server URL and Access Key generated for your sandbox instance.",
+      image: "/images/vs-extension/vs-2.jpg"
     },
     {
-      title: "Propagate Changes",
-      desc: "Run multi-agent generation cycles to propagate edits downstream and keep your specs, designs, and code in sync."
+      number: 3,
+      title: "Install in VS Code",
+      desc: "Open VS Code, navigate to Extensions, click the '...' menu, choose 'Install from VSIX', select the downloaded file, and paste your URL and Access Key.",
+      image: "/images/vs-extension/vs-3.jpg"
     }
   ];
 
@@ -28,92 +35,91 @@ export default function VSCodePluginPage() {
       <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#093cad]/5 rounded-full filter blur-[120px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto z-10 relative mt-6 lg:mt-12">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1.2fr] gap-12 lg:gap-16 items-center">
-          
-          {/* Left Side: Headline & Bullets */}
-          <div className="flex flex-col gap-8">
-            <div className="flex flex-col gap-4">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-[#093cad] bg-[#eaf0ff] border border-[#dbeafe] w-fit">
-                Official Extension
-              </span>
-              <h1 className="text-[36px] sm:text-[48px] lg:text-[60px] leading-[1.08] font-bold text-zinc-950 tracking-tight">
-                Think4ever lives <br className="hidden sm:block" />
-                where you code.
-              </h1>
-              <p className="text-zinc-500 text-base sm:text-lg leading-relaxed max-w-xl">
-                The VS Code plugin brings the full T4E SDLC platform directly into your editor. 
-                See your architecture map, track dependencies, and propagate changes — without leaving VS Code.
-              </p>
+        
+        {/* Intro Hero Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-16 items-center mb-16">
+          <div className="flex flex-col gap-6">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-[#093cad] bg-[#eaf0ff] border border-[#dbeafe] w-fit">
+              <Cpu className="w-3.5 h-3.5 text-[#093cad]" /> Exclusive Extension
+            </span>
+            <h1 className="text-[36px] sm:text-[48px] lg:text-[60px] leading-[1.08] font-bold text-zinc-950 tracking-tight font-sans">
+              Think4ever lives <br />
+              where you code.
+            </h1>
+            <p className="text-zinc-500 text-base sm:text-lg leading-relaxed max-w-xl">
+              The VS Code plugin brings the full T4E SDLC platform directly into your editor. 
+              See your architecture map, track dependencies, and propagate changes — without leaving VS Code.
+            </p>
+
+            <div className="bg-amber-50 border border-amber-200/60 rounded-2xl p-4 flex gap-3.5 max-w-lg mt-2">
+              <ShieldAlert className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+              <div className="flex flex-col gap-1">
+                <span className="text-[13px] font-bold text-zinc-900">Registered Users Only</span>
+                <p className="text-[12px] text-zinc-500 leading-relaxed">
+                  This extension is private and distributed exclusively to registered users via the workspace portal.
+                </p>
+              </div>
             </div>
 
-            {/* Install CTA Button */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4 mt-2">
+              <Link
+                href="https://portal.think4ever.com"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#e25d24] text-white font-bold rounded-xl shadow-lg shadow-orange-500/10 hover:bg-[#c95320] active:scale-[0.98] transition-all duration-300"
+              >
+                Sign In to Download VSIX <ArrowRight className="w-4 h-4" />
+              </Link>
               <a
-                href="https://marketplace.visualstudio.com"
+                href="https://think4ever.com/docs/dev/start_new_project.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white font-bold rounded-xl shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-[#093cad]/20 active:scale-[0.98] transition-all duration-300 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-zinc-200 text-zinc-700 font-semibold rounded-xl hover:border-zinc-350 hover:bg-zinc-50 transition-all duration-300 text-sm"
               >
-                Install the VS Code Plugin <ExternalLink className="w-4 h-4" />
+                Developer Guide <ExternalLink className="w-4 h-4" />
               </a>
             </div>
-
-            {/* Bullet Points */}
-            <div className="flex flex-col gap-6 mt-2">
-              {bulletPoints.map((point, idx) => (
-                <div key={idx} className="flex gap-4">
-                  <div className="w-6 h-6 rounded-full bg-[#eafaf1] border border-[#d1f5e1] flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 text-[#10b981]" strokeWidth={3} />
-                  </div>
-                  <div className="flex flex-col">
-                    <h3 className="text-[15px] sm:text-[16px] font-bold text-zinc-900 leading-tight">
-                      {point.title}
-                    </h3>
-                    <p className="text-[13px] sm:text-[14px] text-zinc-500 mt-1 leading-relaxed max-w-lg">
-                      {point.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
-          {/* Right Side: Visual Mockup / Screenshot Placeholder */}
-          <div className="relative w-full">
-            {/* Background Blur Backing */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#07A7E1]/10 to-[#093cad]/10 rounded-[24px] filter blur-xl opacity-75 -z-10" />
+          {/* Interactive Steps Visualizer */}
+          <div className="bg-[#f8fafc] border border-zinc-200 rounded-[28px] p-6 sm:p-8 shadow-xl flex flex-col gap-6">
+            <div className="flex justify-between items-center border-b border-zinc-200/60 pb-4">
+              <h3 className="text-base sm:text-lg font-bold text-zinc-900">How to Setup the Extension</h3>
+              <div className="flex gap-2">
+                {steps.map(s => (
+                  <button
+                    key={s.number}
+                    onClick={() => setActiveStep(s.number)}
+                    className={`w-8 h-8 rounded-full font-bold text-sm flex items-center justify-center border transition-all cursor-pointer ${
+                      activeStep === s.number
+                        ? "bg-[#093cad] text-white border-[#093cad] shadow-md shadow-[#093cad]/20"
+                        : "bg-white text-zinc-500 border-zinc-200 hover:border-zinc-300"
+                    }`}
+                  >
+                    {s.number}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-            {/* Mockup Container */}
-            <div className="bg-[#18181b] border border-zinc-800 rounded-[24px] shadow-2xl overflow-hidden aspect-video flex flex-col relative">
-              {/* Mock Window Top Bar */}
-              <div className="bg-[#1e1e1f] px-4 py-3 flex items-center justify-between border-b border-zinc-800 select-none">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                  <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                  <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
-                </div>
-                <div className="text-[11px] text-zinc-500 font-medium font-mono">think4ever-workspace — Visual Studio Code</div>
-                <div className="w-12" />
+            {/* Current Active Step details */}
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col">
+                <span className="text-[11px] font-bold text-[#093cad] uppercase tracking-wider mb-1">Step {steps[activeStep-1].number} of 3</span>
+                <h4 className="text-base sm:text-lg font-bold text-zinc-900">{steps[activeStep-1].title}</h4>
+                <p className="text-[13px] sm:text-[14px] text-zinc-500 leading-relaxed mt-1">{steps[activeStep-1].desc}</p>
               </div>
 
-              {/* Mock Window Content */}
-              <div className="flex-1 flex items-center justify-center p-8 bg-zinc-950/80 backdrop-blur-sm relative group">
-                <div className="flex flex-col items-center justify-center text-center gap-4 max-w-sm">
-                  <div className="w-16 h-16 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[#07A7E1] shadow-lg">
-                    <Code className="w-8 h-8 stroke-[1.5]" />
-                  </div>
-                  <div className="flex flex-col gap-1.5">
-                    <h4 className="text-zinc-200 text-base font-bold">Screenshot Placeholder</h4>
-                    <p className="text-zinc-500 text-xs leading-relaxed">
-                      We will display a walkthrough/editor mockup screenshot of the VS Code Plugin extension dashboard right here.
-                    </p>
-                  </div>
-                </div>
+              {/* Step Screenshot Frame */}
+              <div className="border border-zinc-200 rounded-2xl overflow-hidden bg-white shadow-sm aspect-video relative">
+                <img
+                  src={steps[activeStep-1].image}
+                  alt={steps[activeStep-1].title}
+                  className="w-full h-full object-contain"
+                />
               </div>
             </div>
           </div>
-
         </div>
+
       </div>
     </div>
   );

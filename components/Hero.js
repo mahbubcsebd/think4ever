@@ -182,7 +182,7 @@ export default function Hero() {
             <div className="flex flex-col gap-2">
               <h1
                 className="
-              text-[28px] sm:text-[40px] md:text-[54px] lg:text-[68px] xl:text-[80px]
+              text-[28px] sm:text-[40px] md:text-[54px] lg:text-[68px] xl:text-[70px] 2xl:text-[80px]
               leading-[1.08]
               font-bold text-black
               flex flex-col gap-1 sm:gap-2

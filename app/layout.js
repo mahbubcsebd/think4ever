@@ -1,3 +1,5 @@
+import HubSpotRouteTracker from '@/components/globals/HubSpotRouteTracker';
+import LiveAgentChat from '@/components/globals/LiveAgentChat';
 import { constructMetadata } from '@/lib/metadata';
 import { Poppins } from 'next/font/google';
 import './globals.css';
@@ -22,7 +24,11 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${poppins.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        <HubSpotRouteTracker />
+        {children}
+        <LiveAgentChat />
+      </body>
     </html>
   );
 }
