@@ -56,15 +56,21 @@ export default function ModernizeMotion() {
               <div className="flex flex-col gap-3">
                 <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
                   <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">Starting From</span>
-                  <span className="text-[13px] sm:text-[14px] font-semibold text-[#093cad] flex items-center gap-1.5 cursor-pointer hover:underline group">
+                  <a
+                    href="https://portal.think4ever.com"
+                    className="text-[13px] sm:text-[14px] font-semibold text-[#093cad] flex items-center gap-1.5 cursor-pointer hover:underline group w-fit"
+                  >
                     open-source PHP monolith <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                  </span>
+                  </a>
                 </div>
                 <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
                   <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">Output</span>
-                  <span className="text-[13px] sm:text-[14px] font-semibold text-[#093cad] flex items-center gap-1.5 cursor-pointer hover:underline group">
+                  <a
+                    href="https://portal.think4ever.com"
+                    className="text-[13px] sm:text-[14px] font-semibold text-[#093cad] flex items-center gap-1.5 cursor-pointer hover:underline group w-fit"
+                  >
                     view demo output repo <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                  </span>
+                  </a>
                 </div>
                 <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
                   <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">Wall-Clock</span>
