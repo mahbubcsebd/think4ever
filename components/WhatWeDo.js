@@ -8,31 +8,31 @@ import SplitSection from './SplitSection';
 export default function WhatWeDo() {
   const cards = [
     {
-      icon: <Blocks className="w-5 h-5 text-[#093cad]" strokeWidth={2.5} />,
-      iconBg: 'bg-[#eaf0ff]',
+      icon: <Blocks className="w-5 h-5 text-slate-500" strokeWidth={2} />,
+      iconBg: 'bg-slate-100/80',
       title: 'Start from scratch',
       text: 'Describe your idea in plain language — type it, voice it, or paste a ticket. T4E generates requirements, architecture, and working code end-to-end. No spec doc required.',
       bottomText: 'Build Motion',
-      badgeBg: 'bg-[#eaf0ff]',
-      badgeText: 'text-[#093cad]',
+      badgeBg: 'bg-slate-200/75',
+      badgeText: 'text-slate-600',
     },
     {
-      icon: <Link2 className="w-5 h-5 text-[#07A7E1]" strokeWidth={2.5} />,
-      iconBg: 'bg-[#e0f7ff]',
+      icon: <Link2 className="w-5 h-5 text-[#07A7E1]" strokeWidth={2} />,
+      iconBg: 'bg-[#e0f7ff]/70',
       title: 'Bring your own code',
       text: 'Drop your repo. T4E maps your entire stack — dependencies, architecture debt, undocumented relationships — in under 4 minutes. Zero config. 157+ tech stacks supported.',
       bottomText: 'Modernize Motion',
-      badgeBg: 'bg-[#e0f7ff]',
-      badgeText: 'text-[#07A7E1]',
+      badgeBg: 'bg-[#e0f7ff]/70',
+      badgeText: 'text-[#0284c7]',
     },
     {
-      icon: <Zap className="w-5 h-5 text-[#3b82f6]" strokeWidth={2.5} />,
-      iconBg: 'bg-[#f0f4ff]',
+      icon: <Zap className="w-5 h-5 text-[#3b82f6]" strokeWidth={2} />,
+      iconBg: 'bg-[#f0f4ff]/70',
       title: 'Always in sync',
       text: 'Change a requirement — the architecture and code update. Change the code — the docs and tests update. Bidirectional propagation across your entire SDLC. Always. Automatically.',
       bottomText: 'Zero Drift',
-      badgeBg: 'bg-[#f0f4ff]',
-      badgeText: 'text-[#3b82f6]',
+      badgeBg: 'bg-[#dbedff]',
+      badgeText: 'text-[#2563eb]',
     },
   ];
 
@@ -78,7 +78,7 @@ export default function WhatWeDo() {
 
                   {/* Badge at the bottom */}
                   <div className="mt-8">
-                    <span className={`inline-block px-4 py-1.5 rounded-full text-xs font-bold ${card.badgeBg} ${card.badgeText}`}>
+                    <span className={`inline-block px-4 py-1.5 rounded-full text-xs font-medium ${card.badgeBg} ${card.badgeText}`}>
                       {card.bottomText}
                     </span>
                   </div>

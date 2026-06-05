@@ -72,9 +72,12 @@ export default function VSCodePluginPage() {
                 href="https://think4ever.com/docs/dev/start_new_project.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-zinc-200 text-zinc-700 font-semibold rounded-full hover:border-zinc-350 hover:bg-zinc-50 transition-all duration-300 text-sm"
+                className="group relative inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-zinc-200 hover:border-transparent text-zinc-700 hover:text-white font-semibold rounded-full active:scale-[0.98] transition-all duration-300 text-sm overflow-hidden"
               >
-                Developer Guide <ExternalLink className="w-4 h-4" />
+                <span className="absolute inset-0 bg-gradient-to-r from-[#07A7E1] to-[#093cad] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="relative z-10 inline-flex items-center gap-2">
+                  Developer Guide <ExternalLink className="w-4 h-4" />
+                </span>
               </a>
             </div>
           </div>
