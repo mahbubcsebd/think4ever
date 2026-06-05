@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArrowRight, Check, ExternalLink, ShieldAlert, Cpu, Download, Key } from 'lucide-react';
+import { ArrowRight, Check, ExternalLink, ShieldAlert, Cpu, Download, Key, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default function VSCodePluginPage() {
@@ -84,21 +84,23 @@ export default function VSCodePluginPage() {
 
           {/* Interactive Steps Visualizer */}
           <div className="bg-[#f8fafc] border border-zinc-200 rounded-[28px] p-6 sm:p-8 shadow-xl flex flex-col gap-6">
-            <div className="flex justify-between items-center border-b border-zinc-200/60 pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 border-b border-zinc-200/60 pb-4">
               <h3 className="text-base sm:text-lg font-bold text-zinc-900">How to Setup the Extension</h3>
-              <div className="flex gap-2">
-                {steps.map(s => (
-                  <button
-                    key={s.number}
-                    onClick={() => setActiveStep(s.number)}
-                    className={`w-8 h-8 rounded-full font-bold text-sm flex items-center justify-center border transition-all cursor-pointer ${
-                      activeStep === s.number
-                        ? "bg-[#093cad] text-white border-[#093cad] shadow-md shadow-[#093cad]/20"
-                        : "bg-white text-zinc-500 border-zinc-200 hover:border-zinc-300"
-                    }`}
-                  >
-                    {s.number}
-                  </button>
+              <div className="flex items-center gap-1">
+                {steps.map((s, idx) => (
+                  <React.Fragment key={s.number}>
+                    {idx > 0 && <ArrowRight className="w-3.5 h-3.5 text-zinc-400 mx-0.5" />}
+                    <button
+                      onClick={() => setActiveStep(s.number)}
+                      className={`w-8 h-8 rounded-full font-bold text-sm flex items-center justify-center border transition-all cursor-pointer ${
+                        activeStep === s.number
+                          ? "bg-[#093cad] text-white border-[#093cad] shadow-md shadow-[#093cad]/20"
+                          : "bg-white text-zinc-500 border-zinc-200 hover:border-zinc-300"
+                      }`}
+                    >
+                      {s.number}
+                    </button>
+                  </React.Fragment>
                 ))}
               </div>
             </div>

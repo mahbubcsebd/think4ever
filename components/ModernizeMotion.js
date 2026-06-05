@@ -46,7 +46,6 @@ export default function ModernizeMotion() {
             </div>
 
             {/* Info Block */}
-            {/* 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +74,6 @@ export default function ModernizeMotion() {
                 </div>
               </div>
             </motion.div>
-            */}
 
             {/* Hero Button Style */}
             <motion.div

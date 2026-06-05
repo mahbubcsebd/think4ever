@@ -215,11 +215,10 @@ export default function Hero() {
               {/* Free Path CTA */}
               <div className="flex flex-col items-center sm:items-start gap-1.5">
                 <Link
-                  href="/start-free"
-                  className="group relative w-full sm:w-auto text-center px-8 py-3 border border-zinc-200 hover:border-transparent text-zinc-700 hover:text-white font-semibold rounded-full active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm overflow-hidden"
+                  href="https://portal.think4ever.com"
+                  className="w-full sm:w-auto text-center px-8 py-3 bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white font-semibold rounded-full shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm"
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-[#07A7E1] to-[#093cad] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span className="relative z-10">Start Free</span>
+                  Start Free
                 </Link>
                 <span className="text-[11px] text-zinc-400 font-medium select-none">
                   No credit card required
@@ -230,9 +229,10 @@ export default function Hero() {
               <div className="flex flex-col items-center sm:items-start gap-1.5">
                 <Link
                   href="/#pricing"
-                  className="w-full sm:w-auto text-center px-8 py-3 bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white font-semibold rounded-full shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm"
+                  className="group relative w-full sm:w-auto text-center px-8 py-3 border border-zinc-200 hover:border-transparent text-zinc-700 hover:text-white font-semibold rounded-full active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm overflow-hidden"
                 >
-                  Get Early Access
+                  <span className="absolute inset-0 bg-gradient-to-r from-[#07A7E1] to-[#093cad] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <span className="relative z-10">Get Early Access</span>
                 </Link>
                 <span className="text-[11px] text-zinc-400 font-medium select-none">
                   For Teams & Power Users
