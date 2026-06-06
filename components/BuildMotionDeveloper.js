@@ -55,19 +55,25 @@ export default function BuildMotionDeveloper() {
             >
               <div className="flex flex-col gap-3">
                 <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
-                  <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">Input</span>
+                  <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">
+                    Input
+                  </span>
                   <span className="text-[13px] sm:text-[14px] font-semibold text-[#353B3E]">
                     47-second voice memo
                   </span>
                 </div>
                 <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
-                  <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">Output</span>
+                  <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">
+                    Output
+                  </span>
                   <span className="text-[13px] sm:text-[14px] font-semibold text-[#353B3E]">
                     Working prototype + requirements + architecture
                   </span>
                 </div>
                 <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
-                  <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">Time</span>
+                  <span className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mt-0.5">
+                    Time
+                  </span>
                   <span className="text-[13px] sm:text-[14px] font-semibold text-[#353B3E]">
                     31 minutes
                   </span>
