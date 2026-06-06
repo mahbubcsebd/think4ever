@@ -30,7 +30,7 @@ export const FAQFilters = ({ categories, activeCategory, setActiveCategory }) =>
             transition={{ duration: 0.4, delay: 0.1 * idx }}
             onClick={() => setActiveCategory(cat)}
             className={cn(
-              "h-10 px-6 rounded-md text-[13px] font-bold flex items-center gap-2.5 transition-all duration-300 border shadow-sm",
+              "h-10 px-6 rounded-full text-[13px] font-bold flex items-center gap-2.5 transition-all duration-300 border shadow-sm",
               activeCategory === cat 
                 ? "bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white border-transparent" 
                 : "bg-white border-gray-100 text-gray-500 hover:border-gray-200 hover:text-gray-800 hover:bg-gray-50/50"
