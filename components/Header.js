@@ -244,10 +244,16 @@ export default function Header() {
                         <ul className="grid gap-2 outline-none">
                           {item.submenu.map((subItem) => {
                             const Icon = subItem.icon;
+                            const isExternal = subItem.href.startsWith('http');
+                            const LinkComponent = isExternal ? 'a' : Link;
+                            const linkProps = isExternal
+                              ? { href: subItem.href, target: '_blank', rel: 'noopener noreferrer' }
+                              : { href: subItem.href };
+
                             return (
                               <li key={subItem.title}>
-                                <a
-                                  href={subItem.href}
+                                <LinkComponent
+                                  {...linkProps}
                                   className="block select-none space-y-1 rounded-xl p-2.5 no-underline outline-none transition-all hover:bg-zinc-50 group/sub"
                                 >
                                   <div className="flex items-center gap-3">
@@ -265,7 +271,7 @@ export default function Header() {
                                       </p>
                                     </div>
                                   </div>
-                                </a>
+                                </LinkComponent>
                               </li>
                             );
                           })}
