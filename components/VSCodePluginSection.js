@@ -26,7 +26,7 @@ export default function VSCodePluginSection() {
 
             <div className="flex flex-wrap items-center gap-4 mt-2">
               <Link
-                href="/vscode-plugin"
+                href="/third-party-integration/vscode-plugin"
                 className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white font-bold rounded-full shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 text-sm"
               >
                 Get Extension <ArrowRight className="w-4 h-4" />

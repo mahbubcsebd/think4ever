@@ -14,7 +14,7 @@ export default function SplitSection({
   return (
     <section
       id={id}
-      className={`min-h-[90vh] flex flex-col justify-center px-4 md:px-16 py-24 lg:py-32 relative overflow-hidden ${className}`}
+      className={`min-h-[90vh] flex flex-col justify-center px-4 md:px-16 pt-24 pb-16 lg:pt-32 lg:pb-48 relative overflow-hidden ${className}`}
     >
       {/* Background Watermark - Always positioned at the bottom of the section */}
       {watermarkText && (

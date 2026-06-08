@@ -6,11 +6,14 @@ import {
   BookOpen,
   ChevronDown,
   Code,
+  Cpu,
   HelpCircle,
   Palette,
   PlayCircle,
+  Puzzle,
   Rocket,
   Settings,
+  Terminal,
   Users,
 } from 'lucide-react';
 import Image from 'next/image';
@@ -32,6 +35,27 @@ const RESOURCES_DATA = [
     desc: 'Frequently asked questions and detailed answers.',
     href: '/faq',
     icon: HelpCircle,
+  },
+];
+
+const THIRD_PARTY_INTEGRATION_DATA = [
+  {
+    title: 'Think MCP',
+    desc: 'Work in harmony with Claude Code, Codex, and other AI clients.',
+    href: '/third-party-integration#think-mcp',
+    icon: Puzzle,
+  },
+  {
+    title: 'VS Code Plugin',
+    desc: 'Access T4E directly inside your VS Code editor.',
+    href: '/third-party-integration#vscode-plugin',
+    icon: Code,
+  },
+  {
+    title: 'Think API',
+    desc: 'A standard REST interface to programmatically manage tokens.',
+    href: '/third-party-integration#think-api',
+    icon: Terminal,
   },
 ];
 
@@ -79,7 +103,13 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [openSubmenu, setOpenSubmenu] = useState(null);
+  const [hoveredMenu, setHoveredMenu] = useState(null);
   const pathname = usePathname();
+
+  useEffect(() => {
+    setHoveredMenu(null);
+    setIsOpen(false);
+  }, [pathname]);
 
   const toggleMenu = () => {
     setIsOpen((prev) => {
@@ -121,7 +151,12 @@ export default function Header() {
 
   const menuItems = [
     { label: 'How it Works', href: '/how-it-works', ids: ['how-it-works'] },
-    { label: 'VS Code Plugin', href: '/vscode-plugin', ids: ['vscode-plugin'] },
+    {
+      label: '3rd Party Integration',
+      href: '#',
+      ids: ['third-party-integration'],
+      submenu: THIRD_PARTY_INTEGRATION_DATA,
+    },
     {
       label: 'Docs',
       href: '#',
@@ -174,6 +209,9 @@ export default function Header() {
         window.location.hash === '#pricing'
       );
     }
+    if (item.submenu) {
+      return item.submenu.some(sub => pathname === sub.href.split('#')[0]);
+    }
     return pathname === item.href;
   };
 
@@ -209,8 +247,14 @@ export default function Header() {
             {menuItems.map((item) => {
               const hasSubmenu = !!item.submenu;
               const active = isActive(item);
+              const isDropdownOpen = hoveredMenu === item.label;
               return (
-                <div key={item.label} className="relative group">
+                <div
+                  key={item.label}
+                  className="relative group"
+                  onMouseEnter={() => hasSubmenu && setHoveredMenu(item.label)}
+                  onMouseLeave={() => hasSubmenu && setHoveredMenu(null)}
+                >
                   {hasSubmenu ? (
                     <button
                       className={cn(
@@ -221,7 +265,12 @@ export default function Header() {
                       )}
                     >
                       {item.label}
-                      <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180 text-zinc-400 group-hover:text-[#093cad]" />
+                      <ChevronDown
+                        className={cn(
+                          'w-3.5 h-3.5 transition-transform duration-300 text-zinc-400 group-hover:text-[#093cad]',
+                          isDropdownOpen && 'rotate-180 text-[#093cad]'
+                        )}
+                      />
                     </button>
                   ) : (
                     <Link
@@ -237,9 +286,16 @@ export default function Header() {
                     </Link>
                   )}
 
-                  {/* Dropdown Menu (on hover) */}
+                  {/* Dropdown Menu */}
                   {hasSubmenu && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50">
+                    <div
+                      className={cn(
+                        'absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-300 z-50',
+                        isDropdownOpen
+                          ? 'opacity-100 translate-y-0 pointer-events-auto'
+                          : 'opacity-0 translate-y-2 pointer-events-none'
+                      )}
+                    >
                       <div className="bg-white border border-zinc-150 rounded-2xl shadow-xl p-4 flex flex-col gap-2 min-w-[320px] max-w-[420px]">
                         <ul className="grid gap-2 outline-none">
                           {item.submenu.map((subItem) => {
@@ -254,6 +310,7 @@ export default function Header() {
                               <li key={subItem.title}>
                                 <LinkComponent
                                   {...linkProps}
+                                  onClick={() => setHoveredMenu(null)}
                                   className="block select-none space-y-1 rounded-xl p-2.5 no-underline outline-none transition-all hover:bg-zinc-50 group/sub"
                                 >
                                   <div className="flex items-center gap-3">
