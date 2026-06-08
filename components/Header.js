@@ -90,12 +90,12 @@ const DOCS_DATA = [
     href: 'https://think4ever.com/docs/reverse_engineering.html',
     icon: Settings,
   },
-  {
-    title: 'Video Tutorials',
-    desc: 'Watch step-by-step guides on how to use Think4Ever.',
-    href: 'https://think4ever.com/docs/tutorials/user_manual.html',
-    icon: PlayCircle,
-  },
+  // {
+  //   title: 'Video Tutorials',
+  //   desc: 'Watch step-by-step guides on how to use Think4Ever.',
+  //   href: 'https://think4ever.com/docs/tutorials/user_manual.html',
+  //   icon: PlayCircle,
+  // },
 ];
 
 export default function Header() {
