@@ -1,20 +1,20 @@
 'use client';
 
-import PageBanner from '@/components/sections/PageBanner';
+import SplitSection from '@/components/SplitSection';
+import GradientText from '@/components/GradientText';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 const PrivacyPolicy = () => {
   return (
-    <main className="min-h-screen bg-white">
-      {/* Banner */}
-      <PageBanner
-        title="Privacy Policy"
-        bgImage="https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2029&auto=format&fit=crop"
-      />
-
-      {/* Content */}
-      <article className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+    <main className="min-h-screen bg-white relative overflow-hidden font-sans">
+      <SplitSection
+        id="privacy-hero"
+        leftTitle="PRIVACY"
+        watermarkText="PRIVACY"
+        className="!min-h-0 !pt-16 lg:!pt-24 !pb-24 lg:!pb-36 z-10"
+        bottomContent={
+          <article className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 relative z-10">
         {/* Back Link */}
         {/* <Link
           href="/"
@@ -548,7 +548,30 @@ const PrivacyPolicy = () => {
         {/* <div className="mt-16 pt-8 border-t border-gray-100 text-center text-[13px] text-gray-400">
           © 2026 Think4Ever. All rights reserved.
         </div> */}
-      </article>
+          </article>
+        }
+      >
+        <div className="flex flex-col gap-6">
+          <motion.h1
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+            className="text-[28px] sm:text-[40px] md:text-[54px] lg:text-[60px] font-bold text-[#09090D] leading-[1.1] tracking-tight"
+          >
+            Privacy <GradientText>Policy</GradientText>
+          </motion.h1>
+          <motion.p
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            className="text-[15px] lg:text-[16px] text-zinc-500 leading-[1.6] font-normal max-w-2xl"
+          >
+            Our commitments to protecting your personal information and privacy.
+          </motion.p>
+        </div>
+      </SplitSection>
     </main>
   );
 };

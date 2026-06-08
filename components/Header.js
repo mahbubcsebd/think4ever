@@ -90,6 +90,27 @@ const DOCS_DATA = [
     href: 'https://think4ever.com/docs/reverse_engineering.html',
     icon: Settings,
   },
+  {
+    title: 'Think MCP',
+    desc: 'Work in harmony with Claude Code, Codex, and other AI clients.',
+    href: 'https://think4ever.com/docs/manual_think_mcp.html',
+    icon: Puzzle,
+    sameTab: true,
+  },
+  {
+    title: 'VS Code Plugin',
+    desc: 'Access T4E directly inside your VS Code editor.',
+    href: 'https://think4ever.com/docs/dev/vs_code_integration.html',
+    icon: Code,
+    sameTab: true,
+  },
+  {
+    title: 'Think API',
+    desc: 'A standard REST interface to programmatically manage tokens.',
+    href: 'https://think4ever.com/docs/manual_think_api.html',
+    icon: Terminal,
+    sameTab: true,
+  },
   // {
   //   title: 'Video Tutorials',
   //   desc: 'Watch step-by-step guides on how to use Think4Ever.',
@@ -303,7 +324,9 @@ export default function Header() {
                             const isExternal = subItem.href.startsWith('http');
                             const LinkComponent = isExternal ? 'a' : Link;
                             const linkProps = isExternal
-                              ? { href: subItem.href, target: '_blank', rel: 'noopener noreferrer' }
+                              ? subItem.sameTab
+                                ? { href: subItem.href }
+                                : { href: subItem.href, target: '_blank', rel: 'noopener noreferrer' }
                               : { href: subItem.href };
 
                             return (
@@ -496,10 +519,18 @@ export default function Header() {
                           >
                             <div className="flex flex-col gap-3 pl-8 md:pl-12 pt-4 pb-2">
                               {item.submenu.map((subItem, idx) => {
+                                const isExternal = subItem.href.startsWith('http');
+                                const LinkComponent = isExternal ? 'a' : Link;
+                                const linkProps = isExternal
+                                  ? subItem.sameTab
+                                    ? { href: subItem.href }
+                                    : { href: subItem.href, target: '_blank', rel: 'noopener noreferrer' }
+                                  : { href: subItem.href };
+
                                 return (
-                                  <Link
+                                  <LinkComponent
                                     key={idx}
-                                    href={subItem.href}
+                                    {...linkProps}
                                     onClick={toggleMenu}
                                     className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight inline-flex items-center group transition-colors duration-300 w-full cursor-pointer text-zinc-950 hover:text-[#093cad]"
                                   >
@@ -507,7 +538,7 @@ export default function Header() {
                                     <span className="transition-colors duration-300 group-hover:text-[#093cad]">
                                       {subItem.title}
                                     </span>
-                                  </Link>
+                                  </LinkComponent>
                                 );
                               })}
                             </div>

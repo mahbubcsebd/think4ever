@@ -121,17 +121,15 @@ export default function ThirdPartyIntegrationPage() {
                 >
                   Connect Client <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
-                <a
+                <Link
                   href="https://think4ever.com/docs/manual_think_mcp.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="group relative flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2.5 border border-zinc-200 hover:border-transparent text-zinc-700 hover:text-white font-semibold rounded-full active:scale-[0.98] transition-all duration-300 text-xs text-center whitespace-nowrap overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-[#07A7E1] to-[#093cad] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <span className="relative z-10 inline-flex items-center gap-1.5">
                     MCP Docs <ExternalLink className="w-3 h-3" />
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -244,17 +242,15 @@ export default function ThirdPartyIntegrationPage() {
                 >
                   Download VSIX <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
-                <a
-                  href="https://think4ever.com/docs/dev/start_new_project.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="https://think4ever.com/docs/dev/vs_code_integration.html"
                   className="group relative flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2.5 border border-zinc-200 hover:border-transparent text-zinc-700 hover:text-white font-semibold rounded-full active:scale-[0.98] transition-all duration-300 text-xs text-center whitespace-nowrap overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-[#07A7E1] to-[#093cad] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <span className="relative z-10 inline-flex items-center gap-1.5">
                     Dev Guide <ExternalLink className="w-3 h-3" />
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -343,17 +339,15 @@ export default function ThirdPartyIntegrationPage() {
                 >
                   Generate Key <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
-                <a
+                <Link
                   href="https://think4ever.com/docs/manual_think_api.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="group relative flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2.5 border border-zinc-200 hover:border-transparent text-zinc-700 hover:text-white font-semibold rounded-full active:scale-[0.98] transition-all duration-300 text-xs text-center whitespace-nowrap overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-[#07A7E1] to-[#093cad] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <span className="relative z-10 inline-flex items-center gap-1.5">
                     API Reference <ExternalLink className="w-3 h-3" />
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -420,6 +414,13 @@ export default function ThirdPartyIntegrationPage() {
           level
         </motion.h2>
       </SplitSection>
+
+      {/* Trademark Disclaimer Notice */}
+      <div className="max-w-[1400px] mx-auto px-4 md:px-16 pb-12 text-zinc-400 text-xs leading-relaxed font-normal">
+        <p>
+          <strong className="text-zinc-500 font-semibold">Trademark Notice:</strong> Claude Code™ is a trademark of Anthropic PBC. Cursor™ is a registered trademark of Anysphere, Inc. Think4ever is an independent platform developed by Think4Ever Global Inc. All product and company names, logos, and brands used on this website are for identification and compatibility description purposes only. Use of these names, trademarks, and brands does not imply endorsement, affiliation, sponsorship, or authorization by their respective owners.
+        </p>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 
-import PageBanner from '@/components/sections/PageBanner';
+import SplitSection from '@/components/SplitSection';
+import GradientText from '@/components/GradientText';
 import { motion } from 'framer-motion';
 
 const TermsAndConditions = () => {
@@ -13,15 +14,14 @@ const TermsAndConditions = () => {
   };
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* Banner */}
-      <PageBanner
-        title="Terms & Conditions"
-        bgImage="https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2029&auto=format&fit=crop"
-      />
-
-      {/* Content */}
-      <article className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+    <main className="min-h-screen bg-white relative overflow-hidden font-sans">
+      <SplitSection
+        id="terms-hero"
+        leftTitle="TERMS"
+        watermarkText="TERMS"
+        className="!min-h-0 !pt-16 lg:!pt-24 !pb-24 lg:!pb-36 z-10"
+        bottomContent={
+          <article className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 relative z-10">
         {/* Meta info */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pb-8 border-b border-gray-100 mb-10">
           <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-[13px] text-gray-400">
@@ -135,7 +135,30 @@ const TermsAndConditions = () => {
             </p>
           </motion.div>
         </div>
-      </article>
+          </article>
+        }
+      >
+        <div className="flex flex-col gap-6">
+          <motion.h1
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+            className="text-[28px] sm:text-[40px] md:text-[54px] lg:text-[60px] font-bold text-[#09090D] leading-[1.1] tracking-tight"
+          >
+            Terms & <GradientText>Conditions</GradientText>
+          </motion.h1>
+          <motion.p
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            className="text-[15px] lg:text-[16px] text-zinc-500 leading-[1.6] font-normal max-w-2xl"
+          >
+            Agreement governing the use and access of the Think4Ever suite of services.
+          </motion.p>
+        </div>
+      </SplitSection>
     </main>
   );
 };

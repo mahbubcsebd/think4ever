@@ -1,87 +1,128 @@
-import React from 'react';
-import { 
-  Accordion, 
-  AccordionContent, 
-  AccordionItem, 
-  AccordionTrigger 
-} from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 import { cn } from '@/lib/utils';
-import { Settings, CreditCard, Rocket, Headphones, ShieldCheck } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import {
+  CreditCard,
+  Headphones,
+  Rocket,
+  Settings,
+  ShieldCheck,
+} from 'lucide-react';
 
 const catColors = {
-  'Platform': { color: 'text-[#07A7E1]', bg: 'bg-[#07A7E1]/10', icon: <Settings size={18} /> },
-  'Pricing': { color: 'text-[#093cad]', bg: 'bg-[#093cad]/10', icon: <CreditCard size={18} /> },
-  'Onboarding': { color: 'text-[#07A7E1]', bg: 'bg-[#07A7E1]/10', icon: <Rocket size={18} /> },
-  'Support': { color: 'text-[#093cad]', bg: 'bg-[#093cad]/10', icon: <Headphones size={18} /> },
-  'Security': { color: 'text-[#07A7E1]', bg: 'bg-[#07A7E1]/10', icon: <ShieldCheck size={18} /> }
+  Platform: {
+    color: 'text-[#07A7E1]',
+    bg: 'bg-[#07A7E1]/10',
+    icon: <Settings size={18} />,
+  },
+  Pricing: {
+    color: 'text-[#093cad]',
+    bg: 'bg-[#093cad]/10',
+    icon: <CreditCard size={18} />,
+  },
+  Onboarding: {
+    color: 'text-[#07A7E1]',
+    bg: 'bg-[#07A7E1]/10',
+    icon: <Rocket size={18} />,
+  },
+  Support: {
+    color: 'text-[#093cad]',
+    bg: 'bg-[#093cad]/10',
+    icon: <Headphones size={18} />,
+  },
+  Security: {
+    color: 'text-[#07A7E1]',
+    bg: 'bg-[#07A7E1]/10',
+    icon: <ShieldCheck size={18} />,
+  },
 };
 
 export const FAQList = ({ data }) => {
   if (data.length === 0) {
     return (
       <div className="text-center py-20 bg-gray-50/30 rounded-md border border-dashed border-gray-100 mt-10 max-w-4xl mx-auto">
-        <p className="text-gray-400 text-sm">No results found for your search.</p>
+        <p className="text-gray-400 text-sm">
+          No results found for your search.
+        </p>
       </div>
     );
   }
 
   return (
-    <section className="max-w-4xl mx-auto px-4 py-8 sm:py-12 space-y-12">
+    <section className="max-w-4xl mx-auto px-4 py-4 sm:py-12 space-y-12">
       <AnimatePresence mode="popLayout">
         {data.map((section, sectionIdx) => {
           const styles = catColors[section.category] || catColors['Platform'];
-          return (section.items.length > 0 &&
-            <motion.div 
-              layout
-              key={section.category} 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="space-y-5"
-            >
-            <div className="flex items-center justify-between border-b border-gray-50 pb-4">
-              <div className="flex items-center gap-3">
-                <div className={cn("p-1.5 rounded-md", styles.bg, styles.color)}>
-                  {styles.icon}
+          return (
+            section.items.length > 0 && (
+              <motion.div
+                layout
+                key={section.category}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+                className="space-y-5"
+              >
+                <div className="flex items-center justify-between border-b border-gray-50 pb-4">
+                  <div className="flex items-center gap-3">
+                    <div
+                      className={cn(
+                        'p-1.5 rounded-md',
+                        styles.bg,
+                        styles.color,
+                      )}
+                    >
+                      {styles.icon}
+                    </div>
+                    <h3 className="text-[17px] font-bold text-gray-800 tracking-tight">
+                      {section.category}
+                    </h3>
+                  </div>
+                  <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest bg-gray-50 px-2.5 py-1 rounded-md">
+                    {section.items.length} questions
+                  </span>
                 </div>
-                <h3 className="text-[17px] font-bold text-gray-800 tracking-tight">{section.category}</h3>
-              </div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest bg-gray-50 px-2.5 py-1 rounded-md">
-                {section.items.length} questions
-              </span>
-            </div>
 
-            <Accordion type="single" collapsible className="space-y-3">
-              {section.items.map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, x: 100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
-                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: idx * 0.1 }}
-                >
-                  <AccordionItem 
-                    value={`${section.category}-${idx}`}
-                    className="border border-gray-100 rounded-md bg-white hover:border-gray-200 transition-all duration-200 shadow-sm"
-                  >
-                    <AccordionTrigger className="px-5 py-4 hover:no-underline text-left group">
-                      <span className="text-[14px] font-medium text-gray-600 transition-colors pr-2 leading-relaxed group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-b group-hover:from-[#07A7E1] group-hover:to-[#093cad] group-data-[state=open]:text-transparent group-data-[state=open]:bg-clip-text group-data-[state=open]:bg-gradient-to-b group-data-[state=open]:from-[#07A7E1] group-data-[state=open]:to-[#093cad]">
-                        {item.question}
-                      </span>
-                    </AccordionTrigger>
-                    <AccordionContent className="px-5 pb-5 text-gray-500 text-[13.5px] leading-relaxed">
-                      {item.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                </motion.div>
-              ))}
-            </Accordion>
-          </motion.div>
-        );
-      })}
+                <Accordion type="single" collapsible className="space-y-3">
+                  {section.items.map((item, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, x: 100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, amount: 0.1 }}
+                      transition={{
+                        duration: 0.8,
+                        ease: [0.16, 1, 0.3, 1],
+                        delay: idx * 0.1,
+                      }}
+                    >
+                      <AccordionItem
+                        value={`${section.category}-${idx}`}
+                        className="border border-gray-100 rounded-md bg-white hover:border-gray-200 transition-all duration-200 shadow-sm"
+                      >
+                        <AccordionTrigger className="px-5 py-4 hover:no-underline text-left group">
+                          <span className="text-[14px] font-medium text-gray-600 transition-colors pr-2 leading-relaxed group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-b group-hover:from-[#07A7E1] group-hover:to-[#093cad] group-data-[state=open]:text-transparent group-data-[state=open]:bg-clip-text group-data-[state=open]:bg-gradient-to-b group-data-[state=open]:from-[#07A7E1] group-data-[state=open]:to-[#093cad]">
+                            {item.question}
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent className="px-5 pb-5 text-gray-500 text-[13.5px] leading-relaxed">
+                          {item.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    </motion.div>
+                  ))}
+                </Accordion>
+              </motion.div>
+            )
+          );
+        })}
       </AnimatePresence>
     </section>
   );

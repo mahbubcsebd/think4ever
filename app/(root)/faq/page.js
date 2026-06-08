@@ -1,9 +1,12 @@
 'use client';
 import React, { useState, useMemo } from 'react';
-import { FAQHero } from '@/components/sections/faq/FAQHero';
+import { motion } from 'framer-motion';
+import { HelpCircle } from 'lucide-react';
 import { FAQFilters } from '@/components/sections/faq/FAQFilters';
 import { FAQList } from '@/components/sections/faq/FAQList';
 import { StillHaveQuestions } from '@/components/sections/faq/StillHaveQuestions';
+import SplitSection from '@/components/SplitSection';
+import GradientText from '@/components/GradientText';
 
 const faqData = [
   {
@@ -104,7 +107,6 @@ const faqData = [
 ];
 
 const FAQPage = () => {
-  const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('All Questions');
 
   const categories = useMemo(() => {
@@ -114,43 +116,56 @@ const FAQPage = () => {
   const filteredData = useMemo(() => {
     let data = faqData;
     
-    // 1. Filter by Category
+    // Filter by Category
     if (activeCategory !== 'All Questions') {
       data = data.filter(d => d.category === activeCategory);
     }
 
-    // 2. Filter by Search Query
-    if (searchQuery.trim() !== '') {
-      const q = searchQuery.toLowerCase();
-      data = data.map(section => ({
-        ...section,
-        items: section.items.filter(item => 
-          item.question.toLowerCase().includes(q) || 
-          item.answer.toLowerCase().includes(q)
-        )
-      })).filter(section => section.items.length > 0);
-    }
-
     return data;
-  }, [searchQuery, activeCategory]);
+  }, [activeCategory]);
 
   return (
-    <>
-      <FAQHero 
-        searchQuery={searchQuery} 
-        setSearchQuery={setSearchQuery} 
-      />
-
-      <FAQFilters 
-        categories={categories}
-        activeCategory={activeCategory}
-        setActiveCategory={setActiveCategory}
-      />
-
-      <FAQList data={filteredData} />
-
+    <div className="min-h-screen bg-white relative py-12 overflow-hidden font-sans">
+      <SplitSection
+        id="faq-hero"
+        leftTitle="FAQ"
+        watermarkText="FAQ"
+        className="!min-h-0 !pt-16 lg:!pt-24 !pb-24 lg:!pb-36 z-10"
+        bottomContent={
+          <div className="relative z-10 max-w-[1400px] mx-auto px-4 md:px-12 mt-8 md:mt-12">
+            <FAQFilters 
+              categories={categories}
+              activeCategory={activeCategory}
+              setActiveCategory={setActiveCategory}
+            />
+            <FAQList data={filteredData} />
+          </div>
+        }
+      >
+        <div className="flex flex-col gap-6">
+          <motion.h1
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+            className="text-[28px] sm:text-[40px] md:text-[54px] lg:text-[60px] font-bold text-[#09090D] leading-[1.1] tracking-tight"
+          >
+            Frequently Asked <GradientText>Questions</GradientText>
+          </motion.h1>
+          <motion.p
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            className="text-[15px] lg:text-[16px] text-zinc-500 leading-[1.6] font-normal max-w-2xl"
+          >
+            Find answers to common questions about our platform, pricing, onboarding, and support.
+          </motion.p>
+        </div>
+      </SplitSection>
+ 
       <StillHaveQuestions />
-    </>
+    </div>
   );
 };
 
