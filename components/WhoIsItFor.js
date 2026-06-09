@@ -17,29 +17,29 @@ export default function WhoIsItFor() {
             <table className="w-full min-w-[750px] border-collapse text-left">
               <thead>
                 <tr className="bg-gradient-to-r from-[#07A7E1]/5 to-[#093cad]/5 border-b border-zinc-200/60">
-                  <th className="p-6 text-sm font-bold text-[#09090D] tracking-wider uppercase md:whitespace-nowrap whitespace-normal w-1/4">With Think4Ever you can:</th>
-                  <th className="p-6 text-sm font-bold text-[#09090D] tracking-wider uppercase md:whitespace-nowrap whitespace-normal w-5/12">Use cases:</th>
-                  <th className="p-6 text-sm font-bold text-[#09090D] tracking-wider uppercase md:whitespace-nowrap whitespace-normal w-1/3">Who can use Think4Ever:</th>
+                  <th className="p-6 text-sm font-bold text-[#09090D] tracking-wider uppercase md:whitespace-nowrap whitespace-normal w-1/4 text-center">With Think4Ever you can</th>
+                  <th className="p-6 text-sm font-bold text-[#09090D] tracking-wider uppercase md:whitespace-nowrap whitespace-normal w-5/12 text-center">Use cases</th>
+                  <th className="p-6 text-sm font-bold text-[#09090D] tracking-wider uppercase md:whitespace-nowrap whitespace-normal w-1/3 text-center">Who can use Think4Ever</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-200/60">
                 <tr className="hover:bg-zinc-50/50 transition-colors">
-                  <td className="p-6 text-[15px] font-bold text-[#093cad] align-top">Build</td>
+                  <td className="p-6 text-[15px] font-bold align-top"><GradientText>Build</GradientText></td>
                   <td className="p-6 text-[14px] text-zinc-600 font-medium leading-relaxed align-top">New applications, workflows, systems</td>
                   <td className="p-6 text-[14px] text-zinc-500 font-normal leading-relaxed align-top">Developers, founders, product teams</td>
                 </tr>
                 <tr className="hover:bg-zinc-50/50 transition-colors">
-                  <td className="p-6 text-[15px] font-bold text-[#093cad] align-top">Extend</td>
+                  <td className="p-6 text-[15px] font-bold align-top"><GradientText>Extend</GradientText></td>
                   <td className="p-6 text-[14px] text-zinc-600 font-medium leading-relaxed align-top">Integration with or enhancement of existing systems</td>
                   <td className="p-6 text-[14px] text-zinc-500 font-normal leading-relaxed align-top">Engineering teams</td>
                 </tr>
                 <tr className="hover:bg-zinc-50/50 transition-colors">
-                  <td className="p-6 text-[15px] font-bold text-[#093cad] align-top">Modernize</td>
+                  <td className="p-6 text-[15px] font-bold align-top"><GradientText>Modernize</GradientText></td>
                   <td className="p-6 text-[14px] text-zinc-600 font-medium leading-relaxed align-top">Legacy re-factor or transformation</td>
                   <td className="p-6 text-[14px] text-zinc-500 font-normal leading-relaxed align-top">Enterprise architects, CTOs, Distinguished Engineers, Tech Leads</td>
                 </tr>
                 <tr className="hover:bg-zinc-50/50 transition-colors">
-                  <td className="p-6 text-[15px] font-bold text-[#093cad] align-top">Co-Develop</td>
+                  <td className="p-6 text-[15px] font-bold align-top"><GradientText>Co-Develop</GradientText></td>
                   <td className="p-6 text-[14px] text-zinc-600 font-medium leading-relaxed align-top">Architect and Design in Think Platform and use your favorite tool to develop the code.</td>
                   <td className="p-6 text-[14px] text-zinc-500 font-normal leading-relaxed align-top">Corporations and Developers already using or familiar with other tools.</td>
                 </tr>
@@ -54,20 +54,20 @@ export default function WhoIsItFor() {
             </h3>
             <ol className="flex flex-col divide-y divide-zinc-100/80">
               {[
-                { title: 'Use T4E only', desc: 'do everything inside Think4Ever and complete your SDLC.' },
-                { title: 'Use T4E to design and manage', desc: 'processes, flows, roles, etc., and develop in other tools such as Claude Code/Codex/Other-Dev tools.' },
-                { title: 'A Hybrid approach', desc: 'mix both Think4Ever and Third-party tools as needed. Agents can work together to build your System.' },
+                { title: 'Use T4E only', desc: 'Do everything inside Think4Ever and complete your SDLC.' },
+                { title: 'Use T4E to design and manage', desc: 'Processes, flows, roles, etc., and develop in other tools such as Claude Code/Codex/Other-Dev tools.' },
+                { title: 'A Hybrid approach', desc: 'Mix both Think4Ever and Third-party tools as needed. Agents can work together to build your System.' },
                 { title: 'Think API', desc: 'Third-party developers can build new solutions integrated with T4E Platform.' },
-                { title: 'Corporations use T4E API', desc: 'to integrate their internal process with their existing agents.' },
+                { title: 'Corporations use T4E API', desc: 'To integrate their internal process with their existing agents.' },
               ].map((item, idx) => (
                 <li key={idx} className="py-4 first:pt-0 last:pb-0 flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6 hover:bg-zinc-50/40 transition-colors rounded-lg px-4 -mx-4">
                   <div className="flex items-center gap-4 shrink-0 sm:w-[260px]">
-                    <span className="flex items-center justify-center w-7 h-7 rounded-full bg-[#093cad]/10 text-[#093cad] text-[13px] font-mono font-bold">
+                    <span className="text-[14px] font-mono font-semibold text-[#89A4C4] shrink-0">
                       0{idx + 1}
                     </span>
                     <h4 className="text-[15px] font-bold text-zinc-800 leading-none">{item.title}</h4>
                   </div>
-                  <p className="text-[14px] text-zinc-500 leading-relaxed pl-11 sm:pl-0 sm:pt-0.5 flex-1">
+                  <p className="text-[14px] text-zinc-500 leading-relaxed pl-8 sm:pl-0 sm:pt-0.5 flex-1">
                     {item.desc}
                   </p>
                 </li>
