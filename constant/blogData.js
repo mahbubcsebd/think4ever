@@ -408,7 +408,7 @@ export const BLOG_POSTS = [
     author: 'Sunil Kishen',
     readTime: '8 min read',
     date: 'June 09, 2026',
-    image: '/images/blog/blog-3-img-1.jpg',
+    image: '/images/blog/blog-3-thumbnail.png',
     category: 'Engineering',
   },
 ];
