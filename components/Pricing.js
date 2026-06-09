@@ -32,8 +32,7 @@ export default function Pricing() {
       price: '$25.00/month',
       subText: '',
       subTextColor: 'text-zinc-500 italic text-[10px]',
-      description:
-        'For solo developers, freelancers and startup founders',
+      description: 'For solo developers, freelancers and startup founders',
       features: [
         'Included 2000 Orchestration Credits/Month',
         'Create up to 3 Projects',
@@ -60,8 +59,8 @@ export default function Pricing() {
         'Utilize Admin Controls + Caps',
         'Access Priority System Orchestration',
       ],
-      buttonText: 'Get Early Access',
-      href: 'https://portal.think4ever.com',
+      buttonText: 'Contact Sales',
+      href: '/contact-us',
     },
     {
       label: 'Think Blue',

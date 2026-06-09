@@ -2,6 +2,7 @@ import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
 import ModernizeMotion from '@/components/ModernizeMotion';
 import WhatWeDo from '@/components/WhatWeDo';
+import WhoIsItFor from '@/components/WhoIsItFor';
 import Pricing from '@/components/Pricing';
 import VSCodePluginSection from '@/components/VSCodePluginSection';
 
@@ -25,6 +26,9 @@ export default function Home() {
 
         {/* What We Do - 3 cards (Build, Extend, Modernize) */}
         <WhatWeDo />
+
+        {/* Who is it for - table with Co-Develop scenarios */}
+        <WhoIsItFor />
 
         {/* How It Works Section */}
         <HowItWorks />

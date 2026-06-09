@@ -95,6 +95,18 @@ export default function ThirdPartyIntegrationPage() {
           Connect your favorite developer environments, external AI clients, and
           code interfaces with the centralized Think4Ever platform.
         </p>
+        <div className="bg-amber-50 border border-amber-200/60 rounded-2xl p-4 flex gap-3.5 max-w-lg mt-2 mx-auto text-left">
+          <ShieldAlert className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+          <div className="flex flex-col gap-0.5">
+            <span className="text-[13px] font-bold text-zinc-900">
+              Registered Users Only
+            </span>
+            <p className="text-[11px] text-zinc-500 leading-relaxed">
+              These extensions are private and distributed exclusively to
+              registered users via the workspace portal.
+            </p>
+          </div>
+        </div>
       </div>
 
       <SplitSection
@@ -221,19 +233,6 @@ export default function ThirdPartyIntegrationPage() {
                 into your editor. See your architecture map, track dependencies,
                 and propagate changes — without leaving VS Code.
               </p>
-
-              <div className="bg-amber-50 border border-amber-200/60 rounded-2xl p-4 flex gap-3.5 max-w-lg mt-1">
-                <ShieldAlert className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-[13px] font-bold text-zinc-900">
-                    Registered Users Only
-                  </span>
-                  <p className="text-[11px] text-zinc-500 leading-relaxed">
-                    This extension is private and distributed exclusively to
-                    registered users via the workspace portal.
-                  </p>
-                </div>
-              </div>
 
               <div className="flex items-center gap-2.5 sm:gap-4 mt-2 w-full">
                 <Link
