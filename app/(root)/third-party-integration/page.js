@@ -2,7 +2,7 @@
 
 import GradientText from '@/components/GradientText';
 import SplitSection from '@/components/SplitSection';
-import ZoomableImage from '@/components/ZoomableImage';
+import { ZoomableImage } from '@/components/ZoomableImage';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
@@ -136,10 +136,9 @@ export default function ThirdPartyIntegrationPage() {
                 </Link>
                 <Link
                   href="https://think4ever.com/docs/manual_think_mcp.html"
-                  className="group relative flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2.5 border border-zinc-200 hover:border-transparent text-zinc-700 hover:text-white font-semibold rounded-full active:scale-[0.98] transition-all duration-300 text-xs text-center whitespace-nowrap overflow-hidden"
+                  className="btn-gradient-outline flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-[8.5px] font-semibold rounded-full active:scale-[0.98] transition-all duration-300 text-xs text-center whitespace-nowrap cursor-pointer"
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-[#07A7E1] to-[#093cad] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span className="relative z-10 inline-flex items-center gap-1.5">
+                  <span className="btn-text inline-flex items-center gap-1.5">
                     MCP Docs <ExternalLink className="w-3 h-3" />
                   </span>
                 </Link>
@@ -244,10 +243,9 @@ export default function ThirdPartyIntegrationPage() {
                 </Link>
                 <Link
                   href="https://think4ever.com/docs/dev/vs_code_integration.html"
-                  className="group relative flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2.5 border border-zinc-200 hover:border-transparent text-zinc-700 hover:text-white font-semibold rounded-full active:scale-[0.98] transition-all duration-300 text-xs text-center whitespace-nowrap overflow-hidden"
+                  className="btn-gradient-outline flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-[8.5px] font-semibold rounded-full active:scale-[0.98] transition-all duration-300 text-xs text-center whitespace-nowrap cursor-pointer"
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-[#07A7E1] to-[#093cad] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span className="relative z-10 inline-flex items-center gap-1.5">
+                  <span className="btn-text inline-flex items-center gap-1.5">
                     Dev Guide <ExternalLink className="w-3 h-3" />
                   </span>
                 </Link>
@@ -342,10 +340,9 @@ export default function ThirdPartyIntegrationPage() {
                 </Link>
                 <Link
                   href="https://think4ever.com/docs/manual_think_api.html"
-                  className="group relative flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2.5 border border-zinc-200 hover:border-transparent text-zinc-700 hover:text-white font-semibold rounded-full active:scale-[0.98] transition-all duration-300 text-xs text-center whitespace-nowrap overflow-hidden"
+                  className="btn-gradient-outline flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-[8.5px] font-semibold rounded-full active:scale-[0.98] transition-all duration-300 text-xs text-center whitespace-nowrap cursor-pointer"
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-[#07A7E1] to-[#093cad] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span className="relative z-10 inline-flex items-center gap-1.5">
+                  <span className="btn-text inline-flex items-center gap-1.5">
                     API Reference <ExternalLink className="w-3 h-3" />
                   </span>
                 </Link>

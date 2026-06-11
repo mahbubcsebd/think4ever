@@ -5,7 +5,7 @@ import { ArrowRight, Cpu, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import GradientText from './GradientText';
 import SplitSection from './SplitSection';
-import ZoomableImage from './ZoomableImage';
+import { ZoomableImage } from './ZoomableImage';
 
 export default function VSCodePluginSection() {
   return (
@@ -36,10 +36,9 @@ export default function VSCodePluginSection() {
                 href="https://think4ever.com/docs/dev/start_new_project.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-zinc-200 hover:border-transparent text-zinc-700 hover:text-white font-semibold rounded-full active:scale-[0.98] transition-all duration-300 text-xs overflow-hidden"
+                className="btn-gradient-outline inline-flex items-center justify-center gap-2 px-5 py-[8.5px] font-semibold rounded-full active:scale-[0.98] transition-all duration-300 text-xs cursor-pointer"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-[#07A7E1] to-[#093cad] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative z-10 inline-flex items-center gap-2">
+                <span className="btn-text inline-flex items-center gap-2">
                   Developer Guide <ExternalLink className="w-3.5 h-3.5" />
                 </span>
               </a>

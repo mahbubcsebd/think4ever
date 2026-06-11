@@ -15,7 +15,7 @@ import {
   Shield,
 } from 'lucide-react';
 import Image from 'next/image';
-import ZoomableImage from '@/components/ZoomableImage';
+import { ZoomableImage } from '@/components/ZoomableImage';
 import { useState } from 'react';
 
 const steps = [

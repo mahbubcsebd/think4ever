@@ -8,7 +8,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 
-export default function ZoomableImage({ 
+export function ZoomableImage({ 
   src, 
   alt = 'Image', 
   width, 

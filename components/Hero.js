@@ -238,7 +238,6 @@ export default function Hero() {
                 </span>
               </div>
             </div>
-
           </div>
 
           {/* Right Side: Video Player */}

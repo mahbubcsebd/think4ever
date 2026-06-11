@@ -91,11 +91,21 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #093cad; /* Fallback and stroke basis for SVGs */
+}
+
+.btn-gradient-outline .btn-text svg {
+  stroke: #093cad;
+  transition: stroke 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-gradient-outline:hover .btn-text {
   -webkit-text-fill-color: white;
   color: white;
+}
+
+.btn-gradient-outline:hover .btn-text svg {
+  stroke: white;
 }
 
 /* Header scroll shrink */
