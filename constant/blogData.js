@@ -223,7 +223,71 @@ export const BLOG_POSTS = [
           <p>In 2026, code is cheap, but maintenance is expensive.</p>
 
           <div class="my-10">
-            <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+            <!-- Mobile Card view (visible on mobile/tablet) -->
+            <div class="grid grid-cols-1 gap-4 md:hidden">
+              <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] flex flex-col gap-3">
+                <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                  <h4 class="text-sm font-bold text-gray-900">New Feature</h4>
+                  <span class="text-[9px] font-bold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded">01</span>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-wider">Code-First Result (Cursor/Claude)</span>
+                  <p class="text-[13px] text-gray-500 leading-relaxed font-normal">"I'll just add this function here..."</p>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-[#093cad] uppercase tracking-wider font-semibold">Design-First Result (Think4Ever)</span>
+                  <p class="text-[13px] font-medium leading-relaxed"><span class="text-gradient">"Does this fit the System Map?"</span></p>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] flex flex-col gap-3">
+                <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                  <h4 class="text-sm font-bold text-gray-900">Tech Debt</h4>
+                  <span class="text-[9px] font-bold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded">02</span>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-wider">Code-First Result (Cursor/Claude)</span>
+                  <p class="text-[13px] text-gray-500 leading-relaxed font-normal">Compounds with every prompt.</p>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-[#093cad] uppercase tracking-wider font-semibold">Design-First Result (Think4Ever)</span>
+                  <p class="text-[13px] font-medium leading-relaxed"><span class="text-gradient">Prevented by "Design Guardrails".</span></p>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] flex flex-col gap-3">
+                <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                  <h4 class="text-sm font-bold text-gray-900">Onboarding</h4>
+                  <span class="text-[9px] font-bold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded">03</span>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-wider">Code-First Result (Cursor/Claude)</span>
+                  <p class="text-[13px] text-gray-500 leading-relaxed font-normal">Read 100 files to understand the app.</p>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-[#093cad] uppercase tracking-wider font-semibold">Design-First Result (Think4Ever)</span>
+                  <p class="text-[13px] font-medium leading-relaxed"><span class="text-gradient">Read 1 System Design Doc.</span></p>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] flex flex-col gap-3">
+                <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                  <h4 class="text-sm font-bold text-gray-900">Refactoring</h4>
+                  <span class="text-[9px] font-bold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded">04</span>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-wider">Code-First Result (Cursor/Claude)</span>
+                  <p class="text-[13px] text-gray-500 leading-relaxed font-normal">Nightmare; everything is tangled.</p>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-[#093cad] uppercase tracking-wider font-semibold">Design-First Result (Think4Ever)</span>
+                  <p class="text-[13px] font-medium leading-relaxed"><span class="text-gradient">Easy; boundaries are clearly defined.</span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Desktop Table view (hidden on mobile/tablet) -->
+            <div class="hidden md:block overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
               <table class="w-full text-left border-collapse min-w-[750px] md:min-w-full md:table-fixed text-[13px] md:text-base">
                 <thead>
                   <tr class="bg-[#0c4a6e] text-white">
@@ -235,7 +299,7 @@ export const BLOG_POSTS = [
                 <tbody class="divide-y divide-gray-100">
                   <tr class="hover:bg-gray-50/50 transition-colors">
                     <td class="p-3 md:p-5 font-bold text-gray-900 bg-gray-50/30">New Feature</td>
-                    <td class="p-3 md:p-5 italic text-gray-500 whitespace-normal">"I'll just add this function here..."</td>
+                    <td class="p-3 md:p-5 text-gray-500 whitespace-normal">"I'll just add this function here..."</td>
                     <td class="p-3 md:p-5 font-medium whitespace-normal"><span class="text-gradient">"Does this fit the System Map?"</span></td>
                   </tr>
                   <tr class="hover:bg-gray-50/50 transition-colors">
@@ -255,10 +319,6 @@ export const BLOG_POSTS = [
                   </tr>
                 </tbody>
               </table>
-            </div>
-            <div class="mt-3 flex items-center justify-center gap-2 md:hidden">
-               <span class="text-[11px] text-gray-400 font-medium uppercase tracking-widest">Swipe to view more</span>
-               <div class="h-px w-8 bg-gray-200"></div>
             </div>
           </div>
         </section>
@@ -352,7 +412,86 @@ export const BLOG_POSTS = [
         <section>
           <h2 class="text-2xl font-bold text-gray-900 mb-4">The Structural Shift in Application Development</h2>
           <div class="my-10">
-            <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+            <!-- Mobile Card view (visible on mobile/tablet) -->
+            <div class="grid grid-cols-1 gap-4 md:hidden">
+              <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] flex flex-col gap-3">
+                <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                  <h4 class="text-sm font-bold text-gray-900">Operational Model</h4>
+                  <span class="text-[9px] font-bold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded">01</span>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-wider">The Point-Assistant Approach (Cursor, Lovable, Bolt)</span>
+                  <p class="text-[13px] text-gray-500 leading-relaxed font-normal">A faster keyboard; assists humans in writing code file-by-file.</p>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-[#093cad] uppercase tracking-wider font-semibold">The Think4Ever Autonomous Approach</span>
+                  <p class="text-[13px] font-medium leading-relaxed"><span class="text-gradient">An autonomous engineering engine driving the entire SDLC from spec to deployment.</span></p>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] flex flex-col gap-3">
+                <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                  <h4 class="text-sm font-bold text-gray-900">System Visibility</h4>
+                  <span class="text-[9px] font-bold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded">02</span>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-wider">The Point-Assistant Approach (Cursor, Lovable, Bolt)</span>
+                  <p class="text-[13px] text-gray-500 leading-relaxed font-normal">Fragmented; reads local file contexts but lacks architectural awareness.</p>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-[#093cad] uppercase tracking-wider font-semibold">The Think4Ever Autonomous Approach</span>
+                  <p class="text-[13px] font-medium leading-relaxed"><span class="text-gradient">Absolute; maintained via a persistent design harness and system-level coherence.</span></p>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] flex flex-col gap-3">
+                <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                  <h4 class="text-sm font-bold text-gray-900">Scalability Limit</h4>
+                  <span class="text-[9px] font-bold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded">03</span>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-wider">The Point-Assistant Approach (Cursor, Lovable, Bolt)</span>
+                  <p class="text-[13px] text-gray-500 leading-relaxed font-normal">Hits a wall when codebase complexity outgrows the LLM context window.</p>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-[#093cad] uppercase tracking-wider font-semibold">The Think4Ever Autonomous Approach</span>
+                  <p class="text-[13px] font-medium leading-relaxed"><span class="text-gradient">Infinite vertical scale via multi-session context preservation and graph-based state tracking.</span></p>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] flex flex-col gap-3">
+                <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                  <h4 class="text-sm font-bold text-gray-900">Resource Efficiency</h4>
+                  <span class="text-[9px] font-bold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded">04</span>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-wider">The Point-Assistant Approach (Cursor, Lovable, Bolt)</span>
+                  <p class="text-[13px] text-gray-500 leading-relaxed font-normal">High token waste from constantly feeding raw repository files back to the LLM.</p>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-[#093cad] uppercase tracking-wider font-semibold">The Think4Ever Autonomous Approach</span>
+                  <p class="text-[13px] font-medium leading-relaxed"><span class="text-gradient">Ultra-low token consumption via targeted, harness-guided code execution.</span></p>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.05)] flex flex-col gap-3">
+                <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                  <h4 class="text-sm font-bold text-gray-900">Security & Trust</h4>
+                  <span class="text-[9px] font-bold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded">05</span>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-wider">The Point-Assistant Approach (Cursor, Lovable, Bolt)</span>
+                  <p class="text-[13px] text-gray-500 leading-relaxed font-normal">Reactive; relies on external scanners or human code reviews after generation.</p>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[9px] font-bold text-[#093cad] uppercase tracking-wider font-semibold">The Think4Ever Autonomous Approach</span>
+                  <p class="text-[13px] font-medium leading-relaxed"><span class="text-gradient">Proactive; native security analysis is a mandatory gate in the compilation loop.</span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Desktop Table view (hidden on mobile/tablet) -->
+            <div class="hidden md:block overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
               <table class="w-full text-left border-collapse min-w-[750px] md:min-w-full md:table-fixed text-[13px] md:text-base">
                 <thead>
                   <tr class="bg-[#0c4a6e] text-white">
@@ -389,10 +528,6 @@ export const BLOG_POSTS = [
                   </tr>
                 </tbody>
               </table>
-            </div>
-            <div class="mt-3 flex items-center justify-center gap-2 md:hidden">
-               <span class="text-[11px] text-gray-400 font-medium uppercase tracking-widest">Swipe to view more</span>
-               <div class="h-px w-8 bg-gray-200"></div>
             </div>
           </div>
         </section>

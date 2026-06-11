@@ -12,14 +12,60 @@ export default function WhoIsItFor() {
       leftTitle="Who is it for"
       bottomContent={
         <div className="w-full mt-12 pb-20 flex flex-col gap-16 relative z-10 max-w-5xl mx-auto">
-          {/* Scrollable Table view */}
-          <div className="w-full overflow-x-auto rounded-xl border border-zinc-200/60 bg-white/70 backdrop-blur-sm shadow-xl">
+          {/* Mobile Card view (visible on mobile/tablet) */}
+          <div className="grid grid-cols-1 gap-6 md:hidden">
+            {[
+              {
+                action: 'Build',
+                useCases: 'New applications, workflows, systems',
+                who: 'Developers, founders, product teams',
+              },
+              {
+                action: 'Extend',
+                useCases: 'Integration with or enhancement of existing systems',
+                who: 'Engineering teams',
+              },
+              {
+                action: 'Modernize',
+                useCases: 'Legacy re-factor or transformation',
+                who: 'Enterprise architects, CTOs, Distinguished Engineers, Tech Leads',
+              },
+              {
+                action: 'Co-Develop',
+                useCases: 'Architect and Design in Think Platform and use your favorite tool to develop the code.',
+                who: 'Corporations and Developers already using or familiar with other tools.',
+              },
+            ].map((row, idx) => (
+              <div 
+                key={idx}
+                className="bg-white/70 backdrop-blur-sm rounded-2xl border border-zinc-200/60 p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-md transition-all duration-300 flex flex-col gap-4"
+              >
+                <div className="flex items-center justify-between border-b border-zinc-100 pb-3">
+                  <h4 className="text-base font-bold"><GradientText>{row.action}</GradientText></h4>
+                  <span className="text-[10px] font-bold text-zinc-400 bg-zinc-100 px-2.5 py-0.5 rounded-md">
+                    0{idx + 1}
+                  </span>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Use Cases</span>
+                  <p className="text-[14px] text-zinc-600 font-medium leading-relaxed">{row.useCases}</p>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Who can use Think4Ever</span>
+                  <p className="text-[14px] text-zinc-500 font-normal leading-relaxed">{row.who}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop Table view (hidden on mobile/tablet) */}
+          <div className="hidden md:block w-full overflow-x-auto rounded-xl border border-zinc-200/60 bg-white/70 backdrop-blur-sm shadow-xl">
             <table className="w-full min-w-[750px] border-collapse text-left">
               <thead>
                 <tr className="bg-gradient-to-r from-[#07A7E1]/5 to-[#093cad]/5 border-b border-zinc-200/60">
-                  <th className="p-6 text-sm font-bold text-[#09090D] tracking-wider uppercase md:whitespace-nowrap whitespace-normal w-1/4 text-center">With Think4Ever you can</th>
-                  <th className="p-6 text-sm font-bold text-[#09090D] tracking-wider uppercase md:whitespace-nowrap whitespace-normal w-5/12 text-center">Use cases</th>
-                  <th className="p-6 text-sm font-bold text-[#09090D] tracking-wider uppercase md:whitespace-nowrap whitespace-normal w-1/3 text-center">Who can use Think4Ever</th>
+                  <th className="p-6 text-sm font-bold text-[#09090D] tracking-wider uppercase whitespace-nowrap w-1/4">With Think4Ever you can</th>
+                  <th className="p-6 text-sm font-bold text-[#09090D] tracking-wider uppercase whitespace-nowrap w-5/12">Use cases</th>
+                  <th className="p-6 text-sm font-bold text-[#09090D] tracking-wider uppercase whitespace-nowrap w-1/3">Who can use Think4Ever</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-200/60">
