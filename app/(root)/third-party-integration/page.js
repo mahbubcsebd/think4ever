@@ -2,6 +2,7 @@
 
 import GradientText from '@/components/GradientText';
 import SplitSection from '@/components/SplitSection';
+import ZoomableImage from '@/components/ZoomableImage';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
@@ -291,10 +292,11 @@ export default function ThirdPartyIntegrationPage() {
                   </p>
                 </div>
                 <div className="border border-zinc-200 rounded-xl overflow-hidden bg-white shadow-sm aspect-video relative">
-                  <img
+                  <ZoomableImage
                     src={steps[activeStep - 1].image}
                     alt={steps[activeStep - 1].title}
-                    className="w-full h-full object-contain"
+                    fill={true}
+                    className="object-contain"
                   />
                 </div>
               </div>

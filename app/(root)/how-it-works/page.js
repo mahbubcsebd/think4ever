@@ -15,18 +15,19 @@ import {
   Shield,
 } from 'lucide-react';
 import Image from 'next/image';
+import ZoomableImage from '@/components/ZoomableImage';
 import { useState } from 'react';
 
 const steps = [
   {
     id: 1,
     phase: 'FOUNDATION',
-    label: 'Configure the foundation',
+    label: 'Connect your repo',
     badge: 'STEP 01',
     badgeColor: 'bg-blue-50 text-blue-600',
     iconColor: 'text-blue-500',
-    icon: Settings,
-    title: 'Configure the Project Foundation & DESIGN',
+    icon: GitBranch,
+    title: 'Connect your repo',
     description:
       'Start with a central hub where teams configure project settings, manage API keys, and define the technical foundation. Use your existing stack, choose your preferred architecture, or let AI guide recommendations based on your goals.',
     cardTitle: 'WHAT YOU CONFIGURE',
@@ -36,18 +37,18 @@ const steps = [
       'Preferred tech stack — or AI-guided recommendations',
       'Architecture and modernization goals',
     ],
-    tag: 'Setup',
+    tag: 'BOTH PATHS',
     screenshot: '/images/product/step-1.png',
   },
   {
     id: 2,
     phase: 'FOUNDATION',
-    label: 'Define requirements',
+    label: 'Define what to build',
     badge: 'STEP 02',
     badgeColor: 'bg-green-50 text-green-600',
     iconColor: 'text-green-500',
     icon: MessageSquare,
-    title: 'Define Requirements Fast',
+    title: 'Define what to build',
     description:
       'Define application requirements in the way that works for your team. Type manually, chat with Sidekick, or speak to the voice assistant. Think4Ever transforms early ideas into structured business flows, technical foundations, and an architectural draft in minutes.',
     cardTitle: 'INPUT MODES',
@@ -55,20 +56,20 @@ const steps = [
       'Manual text entry',
       'Chat with Sidekick AI assistant',
       'Voice assistant input',
-      'AI-assisted requirement analysis and strengthening',
+      'Al-assisted requirement analysis and strengthening',
     ],
-    tag: 'AI-assisted',
+    tag: 'BOTH PATHS',
     screenshot: '/images/product/step-2.png',
   },
   {
     id: 3,
-    phase: 'FOUNDATION',
-    label: 'Generate core concepts',
+    phase: 'DESIGN',
+    label: 'Map your architecture',
     badge: 'STEP 03',
     badgeColor: 'bg-purple-50 text-purple-600',
     iconColor: 'text-purple-500',
     icon: Boxes,
-    title: 'Generate Core Concepts',
+    title: 'Map your architecture',
     description:
       'Think4Ever analyzes requirements to generate the core architectural pillars of the solution — the structural building blocks that define what the application does, how it behaves, and how the system is organized. Screens, components, services, and relationships visualized from day one.',
     cardTitle: 'GENERATED OUTPUTS',
@@ -78,18 +79,18 @@ const steps = [
       'App domains, modules, services, and system blocks',
       'Database structures and screen flows',
     ],
-    tag: 'Visual map',
+    tag: 'BOTH PATHS',
     screenshot: '/images/product/step-3.png',
   },
   {
     id: 4,
-    phase: 'FOUNDATION',
-    label: 'See impact before changes',
+    phase: 'DESIGN',
+    label: 'See dependencies',
     badge: 'STEP 04',
     badgeColor: 'bg-red-50 text-red-600',
     iconColor: 'text-red-500',
     icon: Eye,
-    title: 'See Impact Before You Change Anything',
+    title: 'See dependencies',
     description:
       'Click any node in the concept diagram and instantly see upstream and downstream implications across your system. Frontend to backend. Data to process. Rules to integrations. Make proactive choices before risk becomes rework.',
     cardTitle: 'IMPACT VISIBILITY COVERS',
@@ -99,41 +100,20 @@ const steps = [
       'Rules and integration relationships',
       'Visual warnings and impact markers',
     ],
-    tag: 'Real-time',
+    tag: 'EXISTING CODE',
     screenshot: '/images/product/step-4.png',
   },
   {
     id: 5,
     phase: 'DESIGN',
-    label: 'Master business flows',
+    label: 'Model your data',
     badge: 'STEP 05',
-    badgeColor: 'bg-blue-50 text-[#093cad]',
-    iconColor: 'text-[#093cad]',
-    icon: GitBranch,
-    title: 'Master Business Flows',
-    description:
-      'Think4Ever generates dynamic business flows — interactive process visualizations that show how work actually moves through the system. Each step can be explored in detail. Each dependency can be understood before implementation begins.',
-    cardTitle: 'WHAT YOU CAN INSPECT PER NODE',
-    cardItems: [
-      'Step logic and triggers',
-      'Dependencies and handoffs',
-      'Validations and business rules',
-      'Sequence, impact, and scale context',
-    ],
-    tag: 'Modernization',
-    screenshot: '/images/product/step-5.png',
-  },
-  {
-    id: 6,
-    phase: 'DESIGN',
-    label: 'Define the data model',
-    badge: 'STEP 06',
     badgeColor: 'bg-cyan-50 text-cyan-600',
     iconColor: 'text-cyan-500',
     icon: Database,
-    title: 'Define the Data Model',
+    title: 'Model your data',
     description:
-      'A central hub for defining entities, relationships, and schemas. Think4Ever turns system data into a visual ERD so teams can understand how information is structured, connected, and managed across the entire application.',
+      'Think4Ever generates dynamic business flows — interactive process visualizations that show how work actually moves through the system. Each step can be explored in detail. Each dependency can be understood before implementation begins.',
     cardTitle: 'DATA LAYER COVERS',
     cardItems: [
       'Entity cards with animated relationship arrows',
@@ -141,47 +121,28 @@ const steps = [
       'Visual ERD with full system data context',
       'Centralized data governance in one view',
     ],
-    tag: 'Visual ERD',
+    tag: 'BOTH PATHS',
     screenshot: '/images/product/step-6.png',
   },
   {
-    id: 7,
-    phase: 'DESIGN',
-    label: 'Set Roles and rules',
-    badge: 'STEP 07',
-    badgeColor: 'bg-green-50 text-green-600',
-    iconColor: 'text-green-500',
-    icon: Shield,
-    title: 'Set Roles and rules',
-    description: 'Define permissions, business rules and governance.',
-    cardTitle: 'GOVERNANCE',
-    cardItems: [
-      'Permissions matrix — user types and access controls',
-      'Rules engine — validations, policies, automation',
-      'Visual rules dashboard with warnings and filters',
-    ],
-    tag: 'Permissions · Rules',
-    screenshot: '/images/product/step-7.png',
-  },
-  {
-    id: 8,
+    id: 6,
     phase: 'BUILD',
-    label: 'Build',
-    badge: 'STEP 08',
+    label: 'Ship to production',
+    badge: 'STEP 06',
     badgeColor: 'bg-blue-50 text-[#093cad]',
     iconColor: 'text-[#093cad]',
     icon: Rocket,
-    title: 'Build & Deploy',
+    title: 'Ship to production',
     description:
-      'Deploy with CI/CD integration. Auto-generated documentation ships with every deployment.',
-    cardTitle: 'DEPLOYMENT',
+      'Generate code, run tests, deploy. Docs auto-generated and versioned with every release.',
+    cardTitle: 'CI/CD & DEPLOYMENT',
     cardItems: [
-      'CI/CD-aligned deployment',
-      'Auto-generated project documentation',
-      'Instant cloud integration',
-      'Continuous delivery pipeline',
+      'Generate code automatically',
+      'Run verification tests',
+      'Deploy to cloud environments',
+      'Auto-generated and versioned documentation',
     ],
-    tag: 'CI/CD · Docs',
+    tag: 'BOTH PATHS',
     screenshot: '/images/product/step-8.png',
   },
 ];
@@ -221,7 +182,7 @@ const ProductPage = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             className="text-[28px] sm:text-[40px] md:text-[54px] lg:text-[60px] font-bold text-[#09090D] leading-[1.1] tracking-tight"
           >
-            From idea to <GradientText>Integrated System.</GradientText>
+            One model. Every stage. <GradientText>Always in sync.</GradientText>
           </motion.h1>
           <motion.p
             initial={{ x: 100, opacity: 0 }}
@@ -230,8 +191,8 @@ const ProductPage = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             className="text-[15px] lg:text-[16px] text-zinc-500 leading-[1.6] font-normal max-w-2xl"
           >
-            Eight connected steps. One continuous platform. Human-directed at
-            every stage.
+            Change anything — requirements, code, or architecture — it
+            propagates everywhere.
           </motion.p>
         </div>
       </SplitSection>
@@ -316,7 +277,7 @@ const ProductPage = () => {
                 {/* Visual Preview / Screenshot */}
                 {current.screenshot && (
                   <div className="mb-10 rounded-2xl overflow-hidden border border-gray-200 shadow-xl shadow-blue-500/5 group">
-                    <Image
+                    <ZoomableImage
                       src={current.screenshot}
                       alt={current.title}
                       width={800}

@@ -5,6 +5,7 @@ import { ArrowRight, Cpu, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import GradientText from './GradientText';
 import SplitSection from './SplitSection';
+import ZoomableImage from './ZoomableImage';
 
 export default function VSCodePluginSection() {
   return (
@@ -53,10 +54,11 @@ export default function VSCodePluginSection() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             className="w-full border border-zinc-200 rounded-2xl overflow-hidden bg-white shadow-xl aspect-video relative"
           >
-            <img
+            <ZoomableImage
               src="/images/vs-extension/vs-2.jpg"
               alt="VS Code Extension"
-              className="w-full h-full object-contain"
+              fill={true}
+              className="object-contain"
             />
           </motion.div>
         </div>

@@ -137,14 +137,14 @@ function OrbitalCircle() {
   );
 }
 
-import BreathingBlob from './ui/BreathingBlob';
 import ProofBar from './ProofBar';
+import BreathingBlob from './ui/BreathingBlob';
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-between overflow-hidden bg-white pt-24 pb-8"
+      className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden bg-white pt-24 pb-12"
     >
       {/* ── Orbital Circle Background ── */}
       <OrbitalCircle />
@@ -172,7 +172,7 @@ export default function Hero() {
       </div>
 
       {/* ── Page Container ── */}
-      <div className="container mx-auto px-4 md:px-12 max-w-[1400px] w-full z-20 relative flex flex-col justify-between flex-1 gap-8">
+      <div className="container mx-auto px-4 md:px-12 max-w-[1400px] w-full z-20 relative flex flex-col justify-start gap-4">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-center py-4 lg:py-6">
           {/* Left Side: Text Content */}
           <div className="flex flex-col gap-6">
@@ -213,32 +213,32 @@ export default function Hero() {
             {/* CTA */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 mt-2">
               {/* Free Path CTA */}
-              <div className="flex flex-col items-center sm:items-start gap-1.5">
+              <div className="flex flex-col items-center gap-1.5">
                 <Link
                   href="https://portal.think4ever.com"
                   className="w-full sm:w-auto text-center px-8 py-3 bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white font-semibold rounded-full shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm"
                 >
                   Start Free
                 </Link>
-                <span className="text-[11px] text-zinc-400 font-medium select-none">
+                <span className="text-[11px] text-zinc-400 font-medium select-none text-center">
                   No credit card required
                 </span>
               </div>
 
               {/* Paid Path CTA */}
-              <div className="flex flex-col items-center sm:items-start gap-1.5">
+              <div className="flex flex-col items-center gap-1.5">
                 <Link
                   href="/#pricing"
-                  className="group relative w-full sm:w-auto text-center px-8 py-3 border border-zinc-200 hover:border-transparent text-zinc-700 hover:text-white font-semibold rounded-full active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm overflow-hidden"
+                  className="btn-gradient-outline w-full sm:w-auto text-center px-6 py-[10.5px] font-semibold rounded-full active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm"
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-[#07A7E1] to-[#093cad] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span className="relative z-10">Get Early Access</span>
+                  <span className="btn-text">Get Early Access</span>
                 </Link>
-                <span className="text-[11px] text-zinc-400 font-medium select-none">
+                <span className="text-[11px] text-zinc-400 font-medium select-none text-center">
                   For Teams & Power Users
                 </span>
               </div>
             </div>
+
           </div>
 
           {/* Right Side: Video Player */}
@@ -254,7 +254,7 @@ export default function Hero() {
               className="w-full rounded-[20px] md:rounded-[24px] overflow-hidden border border-zinc-200 shadow-2xl shadow-zinc-200/50"
             >
               <VideoPlayer
-                videoId="CQpIODqNFek"
+                videoId="nW37QETUq3o"
                 className="aspect-video bg-zinc-900"
               />
             </motion.div>

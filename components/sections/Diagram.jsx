@@ -2,264 +2,161 @@
 import { motion } from 'framer-motion';
 import {
   Boxes,
-  Check,
   Database,
   Eye,
   GitBranch,
   MessageSquare,
-  Settings,
-  Shield,
   Rocket,
 } from 'lucide-react';
 
 const steps = [
   {
     id: 1,
-    title: 'Configure the Foundation & DESIGN',
-    desc: 'Stack, APIs, environments. AI-guided or your own.',
-    tag: 'Setup',
-    icon: Settings,
-    color: 'blue',
+    title: 'Connect your repo',
+    desc: 'Drop your repo or start fresh. T4E maps your stack, dependencies and entry points automatically.',
+    tag: 'BOTH PATHS',
+    icon: GitBranch,
     num: '01',
   },
   {
     id: 2,
-    title: 'Define requirements',
-    desc: 'Chat, voice, or type. Sidekick AI refines.',
-    tag: 'AI-assisted',
+    title: 'Define what to build',
+    desc: 'Type, talk or paste a ticket. AI clarifies until the spec is unambiguous. No lost context between ticket and code.',
+    tag: 'BOTH PATHS',
     icon: MessageSquare,
-    color: 'purple',
     num: '02',
   },
   {
     id: 3,
-    title: 'Generate core concepts',
-    desc: 'Architecture blueprints. Modules and services.',
-    tag: 'Visual map',
+    title: 'Map your architecture',
+    desc: 'Live system map. Every module, service and dependency. Clickable, navigable, always current.',
+    tag: 'BOTH PATHS',
     icon: Boxes,
-    color: 'green',
     num: '03',
   },
   {
     id: 4,
-    title: 'See impact',
-    desc: 'Click any node. See all. Real-time.',
-    tag: 'Real-time',
+    title: 'See dependencies',
+    desc: 'Click any node. See every upstream and downstream impact before you write a line.',
+    tag: 'EXISTING CODE',
     icon: Eye,
-    color: 'orange',
     num: '04',
   },
   {
     id: 5,
-    title: 'Business flows',
-    desc: 'Interactive process maps. Every dependency visible.',
-    tag: 'Modernization',
-    icon: GitBranch,
-    color: 'pink',
+    title: 'Model your data',
+    desc: 'Visual ERD synced across every stage. Change a schema — docs, code and tests update with it.',
+    tag: 'BOTH PATHS',
+    icon: Database,
     num: '05',
   },
   {
     id: 6,
-    title: 'Define data model',
-    desc: 'Visual ERD. Entities, schemas. All relationships mapped.',
-    tag: 'Data model',
-    icon: Database,
-    color: 'blue',
-    num: '06',
-  },
-  {
-    id: 7,
-    title: 'Set Roles and rules',
-    desc: 'Define permissions, business rules and governance.',
-    tag: 'Permissions',
-    icon: Shield,
-    color: 'green',
-    num: '07',
-  },
-  {
-    id: 8,
-    title: 'Build',
-    desc: 'Deploy with CI/CD integration. Auto-generated documentation ships with every deployment.',
-    tag: 'CI/CD',
+    title: 'Ship to production',
+    desc: 'Generate code, run tests, deploy. Docs auto-generated and versioned with every release.',
+    tag: 'BOTH PATHS',
     icon: Rocket,
-    color: 'orange',
-    num: '08',
+    num: '06',
   },
 ];
 
-const StepCard = ({ step, isActive, onClick, className = '' }) => {
+const StepCard = ({ step, isActive, onClick, idx }) => {
   const Icon = step.icon;
-  const colors = {
-    blue: isActive ? 'border-blue-500 bg-blue-50/50 shadow-lg shadow-blue-500/10' : 'border-blue-200 shadow-sm bg-white hover:border-blue-300 hover:shadow-blue-500/10',
-    purple: isActive ? 'border-purple-500 bg-purple-50/50 shadow-lg shadow-purple-500/10' : 'border-purple-200 shadow-sm bg-white hover:border-purple-300 hover:shadow-purple-500/10',
-    green: isActive ? 'border-emerald-500 bg-emerald-50/50 shadow-lg shadow-emerald-500/10' : 'border-emerald-200 shadow-sm bg-white hover:border-emerald-300 hover:shadow-emerald-500/10',
-    orange: isActive ? 'border-orange-500 bg-orange-50/50 shadow-lg shadow-orange-500/10' : 'border-orange-200 shadow-sm bg-[#fffef4] hover:border-orange-300 hover:shadow-orange-500/10',
-    pink: isActive ? 'border-pink-500 bg-pink-50/50 shadow-lg shadow-pink-500/10' : 'border-pink-200 shadow-sm bg-white hover:border-pink-300 hover:shadow-pink-500/10',
+  
+  // Custom tag styling matching screenshot with subtle borders
+  const isBothPaths = step.tag === 'BOTH PATHS';
+  const tagClass = isBothPaths 
+    ? 'bg-[#e0f2fe]/40 border border-[#bae6fd] text-[#0284c7]' 
+    : 'bg-[#e0e7ff]/40 border border-[#c7d2fe] text-[#4f46e5]';
+
+  // Distinct background/border for non-active icon boxes based on step
+  const iconBoxStyles = {
+    '01': 'bg-[#e0f2fe]/40 border border-[#bae6fd] text-[#0284c7]',
+    '02': 'bg-[#e0e7ff]/40 border border-[#c7d2fe] text-[#4f46e5]',
+    '03': 'bg-[#e0f2fe]/40 border border-[#bae6fd] text-[#0284c7]',
+    '04': 'bg-[#e0f2fe]/40 border border-[#bae6fd] text-[#0284c7]',
+    '05': 'bg-[#e0f2fe]/40 border border-[#bae6fd] text-[#0284c7]',
+    '06': 'bg-[#e0f2fe]/40 border border-[#bae6fd] text-[#0284c7]'
   };
 
-  const iconCircle = {
-    blue: 'bg-blue-50 text-blue-500',
-    purple: 'bg-purple-50 text-purple-500',
-    green: 'bg-green-50 text-green-500',
-    orange: 'bg-orange-100 text-orange-600',
-    pink: 'bg-pink-50 text-pink-500',
-  };
-
-  const numCircle = {
-    blue: 'bg-blue-900 text-white',
-    purple: 'bg-purple-600 text-white',
-    green: 'bg-emerald-600 text-white',
-    orange: 'bg-orange-500 text-white',
-    pink: 'bg-pink-600 text-white',
-  };
+  // Explicit borders to avoid conflicts (e.g., md:border-b-0 and md:border-b)
+  let borderClasses = 'border-zinc-200/80 ';
+  
+  // Mobile borders (all rows except last get a bottom border)
+  if (idx !== 5) {
+    borderClasses += 'border-b ';
+  }
+  
+  // Desktop borders
+  if (idx === 0 || idx === 1) {
+    borderClasses += 'md:border-r md:border-b';
+  } else if (idx === 2) {
+    borderClasses += 'md:border-b md:border-r-0';
+  } else if (idx === 3 || idx === 4) {
+    borderClasses += 'md:border-r md:border-b-0';
+  } else if (idx === 5) {
+    borderClasses += 'md:border-r-0 md:border-b-0';
+  }
 
   return (
     <button
       onClick={onClick}
-      className={`relative group border transition-all duration-500 ease-out rounded-xl p-4 sm:p-5 text-left w-full h-full
-        hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl ${colors[step.color]} ${className} ${isActive ? '-translate-y-1 scale-[1.01]' : ''}`}
+      className={`relative flex flex-col p-6 sm:p-8 text-left w-full h-full transition-all duration-300 outline-none
+        ${isActive ? 'bg-[#f8fafc]/80 shadow-[inset_0_0_12px_rgba(7,167,225,0.05)]' : 'bg-white hover:bg-zinc-50/50'}
+        ${borderClasses}
+      `}
     >
-      <div
-        className={`absolute top-2 right-2 w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold transition-all duration-500 ${numCircle[step.color]} ${isActive ? 'scale-110 shadow-md' : 'group-hover:scale-110 group-hover:rotate-6'}`}
-      >
+      {/* Step Number */}
+      <div className="text-[12px] font-bold text-zinc-400 mb-2 font-mono">
         {step.num}
       </div>
 
-      <div className="flex flex-col h-full">
-        <div
-          className={`w-10 h-10 rounded-lg flex items-center justify-center mb-4 transition-all duration-500 ${isActive ? 'scale-110 bg-white border border-current shadow-sm' : 'group-hover:scale-110 group-hover:rotate-3'} ${iconCircle[step.color]}`}
-        >
-          <Icon className="w-5 h-5 flex-shrink-0" />
-        </div>
-        <h3 className={`font-bold text-[14px] mb-1 leading-tight transition-colors duration-300 ${isActive ? 'text-[#e25d24]' : 'text-[#1f2937] group-hover:text-[#e25d24]'}`}>
-          {step.title}
-        </h3>
-        <p className="text-[12px] text-gray-400 leading-relaxed mb-4 flex-1 transition-colors duration-300 group-hover:text-gray-500">
-          {step.desc}
-        </p>
-        <span className={`inline-block self-start px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider transition-all duration-300 border
-          ${isActive ? 'bg-[#e25d24] text-white border-transparent' : 'text-gray-500 bg-gray-50 border-gray-100 group-hover:bg-[#e25d24] group-hover:text-white group-hover:border-transparent'}`}>
-          {step.tag}
-        </span>
+      {/* Icon */}
+      <div
+        className={`w-9 h-9 rounded-lg flex items-center justify-center mb-4 transition-transform duration-300 ${
+          isActive 
+            ? 'scale-110 bg-gradient-to-br from-[#07A7E1] to-[#093cad] text-white shadow-md' 
+            : `${iconBoxStyles[step.num]} group-hover:scale-105`
+        }`}
+      >
+        <Icon className="w-5 h-5 flex-shrink-0" />
       </div>
+
+      {/* Title */}
+      <h3 className={`font-bold text-[16px] sm:text-[18px] mb-2 leading-tight transition-colors duration-300 ${
+        isActive ? 'text-[#093cad]' : 'text-zinc-900'
+      }`}>
+        {step.title}
+      </h3>
+
+      {/* Description */}
+      <p className="text-[13px] text-zinc-500 leading-relaxed mb-6 flex-1">
+        {step.desc}
+      </p>
+
+      {/* Tag */}
+      <span className={`inline-block self-start px-2.5 py-0.5 rounded text-[10px] font-bold tracking-wider ${tagClass}`}>
+        {step.tag}
+      </span>
     </button>
   );
 };
 
-const HorizontalArrow = ({ className = '' }) => (
-  <div
-    className={`absolute flex items-center pointer-events-none ${className}`}
-  >
-    <div className="h-[1px] w-full bg-gray-200"></div>
-    <svg
-      width="8"
-      height="8"
-      viewBox="0 0 8 8"
-      fill="none"
-      className="shrink-0 -ml-1"
-    >
-      <path
-        d="M1 1L7 4L1 7"
-        stroke="#E5E7EB"
-        strokeWidth="1"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  </div>
-);
-
-const VerticalArrow = ({ className = '' }) => (
-  <div
-    className={`absolute flex flex-col items-center pointer-events-none ${className}`}
-  >
-    <div className="w-[1px] h-full bg-gray-200"></div>
-    <svg
-      width="8"
-      height="8"
-      viewBox="0 0 8 8"
-      fill="none"
-      className="shrink-0 -mt-1"
-    >
-      <path
-        d="M1 1L4 7L7 1"
-        stroke="#E5E7EB"
-        strokeWidth="1"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  </div>
-);
-
 export const Diagram = ({ activeIndex = 0, onStepClick = () => {} }) => {
   return (
-    <section className="w-full bg-white overflow-x-auto no-scrollbar">
-      <div className="max-w-[1100px] mx-auto px-4 min-w-[950px]">
-        {/* Phase: Foundation (Steps 1-4) */}
-        <div className="relative mb-24">
-          <div className="inline-block bg-blue-50/50 text-[#1b449b] px-3 py-1 rounded text-[10px] font-bold uppercase tracking-[0.2em] mb-8 border border-blue-100/50">
-            Foundation & DESIGN
+    <div className="w-full bg-white max-w-[1100px] mx-auto px-4">
+      <div className="border border-zinc-200/80 rounded-2xl md:rounded-3xl overflow-hidden bg-white shadow-xl shadow-zinc-200/30 grid grid-cols-1 md:grid-cols-3">
+        {steps.map((step, idx) => (
+          <div key={step.id} className="h-full">
+            <StepCard
+              step={step}
+              isActive={activeIndex === idx}
+              onClick={() => onStepClick(idx)}
+              idx={idx}
+            />
           </div>
-
-          <div className="grid grid-cols-4 gap-6 relative">
-            <HorizontalArrow className="top-[45%] left-[22.5%] w-[7%]" />
-            <HorizontalArrow className="top-[45%] left-[47.5%] w-[7%]" />
-            <HorizontalArrow className="top-[45%] left-[72.5%] w-[7%]" />
-
-            {steps.slice(0, 4).map((step, idx) => (
-              <motion.div
-                key={step.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: idx * 0.1 }}
-                className="z-10 h-full"
-              >
-                <StepCard
-                  step={step}
-                  isActive={activeIndex === idx}
-                  onClick={() => onStepClick(idx)}
-                />
-              </motion.div>
-            ))}
-          </div>
-
-          <VerticalArrow className="left-[12.5%] bottom-[-50px] h-12" />
-        </div>
-
-        {/* Phase: Design & Build (Steps 5-8) */}
-        <div className="relative mb-24">
-          <div className="absolute top-[-30px] left-0">
-            <div className="inline-block bg-pink-50/50 text-pink-600 px-3 py-1 rounded text-[10px] font-bold uppercase tracking-[0.2em] border border-pink-100/50 xl:ml-[105px]">
-              BUILD & DEPLOY
-            </div>
-          </div>
-
-          <div className="grid grid-cols-4 gap-6 relative mt-8">
-            <HorizontalArrow className="top-[45%] left-[22.5%] w-[7%]" />
-            <HorizontalArrow className="top-[45%] left-[47.5%] w-[7%]" />
-            <HorizontalArrow className="top-[45%] left-[72.5%] w-[7%]" />
-
-            {steps.slice(4, 8).map((step, idx) => (
-              <motion.div
-                key={step.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: idx * 0.1 }}
-                className="z-10 h-full"
-              >
-                <StepCard
-                  step={step}
-                  isActive={activeIndex === idx + 4}
-                  onClick={() => onStepClick(idx + 4)}
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };

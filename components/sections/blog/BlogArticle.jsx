@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import ZoomableImage from '@/components/ZoomableImage';
 import { motion } from 'framer-motion';
 
 export const BlogArticle = ({ post }) => {
@@ -44,7 +45,7 @@ export const BlogArticle = ({ post }) => {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
         className="mb-12 relative aspect-[2/1] overflow-hidden rounded-2xl border border-gray-100 shadow-sm"
       >
-        <Image
+        <ZoomableImage
           src={post.image}
           alt={post.title}
           fill

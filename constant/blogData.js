@@ -236,22 +236,22 @@ export const BLOG_POSTS = [
                   <tr class="hover:bg-gray-50/50 transition-colors">
                     <td class="p-3 md:p-5 font-bold text-gray-900 bg-gray-50/30">New Feature</td>
                     <td class="p-3 md:p-5 italic text-gray-500 whitespace-normal">"I'll just add this function here..."</td>
-                    <td class="p-3 md:p-5 font-medium text-blue-600 whitespace-normal">"Does this fit the System Map?"</td>
+                    <td class="p-3 md:p-5 font-medium whitespace-normal"><span class="text-gradient">"Does this fit the System Map?"</span></td>
                   </tr>
                   <tr class="hover:bg-gray-50/50 transition-colors">
                     <td class="p-3 md:p-5 font-bold text-gray-900 bg-gray-50/30">Tech Debt</td>
                     <td class="p-3 md:p-5 text-gray-500 whitespace-normal">Compounds with every prompt.</td>
-                    <td class="p-3 md:p-5 font-medium text-blue-600 whitespace-normal">Prevented by "Design Guardrails".</td>
+                    <td class="p-3 md:p-5 font-medium whitespace-normal"><span class="text-gradient">Prevented by "Design Guardrails".</span></td>
                   </tr>
                   <tr class="hover:bg-gray-50/50 transition-colors">
                     <td class="p-3 md:p-5 font-bold text-gray-900 bg-gray-50/30">Onboarding</td>
                     <td class="p-3 md:p-5 text-gray-500 whitespace-normal">Read 100 files to understand the app.</td>
-                    <td class="p-3 md:p-5 font-medium text-blue-600 whitespace-normal">Read 1 System Design Doc.</td>
+                    <td class="p-3 md:p-5 font-medium whitespace-normal"><span class="text-gradient">Read 1 System Design Doc.</span></td>
                   </tr>
                   <tr class="hover:bg-gray-50/50 transition-colors">
                     <td class="p-3 md:p-5 font-bold text-gray-900 bg-gray-50/30">Refactoring</td>
                     <td class="p-3 md:p-5 text-gray-500 whitespace-normal">Nightmare; everything is tangled.</td>
-                    <td class="p-3 md:p-5 font-medium text-blue-600 whitespace-normal">Easy; boundaries are clearly defined.</td>
+                    <td class="p-3 md:p-5 font-medium whitespace-normal"><span class="text-gradient">Easy; boundaries are clearly defined.</span></td>
                   </tr>
                 </tbody>
               </table>
@@ -365,27 +365,27 @@ export const BLOG_POSTS = [
                   <tr class="hover:bg-gray-50/50 transition-colors">
                     <td class="p-3 md:p-5 font-bold text-gray-900 bg-gray-50/30">Operational Model</td>
                     <td class="p-3 md:p-5 text-gray-500 whitespace-normal">A faster keyboard; assists humans in writing code file-by-file.</td>
-                    <td class="p-3 md:p-5 font-medium text-blue-600 whitespace-normal">An autonomous engineering engine driving the entire SDLC from spec to deployment.</td>
+                    <td class="p-3 md:p-5 font-medium whitespace-normal"><span class="text-gradient">An autonomous engineering engine driving the entire SDLC from spec to deployment.</span></td>
                   </tr>
                   <tr class="hover:bg-gray-50/50 transition-colors">
                     <td class="p-3 md:p-5 font-bold text-gray-900 bg-gray-50/30">System Visibility</td>
                     <td class="p-3 md:p-5 text-gray-500 whitespace-normal">Fragmented; reads local file contexts but lacks architectural awareness.</td>
-                    <td class="p-3 md:p-5 font-medium text-blue-600 whitespace-normal">Absolute; maintained via a persistent design harness and system-level coherence.</td>
+                    <td class="p-3 md:p-5 font-medium whitespace-normal"><span class="text-gradient">Absolute; maintained via a persistent design harness and system-level coherence.</span></td>
                   </tr>
                   <tr class="hover:bg-gray-50/50 transition-colors">
                     <td class="p-3 md:p-5 font-bold text-gray-900 bg-gray-50/30">Scalability Limit</td>
                     <td class="p-3 md:p-5 text-gray-500 whitespace-normal">Hits a wall when codebase complexity outgrows the LLM context window.</td>
-                    <td class="p-3 md:p-5 font-medium text-blue-600 whitespace-normal">Infinite vertical scale via multi-session context preservation and graph-based state tracking.</td>
+                    <td class="p-3 md:p-5 font-medium whitespace-normal"><span class="text-gradient">Infinite vertical scale via multi-session context preservation and graph-based state tracking.</span></td>
                   </tr>
                   <tr class="hover:bg-gray-50/50 transition-colors">
                     <td class="p-3 md:p-5 font-bold text-gray-900 bg-gray-50/30">Resource Efficiency</td>
                     <td class="p-3 md:p-5 text-gray-500 whitespace-normal">High token waste from constantly feeding raw repository files back to the LLM.</td>
-                    <td class="p-3 md:p-5 font-medium text-blue-600 whitespace-normal">Ultra-low token consumption via targeted, harness-guided code execution.</td>
+                    <td class="p-3 md:p-5 font-medium whitespace-normal"><span class="text-gradient">Ultra-low token consumption via targeted, harness-guided code execution.</span></td>
                   </tr>
                   <tr class="hover:bg-gray-50/50 transition-colors">
                     <td class="p-3 md:p-5 font-bold text-gray-900 bg-gray-50/30">Security & Trust</td>
                     <td class="p-3 md:p-5 text-gray-500 whitespace-normal">Reactive; relies on external scanners or human code reviews after generation.</td>
-                    <td class="p-3 md:p-5 font-medium text-blue-600 whitespace-normal">Proactive; native security analysis is a mandatory gate in the compilation loop.</td>
+                    <td class="p-3 md:p-5 font-medium whitespace-normal"><span class="text-gradient">Proactive; native security analysis is a mandatory gate in the compilation loop.</span></td>
                   </tr>
                 </tbody>
               </table>
