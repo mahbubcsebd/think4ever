@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { Play } from 'lucide-react';
 import Image from 'next/image';
 
-export default function VideoPlayer({ url, videoId, className, imageClassName, thumbnail, title = "Watch how it works", ...props }) {
+export default function VideoPlayer({ url, videoId, className, imageClassName, iframeClassName, thumbnail, title = "Watch how it works", ...props }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const playerRef = useRef(null);
   const iframeId = `yt-player-${videoId || 'default'}`;
@@ -131,6 +131,7 @@ export default function VideoPlayer({ url, videoId, className, imageClassName, t
           width="100%"
           height="100%"
           style={{ position: 'absolute', top: 0, left: 0 }}
+          className={iframeClassName}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
