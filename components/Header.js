@@ -331,7 +331,7 @@ export default function Header() {
                           : 'opacity-0 translate-y-2 pointer-events-none'
                       )}
                     >
-                      <div className="bg-white border border-zinc-150 rounded-2xl shadow-xl p-4 flex flex-col gap-2 min-w-[320px] max-w-[420px]">
+                      <div className="bg-white border border-zinc-150 rounded-2xl shadow-xl p-4 flex flex-col gap-2 min-w-[320px] max-w-[420px] max-h-[480px] overflow-y-auto">
                         <ul className="grid gap-2 outline-none">
                           {item.submenu.map((subItem) => {
                             const Icon = subItem.icon;
