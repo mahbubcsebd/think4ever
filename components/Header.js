@@ -57,6 +57,12 @@ const THIRD_PARTY_INTEGRATION_DATA = [
     href: '/third-party-integration#think-api',
     icon: Terminal,
   },
+  {
+    title: 'Ecosystem Integration',
+    desc: 'Connect external tools like Jira, Slack, GitHub, and Figma.',
+    href: '/third-party-integration#connect-tools',
+    icon: Puzzle,
+  },
 ];
 
 const DOCS_DATA = [
@@ -67,20 +73,20 @@ const DOCS_DATA = [
     icon: Rocket,
   },
   {
-    title: 'Think4ever Designer',
+    title: 'Think4Ever Designer',
     desc: 'Learn how to use the Designer to map your systems.',
     href: 'https://think4ever.com/docs/manual_introduction.html',
     icon: Palette,
   },
   {
-    title: 'Think4ever Developer',
+    title: 'Think4Ever Developer',
     desc: 'Technical guide for developers building with Think4Ever.',
     href: 'https://think4ever.com/docs/dev/start_new_project.html',
     icon: Code,
   },
   {
-    title: 'Think4ever Portal',
-    desc: 'Learn how to use the Think4ever Portal.',
+    title: 'Think4Ever Portal',
+    desc: 'Learn how to use the Think4Ever Portal.',
     href: 'https://think4ever.com/docs/portal/dashboard.html',
     icon: Users,
   },
@@ -109,6 +115,13 @@ const DOCS_DATA = [
     desc: 'A standard REST interface to programmatically manage tokens.',
     href: 'https://think4ever.com/docs/manual_think_api.html',
     icon: Terminal,
+    sameTab: true,
+  },
+  {
+    title: 'Third-party Ecosystem Integration',
+    desc: 'Learn about connecting external tools and managing integrations.',
+    href: 'https://think4ever.com/docs/manual_ecosystem_integration.html',
+    icon: Puzzle,
     sameTab: true,
   },
   // {
@@ -260,6 +273,7 @@ export default function Header() {
               src={Logo}
               alt="Logo"
               className="w-[120px] md:w-[150px] h-auto object-contain"
+              priority
             />
           </Link>
 

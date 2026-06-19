@@ -43,6 +43,7 @@ export function ZoomableImage({
         <DialogContent 
           className="max-w-[95vw] md:max-w-5xl bg-transparent border-0 shadow-none p-0 flex items-center justify-center focus:outline-none z-[100]"
           showCloseButton={false}
+          aria-describedby={undefined}
         >
           <DialogTitle className="sr-only">{alt}</DialogTitle>
           <div className="relative max-w-fit max-h-[85vh] mx-auto flex justify-center items-start">

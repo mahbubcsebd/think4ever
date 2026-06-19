@@ -14,7 +14,7 @@ export const BlogRecommendations = ({ posts, currentPostId }) => {
         {recommendedPosts.map((recommended) => (
           <Link 
             key={recommended.id} 
-            href={`/blog/${recommended.slug}`}
+            href={`/blog/${recommended.slug}/`}
             className="group block bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
             <span className="text-[10px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#07A7E1] to-[#093cad] uppercase tracking-widest mb-4 block">

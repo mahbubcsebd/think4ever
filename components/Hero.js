@@ -253,8 +253,9 @@ export default function Hero() {
               className="w-full rounded-[20px] md:rounded-[24px] overflow-hidden border border-zinc-200 shadow-2xl shadow-zinc-200/50"
             >
               <VideoPlayer
-                videoId="nW37QETUq3o"
+                videoId="Lq-vza9_CzI"
                 className="aspect-video bg-zinc-900"
+                title="From Concept or Code to Fully Built System in Minutes"
               />
             </motion.div>
           </div>

@@ -17,7 +17,7 @@ export const BlogList = ({ view, posts }) => {
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: idx * 0.1 }}
           >
-            <Link href={`/blog/${post.slug}`} className="group block">
+            <Link href={`/blog/${post.slug}/`} className="group block">
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg sm:rounded-xl mb-5 sm:mb-8 bg-gray-50 border border-gray-100 shadow-sm">
               <Image
                 src={post.image}
@@ -67,7 +67,7 @@ export const BlogList = ({ view, posts }) => {
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: idx * 0.1 }}
         >
-          <Link href={`/blog/${post.slug}`} className="group block h-full flex flex-col">
+          <Link href={`/blog/${post.slug}/`} className="group block h-full flex flex-col">
           <div className="relative aspect-[16/10] w-full overflow-hidden rounded-lg sm:rounded-xl mb-4 sm:mb-6 bg-gray-50 border border-gray-100">
             <Image
               src={post.image}

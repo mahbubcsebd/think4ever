@@ -11,6 +11,8 @@ import GradientText from '@/components/GradientText';
 export default function BlogPage() {
   const [view, setView] = useState('single');
 
+  const sortedPosts = [...BLOG_POSTS].sort((a, b) => b.id - a.id);
+
   return (
     <div className="bg-white min-h-screen font-sans selection:bg-blue-100 relative overflow-hidden">
       <SplitSection
@@ -21,7 +23,7 @@ export default function BlogPage() {
         bottomContent={
           <div className="relative z-10 max-w-[1100px] mx-auto px-4 sm:px-6 mt-8 md:mt-12">
             <BlogViewSwitcher view={view} setView={setView} />
-            <BlogList view={view} posts={BLOG_POSTS} />
+            <BlogList view={view} posts={sortedPosts} />
           </div>
         }
       >
