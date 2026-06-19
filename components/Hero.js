@@ -259,7 +259,7 @@ export default function Hero() {
               >
                 <VideoPlayer
                   videoId="Lq-vza9_CzI"
-                  className="aspect-video bg-zinc-900"
+                  className="aspect-[16/10] bg-zinc-900"
                   title="video 1 — greenfield"
                 />
               </motion.div>
@@ -282,9 +282,9 @@ export default function Hero() {
               >
                 <VideoPlayer
                   videoId="FY68DuwOf4Q"
-                  className="aspect-video bg-zinc-900"
+                  className="aspect-[16/10] lg:aspect-video bg-zinc-900"
                   imageClassName="scale-x-[1.15] scale-y-[1.04] group-hover:scale-x-[1.19] group-hover:scale-y-[1.08]"
-                  iframeClassName="scale-[1.11] origin-center"
+                  iframeClassName="lg:scale-[1.11] lg:origin-center"
                   title="video 2 — brownfield"
                 />
               </motion.div>
