@@ -117,7 +117,7 @@ export default function VideoPlayer({ url, videoId, className, thumbnail, title 
 
           {/* Title Text */}
           {title && (
-            <p className="relative z-10 text-white/95 text-[11px] sm:text-[14px] font-bold tracking-wide px-4 text-center mt-4 drop-shadow-md">
+            <p className="absolute bottom-4 left-4 z-10 text-white/95 text-[11px] sm:text-[13px] font-semibold tracking-wide drop-shadow-md">
               {title}
             </p>
           )}
