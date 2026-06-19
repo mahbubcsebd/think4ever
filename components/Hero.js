@@ -240,24 +240,53 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Side: Video Player */}
-          <div className="w-full relative mt-4 lg:mt-0">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.8,
-                ease: [0.16, 1, 0.3, 1],
-                delay: 0.3,
-              }}
-              className="w-full rounded-[20px] md:rounded-[24px] overflow-hidden border border-zinc-200 shadow-2xl shadow-zinc-200/50"
-            >
-              <VideoPlayer
-                videoId="Lq-vza9_CzI"
-                className="aspect-video bg-zinc-900"
-                title="From Concept or Code to Fully Built System in Minutes"
-              />
-            </motion.div>
+          {/* Right Side: Stacked Video Players */}
+          <div className="flex flex-col gap-6 w-full relative mt-4 lg:mt-0">
+            {/* Video 1: Greenfield */}
+            <div className="flex flex-col gap-2">
+              <h3 className="text-xs sm:text-sm font-bold text-zinc-800 tracking-tight">
+                Build from scratch
+              </h3>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.16, 1, 0.3, 1],
+                  delay: 0.3,
+                }}
+                className="w-full rounded-[20px] md:rounded-[24px] overflow-hidden border border-zinc-200 shadow-2xl shadow-zinc-200/50"
+              >
+                <VideoPlayer
+                  videoId="Lq-vza9_CzI"
+                  className="aspect-video bg-zinc-900"
+                  title="video 1 — greenfield"
+                />
+              </motion.div>
+            </div>
+
+            {/* Video 2: Brownfield */}
+            <div className="flex flex-col gap-2">
+              <h3 className="text-xs sm:text-sm font-bold text-zinc-800 tracking-tight">
+                Bring your own code, adapt existing
+              </h3>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.16, 1, 0.3, 1],
+                  delay: 0.4,
+                }}
+                className="w-full rounded-[20px] md:rounded-[24px] overflow-hidden border border-zinc-200 shadow-2xl shadow-zinc-200/50"
+              >
+                <VideoPlayer
+                  videoId="FY68DuwOf4Q"
+                  className="aspect-video bg-zinc-900"
+                  title="video 2 — brownfield"
+                />
+              </motion.div>
+            </div>
           </div>
         </div>
 
