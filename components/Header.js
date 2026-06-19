@@ -331,8 +331,16 @@ export default function Header() {
                           : 'opacity-0 translate-y-2 pointer-events-none'
                       )}
                     >
-                      <div className="bg-white border border-zinc-150 rounded-2xl shadow-xl p-4 flex flex-col gap-2 min-w-[320px] max-w-[420px] max-h-[480px] overflow-y-auto custom-scrollbar">
-                        <ul className="grid gap-2 outline-none">
+                      <div className={cn(
+                        "bg-white border border-zinc-150 rounded-2xl shadow-xl p-4 flex flex-col gap-2 max-h-[480px] overflow-y-auto custom-scrollbar",
+                        item.label === 'Docs'
+                          ? 'min-w-[320px] lg:min-w-[700px] max-w-[420px] lg:max-w-[760px]'
+                          : 'min-w-[320px] max-w-[420px]'
+                      )}>
+                        <ul className={cn(
+                          "grid gap-2 outline-none",
+                          item.label === 'Docs' && "lg:grid-cols-2 lg:gap-x-6"
+                        )}>
                           {item.submenu.map((subItem) => {
                             const Icon = subItem.icon;
                             const isExternal = subItem.href.startsWith('http');
