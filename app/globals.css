@@ -179,6 +179,25 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
+/* Custom premium thin scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e4e4e7;
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #d4d4d8;
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #e4e4e7 transparent;
+}
+
 /* Ensure all interactive elements consistently show a pointer cursor */
 a, button, [role="button"], .cursor-pointer, .swiper-button-next, .swiper-button-prev, .swiper-pagination-bullet {
   cursor: pointer !important;
