@@ -23,7 +23,7 @@ export default function VideoPlayer({ url, videoId, className, thumbnail, title 
     }
     if (!videoUrl) return '';
     const match = videoUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/);
-    let embedUrl = match && match[1] ? `https://www.youtube.com/embed/${match[1]}?enablejsapi=1&rel=0` : videoUrl;
+    let embedUrl = match && match[1] ? `https://www.youtube.com/embed/${match[1]}?enablejsapi=1&rel=0&loop=1&playlist=${match[1]}` : videoUrl;
     if (autoplay) {
       embedUrl += embedUrl.includes('?') ? '&autoplay=1' : '?autoplay=1';
     }
@@ -38,8 +38,8 @@ export default function VideoPlayer({ url, videoId, className, thumbnail, title 
 
     let player;
     const onPlayerStateChange = (event) => {
-      // YT.PlayerState.PAUSED = 2, YT.PlayerState.ENDED = 0
-      if (event.data === 2 || event.data === 0) {
+      // YT.PlayerState.PAUSED = 2
+      if (event.data === 2) {
         setIsPlaying(false);
       }
     };
