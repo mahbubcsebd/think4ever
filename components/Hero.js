@@ -144,7 +144,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden bg-white pt-24 pb-12"
+      className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center bg-white pt-24 pb-12"
     >
       {/* ── Orbital Circle Background ── */}
       <OrbitalCircle />
@@ -241,7 +241,7 @@ export default function Hero() {
           </div>
 
           {/* Right Side: Stacked Video Players */}
-          <div className="flex flex-col gap-5 w-full lg:max-w-[460px] xl:max-w-[500px] relative mt-4 lg:mt-0 lg:ml-auto">
+          <div className="flex flex-col gap-4 w-full lg:max-w-[480px] xl:max-w-[540px] relative mt-4 lg:mt-0 lg:ml-auto">
             {/* Video 1: Greenfield */}
             <div className="flex flex-col gap-2">
               <h3 className="text-xs sm:text-sm font-bold text-zinc-800 tracking-tight">
@@ -259,7 +259,7 @@ export default function Hero() {
               >
                 <VideoPlayer
                   videoId="Lq-vza9_CzI"
-                  className="aspect-[16/10] bg-zinc-900"
+                  className="aspect-video bg-zinc-900"
                   title="video 1 — greenfield"
                 />
               </motion.div>
@@ -282,9 +282,8 @@ export default function Hero() {
               >
                 <VideoPlayer
                   videoId="FY68DuwOf4Q"
-                  className="aspect-[16/10] lg:aspect-video bg-zinc-900"
+                  className="aspect-video bg-zinc-900"
                   imageClassName="scale-x-[1.15] scale-y-[1.04] group-hover:scale-x-[1.19] group-hover:scale-y-[1.08]"
-                  iframeClassName="lg:scale-[1.11] lg:origin-center"
                   title="video 2 — brownfield"
                 />
               </motion.div>
