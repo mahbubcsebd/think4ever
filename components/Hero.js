@@ -241,7 +241,7 @@ export default function Hero() {
           </div>
 
           {/* Right Side: Stacked Video Players */}
-          <div className="flex flex-col gap-6 w-full relative mt-4 lg:mt-0">
+          <div className="flex flex-col gap-5 w-full lg:max-w-[460px] xl:max-w-[500px] relative mt-4 lg:mt-0 lg:ml-auto">
             {/* Video 1: Greenfield */}
             <div className="flex flex-col gap-2">
               <h3 className="text-xs sm:text-sm font-bold text-zinc-800 tracking-tight">
