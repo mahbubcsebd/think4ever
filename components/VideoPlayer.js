@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { Play } from 'lucide-react';
 import Image from 'next/image';
 
-export default function VideoPlayer({ url, videoId, className, thumbnail, title = "Watch how it works", ...props }) {
+export default function VideoPlayer({ url, videoId, className, imageClassName, thumbnail, title = "Watch how it works", ...props }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const playerRef = useRef(null);
   const iframeId = `yt-player-${videoId || 'default'}`;
@@ -102,7 +102,7 @@ export default function VideoPlayer({ url, videoId, className, thumbnail, title 
                alt="Video Preview" 
                fill 
                sizes="(max-width: 768px) 100vw, 800px"
-               className="object-cover opacity-90 transition-transform duration-700 scale-x-[1.15] scale-y-[1.04] group-hover:scale-x-[1.19] group-hover:scale-y-[1.08]" 
+               className={cn("object-cover opacity-90 transition-transform duration-700 scale-[1.04] group-hover:scale-[1.08]", imageClassName)} 
                priority
              />
           </div>

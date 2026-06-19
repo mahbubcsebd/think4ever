@@ -283,6 +283,7 @@ export default function Hero() {
                 <VideoPlayer
                   videoId="FY68DuwOf4Q"
                   className="aspect-video bg-zinc-900"
+                  imageClassName="scale-x-[1.15] scale-y-[1.04] group-hover:scale-x-[1.19] group-hover:scale-y-[1.08]"
                   title="video 2 — brownfield"
                 />
               </motion.div>
