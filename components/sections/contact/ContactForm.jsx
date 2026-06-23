@@ -324,7 +324,7 @@ const ContactForm = () => {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="w-full h-12 bg-gradient-to-r from-[#07A7E1] to-[#093cad] hover:from-[#068cb0] hover:to-[#072f85] text-white rounded-full font-bold font-sans text-[16px] shadow-lg shadow-blue-500/20 transition-all active:scale-[0.98]"
+          className="w-full h-12 bg-[#093cad] hover:bg-[#072f85] text-white rounded-full font-bold font-sans text-[16px] shadow-lg shadow-blue-500/20 transition-all active:scale-[0.98]"
         >
           {isSubmitting ? 'Sending...' : 'Contact Us'}
         </Button>

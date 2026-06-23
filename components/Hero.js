@@ -60,7 +60,6 @@ function OrbitalCircle() {
       rounded-full
       top-[-262px] right-[120px]
       bottom-auto left-auto
-      animate-hero-rotation
       pointer-events-none
       will-change-transform
       z-10
@@ -72,7 +71,6 @@ function OrbitalCircle() {
           <div className="w-full h-full flex items-center justify-center">
             <div
               className="text-white flex items-center justify-center"
-              style={{ animation: 'hero-rotation 12s linear infinite reverse' }}
             >
               <InfinityIcon
                 size="12"
@@ -97,7 +95,6 @@ function OrbitalCircle() {
           >
             <div
               className="text-white flex items-center justify-center"
-              style={{ animation: 'hero-rotation 12s linear infinite reverse' }}
             >
               <InfinityIcon
                 size="12"
@@ -122,7 +119,6 @@ function OrbitalCircle() {
           >
             <div
               className="text-white flex items-center justify-center"
-              style={{ animation: 'hero-rotation 12s linear infinite reverse' }}
             >
               <InfinityIcon
                 size="12"
@@ -144,7 +140,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center bg-white pt-24 pb-12"
+      className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center bg-white pt-24 pb-12 overflow-hidden"
     >
       {/* ── Orbital Circle Background ── */}
       <OrbitalCircle />
@@ -216,7 +212,7 @@ export default function Hero() {
               <div className="flex flex-col items-center gap-1.5">
                 <Link
                   href="https://portal.think4ever.com"
-                  className="w-full sm:w-auto text-center px-8 py-3 bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white font-semibold rounded-full shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm"
+                  className="w-full sm:w-auto text-center px-8 py-3 bg-[#093cad] text-white font-semibold rounded-full shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm"
                 >
                   Start Free
                 </Link>
@@ -229,9 +225,9 @@ export default function Hero() {
               <div className="flex flex-col items-center gap-1.5">
                 <Link
                   href="/#pricing"
-                  className="btn-gradient-outline w-full sm:w-auto text-center px-6 py-[10.5px] font-semibold rounded-full active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm"
+                  className="w-full sm:w-auto text-center px-6 py-[10.5px] border-2 border-[#093cad] text-[#093cad] hover:bg-[#093cad] hover:text-white font-semibold rounded-full active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm"
                 >
-                  <span className="btn-text">Get Early Access</span>
+                  <span>Get Early Access</span>
                 </Link>
                 <span className="text-[11px] text-zinc-400 font-medium select-none text-center">
                   For Teams & Power Users

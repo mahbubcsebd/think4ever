@@ -28,7 +28,7 @@ export default function VSCodePluginSection() {
             <div className="flex flex-wrap items-center gap-4 mt-2">
               <Link
                 href="/third-party-integration/vscode-plugin"
-                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white font-bold rounded-full shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 text-sm"
+                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#093cad] text-white font-bold rounded-full shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 text-sm"
               >
                 Get Extension <ArrowRight className="w-4 h-4" />
               </Link>
@@ -36,7 +36,7 @@ export default function VSCodePluginSection() {
                 href="https://think4ever.com/docs/dev/start_new_project.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-gradient-outline inline-flex items-center justify-center gap-2 px-5 py-[8.5px] font-semibold rounded-full active:scale-[0.98] transition-all duration-300 text-xs cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-[8.5px] border-2 border-[#093cad] text-[#093cad] hover:bg-[#093cad] hover:text-white font-semibold rounded-full active:scale-[0.98] transition-all duration-300 text-xs cursor-pointer"
               >
                 <span className="btn-text inline-flex items-center gap-2">
                   Developer Guide <ExternalLink className="w-3.5 h-3.5" />

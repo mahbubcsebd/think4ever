@@ -19,7 +19,7 @@ export default function Button({
 
   const variants = {
     primary:
-      "bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white px-5 py-2 rounded-full text-sm hover:opacity-90 shadow-sm hover:shadow-md",
+      "bg-[#093cad] text-white px-5 py-2 rounded-full text-sm hover:opacity-90 shadow-sm hover:shadow-md",
     outline:
       "border border-zinc-200 text-zinc-800 px-5 py-2 rounded-full text-sm hover:border-brand-blue hover:text-brand-blue",
   };

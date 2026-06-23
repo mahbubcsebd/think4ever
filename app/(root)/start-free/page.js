@@ -183,7 +183,7 @@ export default function StartFreePage() {
                 </div>
                 <Link
                   href="https://portal.think4ever.com"
-                  className="w-full mt-4 py-3.5 bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white font-semibold rounded-xl hover:opacity-95 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2"
+                  className="w-full mt-4 py-3.5 bg-[#093cad] text-white font-semibold rounded-xl hover:opacity-95 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   Go to Portal <ArrowRight className="w-4 h-4" />
                 </Link>

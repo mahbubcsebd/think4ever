@@ -46,7 +46,7 @@ export const FAQFilters = ({
             className={cn(
               'h-9 md:h-10 px-3 md:px-6 rounded-full text-xs md:text-[13px] font-bold flex items-center justify-center gap-1.5 md:gap-2.5 transition-all duration-300 border shadow-sm w-full md:w-auto',
               activeCategory === cat
-                ? 'bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white border-transparent'
+                ? 'bg-[#093cad] text-white border-transparent'
                 : 'bg-white border-gray-100 text-gray-500 hover:border-gray-200 hover:text-gray-800 hover:bg-gray-50/50',
             )}
           >

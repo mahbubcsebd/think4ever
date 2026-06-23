@@ -233,7 +233,7 @@ const ProductPage = () => {
                       <span
                         className={`flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full text-[11px] sm:text-[12px] font-bold shrink-0 ${
                           isActive
-                            ? 'bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white'
+                            ? 'bg-[#093cad] text-white'
                             : 'bg-gray-200/60 text-gray-400'
                         }`}
                       >

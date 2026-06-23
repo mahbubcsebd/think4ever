@@ -161,7 +161,7 @@ export default function Pricing() {
 
                 {/* Bottom Button */}
                 <Link href={plan.href || '#'} className="mt-auto block w-full">
-                  <button className="w-full bg-gradient-to-r from-[#07A7E1] to-[#093cad] hover:scale-[1.02] active:scale-95 text-white rounded-full py-3 px-4 font-semibold text-[13px] transition-transform duration-300 shadow-md shadow-blue-500/20">
+                  <button className="w-full bg-[#093cad] hover:scale-[1.02] active:scale-95 text-white rounded-full py-3 px-4 font-semibold text-[13px] transition-transform duration-300 shadow-md shadow-blue-500/20">
                     {plan.buttonText}
                   </button>
                 </Link>

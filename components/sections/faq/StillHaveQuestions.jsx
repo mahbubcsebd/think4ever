@@ -25,7 +25,7 @@ export const StillHaveQuestions = () => {
                 Contact Us
               </Link>
             </Button>
-            <Button asChild className="h-11 px-8 bg-gradient-to-r from-[#07A7E1] to-[#093cad] hover:opacity-90 text-white rounded-full font-bold text-[13px] shadow-lg shadow-blue-500/15 active:scale-[0.98] transition-all border-none">
+            <Button asChild className="h-11 px-8 bg-[#093cad] hover:opacity-90 text-white rounded-full font-bold text-[13px] shadow-lg shadow-blue-500/15 active:scale-[0.98] transition-all border-none">
               <Link href="https://portal.think4ever.com" className="flex items-center gap-2">
                 <Rocket size={16} />
                 Get Early Access

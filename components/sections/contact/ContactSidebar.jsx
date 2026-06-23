@@ -64,7 +64,7 @@ const ContactSidebar = () => {
         <p className="text-center text-[11px] text-gray-400 mb-5 leading-relaxed font-bold">
           Chat with our team in real-time. Average response time under 2 minutes.
         </p>
-        <Button className="w-full h-10 bg-gradient-to-r from-[#07A7E1] to-[#093cad] hover:from-[#068cb0] hover:to-[#072f85] text-white font-bold font-sans rounded-md text-[12px] flex items-center justify-center gap-2 transition-all shadow-sm shadow-blue-500/20">
+        <Button className="w-full h-10 bg-[#093cad] hover:bg-[#072f85] text-white font-bold font-sans rounded-md text-[12px] flex items-center justify-center gap-2 transition-all shadow-sm shadow-blue-500/20">
           <MessageSquare size={14} />
           Start Live Chat
         </Button>

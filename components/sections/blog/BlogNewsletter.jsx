@@ -18,7 +18,7 @@ export const BlogNewsletter = () => {
           />
           <button
             type="submit"
-            className="bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white font-bold px-6 py-3 rounded-full text-[14px] sm:text-[15px] hover:opacity-95 transition-all active:scale-95 shadow-md shadow-blue-500/10 h-11 sm:h-auto"
+            className="bg-[#093cad] text-white font-bold px-6 py-3 rounded-full text-[14px] sm:text-[15px] hover:opacity-95 transition-all active:scale-95 shadow-md shadow-blue-500/10 h-11 sm:h-auto"
           >
             Subscribe
           </button>

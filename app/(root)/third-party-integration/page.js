@@ -195,13 +195,13 @@ export default function ThirdPartyIntegrationPage() {
               <div className="flex items-center gap-2.5 sm:gap-4 mt-2 w-full">
                 <Link
                   href="https://portal.think4ever.com"
-                  className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 sm:px-6 py-2.5 bg-gradient-to-r from-[#07A7E1] to-[#093cad] text-white font-bold rounded-full shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm text-center whitespace-nowrap"
+                  className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 sm:px-6 py-2.5 bg-[#093cad] text-white font-bold rounded-full shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm text-center whitespace-nowrap"
                 >
                   Connect Client <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
                 <Link
                   href="https://think4ever.com/docs/manual_think_mcp.html"
-                  className="btn-gradient-outline flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-[8.5px] font-semibold rounded-full active:scale-[0.98] transition-all duration-300 text-xs text-center whitespace-nowrap cursor-pointer"
+                  className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-[8.5px] border-2 border-[#093cad] text-[#093cad] hover:bg-[#093cad] hover:text-white font-semibold rounded-full active:scale-[0.98] transition-all duration-300 text-xs text-center whitespace-nowrap cursor-pointer"
                 >
                   <span className="btn-text inline-flex items-center gap-1.5">
                     MCP Docs <ExternalLink className="w-3 h-3" />
