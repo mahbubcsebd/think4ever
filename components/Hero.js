@@ -66,9 +66,9 @@ function OrbitalCircle() {
     "
     >
       {/* Ball 1 - Top Center (0 degrees) */}
-      <div className="absolute inset-0 flex justify-center z-10">
+      <div className="absolute inset-0 flex justify-center z-10 max-md:rotate-[150deg] md:rotate-0">
         <div className="w-[20px] h-[20px] md:w-[28px] md:h-[28px] rounded-full bg-brand-blue flex items-center justify-center -translate-y-1/2 shadow-lg drop-shadow-md border-[2px] border-white">
-          <div className="w-full h-full flex items-center justify-center">
+          <div className="w-full h-full flex items-center justify-center max-md:-rotate-[150deg] md:-rotate-0">
             <div
               className="text-white flex items-center justify-center"
             >
@@ -84,14 +84,12 @@ function OrbitalCircle() {
 
       {/* Ball 2 - Bottom Right (120 degrees) */}
       <div
-        className="absolute inset-0 flex justify-center z-10"
-        style={{ transform: 'rotate(120deg)' }}
+        className="absolute inset-0 flex justify-center z-10 max-md:rotate-[90deg] md:rotate-[120deg]"
       >
         <div className="w-[20px] h-[20px] md:w-[28px] md:h-[28px] rounded-full bg-brand-blue flex items-center justify-center -translate-y-1/2 shadow-lg drop-shadow-md border-[2px] border-white">
           {/* Static counter-rotation of 120deg */}
           <div
-            className="w-full h-full flex items-center justify-center"
-            style={{ transform: 'rotate(-120deg)' }}
+            className="w-full h-full flex items-center justify-center max-md:-rotate-[90deg] md:-rotate-[120deg]"
           >
             <div
               className="text-white flex items-center justify-center"
@@ -108,14 +106,12 @@ function OrbitalCircle() {
 
       {/* Ball 3 - Bottom Left (240 degrees) */}
       <div
-        className="absolute inset-0 flex justify-center z-10"
-        style={{ transform: 'rotate(240deg)' }}
+        className="absolute inset-0 hidden md:flex justify-center z-10 md:rotate-[240deg]"
       >
         <div className="w-[20px] h-[20px] md:w-[28px] md:h-[28px] rounded-full bg-brand-blue flex items-center justify-center -translate-y-1/2 shadow-lg drop-shadow-md border-[2px] border-white">
           {/* Static counter-rotation of 240deg */}
           <div
-            className="w-full h-full flex items-center justify-center"
-            style={{ transform: 'rotate(-240deg)' }}
+            className="w-full h-full flex items-center justify-center md:-rotate-[240deg]"
           >
             <div
               className="text-white flex items-center justify-center"
