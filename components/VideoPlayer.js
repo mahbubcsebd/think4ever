@@ -1,10 +1,18 @@
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 import { Play } from 'lucide-react';
 import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
-export default function VideoPlayer({ url, videoId, className, imageClassName, iframeClassName, thumbnail, title = "Watch how it works", ...props }) {
+export default function VideoPlayer({
+  url,
+  videoId,
+  className,
+  imageClassName,
+  thumbnail,
+  title = 'Watch how it works',
+  ...props
+}) {
   const [isPlaying, setIsPlaying] = useState(false);
   const playerRef = useRef(null);
   const iframeId = `yt-player-${videoId || 'default'}`;
@@ -22,15 +30,21 @@ export default function VideoPlayer({ url, videoId, className, imageClassName, i
       videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
     }
     if (!videoUrl) return '';
-    const match = videoUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/);
-    let embedUrl = match && match[1] ? `https://www.youtube.com/embed/${match[1]}?enablejsapi=1&rel=0&loop=1&playlist=${match[1]}` : videoUrl;
+    const match = videoUrl.match(
+      /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/,
+    );
+    let embedUrl =
+      match && match[1]
+        ? `https://www.youtube.com/embed/${match[1]}?enablejsapi=1&rel=0&loop=1&playlist=${match[1]}`
+        : videoUrl;
     if (autoplay) {
       embedUrl += embedUrl.includes('?') ? '&autoplay=1' : '?autoplay=1';
     }
     return embedUrl;
   };
 
-  const videoUrl = url || (videoId ? `https://www.youtube.com/watch?v=${videoId}` : '');
+  const videoUrl =
+    url || (videoId ? `https://www.youtube.com/watch?v=${videoId}` : '');
 
   // Load YouTube Player API to listen to pause event
   useEffect(() => {
@@ -65,7 +79,7 @@ export default function VideoPlayer({ url, videoId, className, imageClassName, i
       } else {
         document.head.appendChild(tag);
       }
-      
+
       window.onYouTubeIframeAPIReady = () => {
         initPlayer();
       };
@@ -89,22 +103,30 @@ export default function VideoPlayer({ url, videoId, className, imageClassName, i
   }, [isPlaying, iframeId]);
 
   return (
-    <div className={cn("relative rounded-xl overflow-hidden shadow-xl border border-zinc-200 bg-black group transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl", className)}>
+    <div
+      className={cn(
+        'relative rounded-xl overflow-hidden shadow-xl border border-zinc-200 bg-black group transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl',
+        className,
+      )}
+    >
       {!isPlaying && currentThumbnail && (
-        <div 
+        <div
           className="absolute inset-0 z-10 flex flex-col items-center justify-center cursor-pointer bg-black/30 transition-all duration-300"
           onClick={() => setIsPlaying(true)}
         >
           {/* Background Thumbnail Image (Screenshot of the video, zoomed slightly to hide YouTube black bars) */}
           <div className="absolute inset-0 z-0 overflow-hidden">
-             <Image 
-               src={currentThumbnail} 
-               alt="Video Preview" 
-               fill 
-               sizes="(max-width: 768px) 100vw, 800px"
-               className={cn("object-cover opacity-90 transition-transform duration-700 scale-[1.04] group-hover:scale-[1.08]", imageClassName)} 
-               priority
-             />
+            <Image
+              src={currentThumbnail}
+              alt="Video Preview"
+              fill
+              sizes="(max-width: 768px) 100vw, 800px"
+              className={cn(
+                'object-cover opacity-90 transition-transform duration-700 scale-[1.04] group-hover:scale-[1.08]',
+                imageClassName,
+              )}
+              priority
+            />
           </div>
 
           {/* Dark overlay for contrast */}
@@ -131,7 +153,6 @@ export default function VideoPlayer({ url, videoId, className, imageClassName, i
           width="100%"
           height="100%"
           style={{ position: 'absolute', top: 0, left: 0 }}
-          className={iframeClassName}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -142,5 +163,3 @@ export default function VideoPlayer({ url, videoId, className, imageClassName, i
     </div>
   );
 }
-
-
