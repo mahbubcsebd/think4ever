@@ -58,7 +58,7 @@ function OrbitalCircle() {
       w-[946px] h-[946px]
       border border-[#E0E0E0]
       rounded-full
-      top-[-262px] right-[120px]
+      top-[-262px] -right-[150px] lg:-right-[350px] xl:-right-[200px] 2xl:right-[50px]
       bottom-auto left-auto
       pointer-events-none
       will-change-transform
@@ -136,7 +136,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center bg-white pt-24 pb-12 overflow-hidden"
+      className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center bg-white pt-24 pb-12 lg:pt-16 lg:pb-8 xl:pt-24 xl:pb-12 overflow-hidden"
     >
       {/* ── Orbital Circle Background ── */}
       <OrbitalCircle />
@@ -165,37 +165,35 @@ export default function Hero() {
 
       {/* ── Page Container ── */}
       <div className="container mx-auto px-4 md:px-12 max-w-[1400px] w-full z-20 relative flex flex-col justify-start gap-4">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-center py-4 lg:py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] xl:grid-cols-[1.4fr_1fr] 2xl:grid-cols-[1.1fr_1fr] gap-8 lg:gap-8 xl:gap-8 2xl:gap-12 items-center py-4 lg:py-2 xl:py-2 2xl:py-6">
           {/* Left Side: Text Content */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-5 lg:gap-4 xl:gap-4 2xl:gap-6">
             {/* Headline */}
             <div className="flex flex-col gap-2">
               <h1
                 className="
-              text-[28px] sm:text-[40px] md:text-[54px] lg:text-[60px] xl:text-[62px] 2xl:text-[72px]
+              text-[28px] sm:text-[40px] md:text-[54px] lg:text-[46px] xl:text-[48px] 2xl:text-[72px]
               leading-[1.08]
               font-bold text-black
-              flex flex-col gap-1 sm:gap-2
+              flex flex-wrap items-center gap-x-3 md:gap-x-4 gap-y-1 sm:gap-y-2
             "
               >
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 md:gap-4">
-                  <span className="inline-flex flex-wrap items-center gap-x-2 md:gap-3">
-                    <span className="inline-flex items-center gap-x-3">
-                      <BreathingBlob className="shrink-0" /> From Code or
-                    </span>
-                    <span className="inline-flex items-center gap-2 md:gap-3">
-                      Concept
-                      <ArrowRight
-                        className="w-[0.6em] h-[0.6em] text-black shrink-0"
-                        strokeWidth={3}
-                      />
-                    </span>
-                  </span>
+                <span className="inline-flex items-center gap-x-3">
+                  <BreathingBlob className="shrink-0" /> From Code or
+                </span>
+                <span className="inline-flex items-center gap-2 md:gap-3">
+                  Concept
+                  <ArrowRight
+                    className="w-[0.6em] h-[0.6em] text-black shrink-0"
+                    strokeWidth={3}
+                  />
+                </span>
+                <div className="w-full xl:w-[280px] 2xl:w-full">
+                  <MotionTextLoop />
                 </div>
-                <MotionTextLoop />
               </h1>
 
-              <p className="max-w-lg text-sm md:text-base text-zinc-500 leading-relaxed font-normal mt-2">
+              <p className="max-w-lg lg:max-w-xl xl:max-w-xl 2xl:max-w-lg text-sm md:text-base lg:text-sm xl:text-base 2xl:text-base text-zinc-500 leading-relaxed font-normal mt-2">
                 The first AI-native SDLC platform that keeps your architecture,
                 code, and every dependency connected — so a change anywhere
                 propagates everywhere.
@@ -203,12 +201,12 @@ export default function Hero() {
             </div>
 
             {/* CTA */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 mt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 mt-1 lg:mt-0 xl:mt-0 2xl:mt-2">
               {/* Free Path CTA */}
               <div className="flex flex-col items-center gap-1.5">
                 <Link
                   href="https://portal.think4ever.com"
-                  className="w-full sm:w-auto text-center px-8 py-3 bg-[#093cad] text-white font-semibold rounded-full shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm"
+                  className="w-full sm:w-auto text-center px-8 py-3 lg:py-2.5 xl:py-2.5 2xl:py-3 bg-[#093cad] text-white font-semibold rounded-full shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm"
                 >
                   Start Free
                 </Link>
@@ -221,7 +219,7 @@ export default function Hero() {
               <div className="flex flex-col items-center gap-1.5">
                 <Link
                   href="/#pricing"
-                  className="w-full sm:w-auto text-center px-6 py-[10.5px] border-2 border-[#093cad] text-[#093cad] hover:bg-[#093cad] hover:text-white font-semibold rounded-full active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm"
+                  className="w-full sm:w-auto text-center px-6 py-[10.5px] lg:py-[8.5px] xl:py-[8.5px] 2xl:py-[10.5px] border-2 border-[#093cad] text-[#093cad] hover:bg-[#093cad] hover:text-white font-semibold rounded-full active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm"
                 >
                   <span>Get Early Access</span>
                 </Link>
@@ -233,9 +231,9 @@ export default function Hero() {
           </div>
 
           {/* Right Side: Stacked Video Players */}
-          <div className="flex flex-col gap-4 w-full lg:max-w-[480px] xl:max-w-[540px] relative mt-4 lg:mt-0 lg:ml-auto">
+          <div className="flex flex-col gap-4 w-full 2xl:max-w-[540px] relative mt-4 lg:mt-0 lg:ml-auto">
             {/* Video 1: Greenfield */}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1.5 xl:gap-1.5 2xl:gap-2">
               <h3 className="text-xs sm:text-sm font-bold text-zinc-800 tracking-tight">
                 Build from scratch
               </h3>
@@ -247,7 +245,7 @@ export default function Hero() {
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0.3,
                 }}
-                className="w-full rounded-[20px] md:rounded-[24px] overflow-hidden border border-zinc-200 shadow-2xl shadow-zinc-200/50"
+                className="w-full rounded-[20px] md:rounded-[24px] lg:rounded-[16px] xl:rounded-[16px] 2xl:rounded-[24px] overflow-hidden border border-zinc-200 shadow-2xl shadow-zinc-200/50"
               >
                 <VideoPlayer
                   videoId="Lq-vza9_CzI"
@@ -258,7 +256,7 @@ export default function Hero() {
             </div>
 
             {/* Video 2: Brownfield */}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1.5 xl:gap-1.5 2xl:gap-2">
               <h3 className="text-xs sm:text-sm font-bold text-zinc-800 tracking-tight">
                 Bring your own code, adapt existing
               </h3>
@@ -270,7 +268,7 @@ export default function Hero() {
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0.4,
                 }}
-                className="w-full rounded-[20px] md:rounded-[24px] overflow-hidden border border-zinc-200 shadow-2xl shadow-zinc-200/50"
+                className="w-full rounded-[20px] md:rounded-[24px] lg:rounded-[16px] xl:rounded-[16px] 2xl:rounded-[24px] overflow-hidden border border-zinc-200 shadow-2xl shadow-zinc-200/50"
               >
                 <VideoPlayer
                   videoId="FY68DuwOf4Q"
