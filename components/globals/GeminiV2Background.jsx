@@ -29,12 +29,24 @@ export default function GeminiV2Background({ children }) {
             66% { transform: translate(20vw, -25vh) rotate(60deg) scale(0.9); }
             100% { transform: translate(0%, 0%) rotate(0deg) scale(1); }
           }
+          @keyframes aurora-hue {
+            0% { filter: blur(90px) hue-rotate(0deg); }
+            33% { filter: blur(90px) hue-rotate(30deg); }
+            66% { filter: blur(90px) hue-rotate(-20deg); }
+            100% { filter: blur(90px) hue-rotate(0deg); }
+          }
         `}
       </style>
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-[-1] bg-[#eff5fc]">
         
-        {/* Core Aurora Container with immense blur for organic blending */}
-        <div className="absolute inset-0" style={{ filter: "blur(90px)" }}>
+        {/* Core Aurora Container with immense blur for organic blending and hue rotation for morphing colors */}
+        <div 
+          className="absolute inset-0" 
+          style={{ 
+            animation: "aurora-hue 35s ease-in-out infinite",
+            transform: "translateZ(0)" // hardware acceleration
+          }}
+        >
           
           {/* Main Cyan/Light Blue Core */}
           <div
