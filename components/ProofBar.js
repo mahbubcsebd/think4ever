@@ -11,9 +11,9 @@ export default function ProofBar({ className = "px-4 md:px-12 pt-12 md:pt-16 bg-
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.4 }}
-          className="bg-white/2 backdrop-blur-[3px] border border-zinc-200/60 shadow-2xl shadow-zinc-200/40 rounded-[20px] md:rounded-[24px] flex flex-col sm:flex-row divide-y sm:divide-y-0 sm:divide-x divide-zinc-200 overflow-hidden"
+          className="bg-white/40 backdrop-blur-xl border border-white/50 shadow-2xl shadow-[#093cad]/10 rounded-[20px] md:rounded-[24px] flex flex-col sm:flex-row divide-y sm:divide-y-0 sm:divide-x divide-white/50 overflow-hidden"
         >
-          <div className="flex-1 py-8 px-4 text-center hover:bg-zinc-50/50 transition-colors">
+          <div className="flex-1 py-8 px-4 text-center hover:bg-white/60 transition-colors">
             <div className="text-[36px] md:text-[44px] font-extrabold mb-2 tracking-tight leading-none">
               <GradientText>{'<'}4 min</GradientText>
             </div>
@@ -23,7 +23,7 @@ export default function ProofBar({ className = "px-4 md:px-12 pt-12 md:pt-16 bg-
               zero config
             </div>
           </div>
-          <div className="flex-1 py-8 px-4 text-center hover:bg-zinc-50/50 transition-colors">
+          <div className="flex-1 py-8 px-4 text-center hover:bg-white/60 transition-colors">
             <div className="text-[36px] md:text-[44px] font-extrabold mb-2 tracking-tight leading-none">
               <GradientText>157+</GradientText>
             </div>
@@ -33,7 +33,7 @@ export default function ProofBar({ className = "px-4 md:px-12 pt-12 md:pt-16 bg-
               out of the box
             </div>
           </div>
-          <div className="flex-1 py-8 px-4 text-center hover:bg-zinc-50/50 transition-colors">
+          <div className="flex-1 py-8 px-4 text-center hover:bg-white/60 transition-colors">
             <div className="text-[36px] md:text-[44px] font-extrabold mb-2 tracking-tight leading-none">
               <GradientText>Zero drift</GradientText>
             </div>
