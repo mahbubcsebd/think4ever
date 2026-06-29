@@ -96,7 +96,7 @@ export default function Impacts() {
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0.2 + idx * 0.15,
                 }}
-                className="md:w-[200px] md:h-[200px] lg:w-[240px] lg:h-[240px] xl:w-[300px] xl:h-[300px] shrink-0 rounded-full flex flex-col justify-start pt-12 lg:pt-16 xl:pt-[70px] items-center text-center border border-[#E0E0E0] bg-transparent relative select-none transition-transform duration-500 ease-out hover:border-brand-blue hover:z-30 hover:scale-110"
+                className="md:w-[200px] md:h-[200px] lg:w-[240px] lg:h-[240px] xl:w-[300px] xl:h-[300px] shrink-0 rounded-full flex flex-col justify-start pt-12 lg:pt-16 xl:pt-[70px] items-center text-center border border-white/50 bg-white/40 backdrop-blur-xl relative select-none transition-transform duration-500 ease-out hover:border-brand-blue hover:z-30 hover:scale-110"
                 style={{ zIndex: 10 + idx }}
               >
                 <h3 className="text-[20px] lg:text-[28px] font-bold tracking-tight mb-2">

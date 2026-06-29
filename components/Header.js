@@ -255,10 +255,10 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col ${
           isOpen
-            ? 'h-[100dvh] overflow-hidden bg-white shadow-lg py-5'
+            ? 'h-[100dvh] overflow-hidden bg-white/80 backdrop-blur-2xl shadow-lg py-5'
             : scrolled
-              ? 'h-[72px] py-2.5 bg-white/98 shadow-[0_1px_24px_rgba(0,0,0,0.07)] backdrop-blur-md'
-              : 'h-[80px] py-5 bg-transparent'
+              ? 'h-[72px] justify-center bg-white/40 shadow-sm border-b border-white/50 backdrop-blur-xl'
+              : 'h-[80px] justify-center bg-transparent'
         }`}
       >
         {/* Inner container — keeps content aligned with rest of page */}

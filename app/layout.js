@@ -1,5 +1,6 @@
 import HubSpotRouteTracker from '@/components/globals/HubSpotRouteTracker';
 import LiveAgentChat from '@/components/globals/LiveAgentChat';
+import GeminiV2Background from '@/components/globals/GeminiV2Background';
 import { constructMetadata } from '@/lib/metadata';
 import { Poppins } from 'next/font/google';
 import Script from 'next/script';
@@ -29,7 +30,8 @@ export default function RootLayout({ children }) {
           defer
         />
       </head>
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans bg-transparent relative">
+        <GeminiV2Background />
         <HubSpotRouteTracker />
         {children}
         <LiveAgentChat />

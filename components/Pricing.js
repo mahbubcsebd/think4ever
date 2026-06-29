@@ -118,7 +118,7 @@ export default function Pricing() {
             {plans.map((plan, idx) => (
               <div
                 key={idx}
-                className={`group flex flex-col p-8 bg-transparent transition-all duration-500 ease-out hover:scale-[1.03] hover:shadow-2xl hover:shadow-zinc-200 hover:z-20 hover:bg-white relative origin-center border border-[#E0E0E0] min-h-[500px]
+                className={`group flex flex-col p-8 bg-white/40 backdrop-blur-xl transition-all duration-500 ease-out hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#093cad]/10 hover:z-20 hover:bg-white/60 relative origin-center border border-white/50 min-h-[500px]
                   ${getBorderRadius(idx)}
                   ${getMargins(idx)}
                 `}

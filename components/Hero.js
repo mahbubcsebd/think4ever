@@ -69,9 +69,7 @@ function OrbitalCircle() {
       <div className="absolute inset-0 flex justify-center z-10 max-md:rotate-[150deg] md:rotate-0">
         <div className="w-[20px] h-[20px] md:w-[28px] md:h-[28px] rounded-full bg-brand-blue flex items-center justify-center -translate-y-1/2 shadow-lg drop-shadow-md border-[2px] border-white">
           <div className="w-full h-full flex items-center justify-center max-md:-rotate-[150deg] md:-rotate-0">
-            <div
-              className="text-white flex items-center justify-center"
-            >
+            <div className="text-white flex items-center justify-center">
               <InfinityIcon
                 size="12"
                 strokeWidth={3}
@@ -83,17 +81,11 @@ function OrbitalCircle() {
       </div>
 
       {/* Ball 2 - Bottom Right (120 degrees) */}
-      <div
-        className="absolute inset-0 flex justify-center z-10 max-md:rotate-[90deg] md:rotate-[120deg]"
-      >
+      <div className="absolute inset-0 flex justify-center z-10 max-md:rotate-[90deg] md:rotate-[120deg]">
         <div className="w-[20px] h-[20px] md:w-[28px] md:h-[28px] rounded-full bg-brand-blue flex items-center justify-center -translate-y-1/2 shadow-lg drop-shadow-md border-[2px] border-white">
           {/* Static counter-rotation of 120deg */}
-          <div
-            className="w-full h-full flex items-center justify-center max-md:-rotate-[90deg] md:-rotate-[120deg]"
-          >
-            <div
-              className="text-white flex items-center justify-center"
-            >
+          <div className="w-full h-full flex items-center justify-center max-md:-rotate-[90deg] md:-rotate-[120deg]">
+            <div className="text-white flex items-center justify-center">
               <InfinityIcon
                 size="12"
                 strokeWidth={3}
@@ -105,17 +97,11 @@ function OrbitalCircle() {
       </div>
 
       {/* Ball 3 - Bottom Left (240 degrees) */}
-      <div
-        className="absolute inset-0 hidden md:flex justify-center z-10 md:rotate-[240deg]"
-      >
+      <div className="absolute inset-0 hidden md:flex justify-center z-10 md:rotate-[240deg]">
         <div className="w-[20px] h-[20px] md:w-[28px] md:h-[28px] rounded-full bg-brand-blue flex items-center justify-center -translate-y-1/2 shadow-lg drop-shadow-md border-[2px] border-white">
           {/* Static counter-rotation of 240deg */}
-          <div
-            className="w-full h-full flex items-center justify-center md:-rotate-[240deg]"
-          >
-            <div
-              className="text-white flex items-center justify-center"
-            >
+          <div className="w-full h-full flex items-center justify-center md:-rotate-[240deg]">
+            <div className="text-white flex items-center justify-center">
               <InfinityIcon
                 size="12"
                 strokeWidth={3}
@@ -136,7 +122,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center bg-white pt-24 pb-12 lg:pt-16 lg:pb-8 xl:pt-24 xl:pb-12 overflow-hidden"
+      className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center pt-24 pb-12 lg:pt-16 lg:pb-8 xl:pt-24 xl:pb-12 overflow-hidden"
     >
       {/* ── Orbital Circle Background ── */}
       <OrbitalCircle />
@@ -153,9 +139,9 @@ export default function Hero() {
         flex items-center justify-center
         text-[clamp(5rem,10vw,9rem)]
         font-black uppercase
-        text-zinc-200
+        text-zinc-200/30
         tracking-[-0.04em]
-        opacity-80
+        opacity-20
         whitespace-nowrap
         z-0
       "

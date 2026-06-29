@@ -21,7 +21,7 @@ export default function SplitSection({
         <div
           className={`absolute left-1/2 -translate-x-1/2 top-auto bottom-0 pointer-events-none z-0 select-none ${watermarkClassName}`}
         >
-          <span className="font-bold font-sans text-[24vw] uppercase tracking-tighter leading-none text-[#f5f5f5] whitespace-nowrap">
+          <span className="font-bold font-sans text-[24vw] uppercase tracking-tighter leading-none text-zinc-200/30 opacity-20 whitespace-nowrap">
             {watermarkText}
           </span>
         </div>

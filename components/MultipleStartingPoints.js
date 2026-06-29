@@ -49,7 +49,7 @@ export default function MultipleStartingPoints() {
             {cards.map((card, idx) => (
               <div
                 key={idx}
-                className={`group flex flex-col p-8 md:p-10 bg-transparent transition-all duration-500 ease-out hover:scale-[1.03] hover:shadow-2xl hover:shadow-zinc-200 hover:z-20 hover:bg-white relative origin-center border border-[#E0E0E0]
+                className={`group flex flex-col p-8 md:p-10 bg-white/40 backdrop-blur-xl transition-all duration-500 ease-out hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#093cad]/10 hover:z-20 hover:bg-white/60 relative origin-center border border-white/50
                   ${idx === 0 ? 'rounded-t-[24px] lg:rounded-none lg:rounded-l-[24px]' : ''}
                   ${idx === 1 ? '-mt-[1px] lg:mt-0 lg:-ml-[1px]' : ''}
                   ${idx === 2 ? 'rounded-b-[24px] lg:rounded-none lg:rounded-r-[24px] -mt-[1px] lg:mt-0 lg:-ml-[1px]' : ''}
