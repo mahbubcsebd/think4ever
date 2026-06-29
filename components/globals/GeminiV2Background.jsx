@@ -43,7 +43,7 @@ export default function GeminiV2Background({ children }) {
         <div 
           className="absolute inset-0" 
           style={{ 
-            animation: "aurora-hue 35s ease-in-out infinite",
+            animation: "aurora-hue 20s ease-in-out infinite",
             transform: "translateZ(0)" // hardware acceleration
           }}
         >
@@ -53,7 +53,7 @@ export default function GeminiV2Background({ children }) {
             className="absolute top-[-20%] left-[-20%] w-[120vw] h-[120vh] rounded-[100%]"
             style={{
               background: "radial-gradient(ellipse at center, rgba(7, 167, 225, 0.22) 0%, transparent 80%)",
-              animation: "aurora-1 25s ease-in-out infinite",
+              animation: "aurora-1 15s ease-in-out infinite",
               transformOrigin: "center center",
             }}
           />
@@ -63,7 +63,7 @@ export default function GeminiV2Background({ children }) {
             className="absolute top-[-10%] right-[-20%] w-[120vw] h-[120vh] rounded-[100%]"
             style={{
               background: "radial-gradient(ellipse at center, rgba(9, 60, 173, 0.15) 0%, transparent 80%)",
-              animation: "aurora-2 30s ease-in-out infinite",
+              animation: "aurora-2 18s ease-in-out infinite",
               transformOrigin: "40% 60%",
             }}
           />
@@ -73,7 +73,7 @@ export default function GeminiV2Background({ children }) {
             className="absolute bottom-[-20%] left-[-10%] w-[120vw] h-[120vh] rounded-[100%]"
             style={{
               background: "radial-gradient(ellipse at center, rgba(66, 133, 244, 0.18) 0%, transparent 80%)",
-              animation: "aurora-3 22s ease-in-out infinite",
+              animation: "aurora-3 14s ease-in-out infinite",
               transformOrigin: "60% 40%",
             }}
           />
@@ -83,7 +83,7 @@ export default function GeminiV2Background({ children }) {
             className="absolute bottom-[-10%] right-[-10%] w-[100vw] h-[100vh] rounded-[100%]"
             style={{
               background: "radial-gradient(ellipse at center, rgba(168, 85, 247, 0.15) 0%, transparent 80%)",
-              animation: "aurora-4 28s ease-in-out infinite",
+              animation: "aurora-4 16s ease-in-out infinite",
               transformOrigin: "center center",
             }}
           />
@@ -93,7 +93,7 @@ export default function GeminiV2Background({ children }) {
             className="absolute top-[20%] left-[20%] w-[60vw] h-[60vh] rounded-[100%]"
             style={{
               background: "radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 80%)",
-              animation: "aurora-1 32s ease-in-out infinite reverse",
+              animation: "aurora-1 20s ease-in-out infinite reverse",
             }}
           />
         </div>
