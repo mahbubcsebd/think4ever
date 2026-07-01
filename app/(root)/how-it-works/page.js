@@ -189,7 +189,7 @@ const ProductPage = () => {
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="text-[15px] lg:text-[16px] text-zinc-500 leading-[1.6] font-normal max-w-2xl"
+            className="text-[15px] lg:text-[16px] text-zinc-800 leading-[1.6] font-normal max-w-2xl"
           >
             Change anything — requirements, code, or architecture — it
             propagates everywhere.

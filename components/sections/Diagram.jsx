@@ -107,7 +107,7 @@ const StepCard = ({ step, isActive, onClick, idx }) => {
       `}
     >
       {/* Step Number */}
-      <div className="text-[12px] font-bold text-zinc-400 mb-2 font-mono">
+      <div className="text-[12px] font-bold text-zinc-700 mb-2 font-mono">
         {step.num}
       </div>
 
@@ -130,7 +130,7 @@ const StepCard = ({ step, isActive, onClick, idx }) => {
       </h3>
 
       {/* Description */}
-      <p className="text-[13px] text-zinc-500 leading-relaxed mb-6 flex-1">
+      <p className="text-[13px] text-zinc-800 leading-relaxed mb-6 flex-1">
         {step.desc}
       </p>
 

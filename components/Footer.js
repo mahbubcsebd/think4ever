@@ -21,7 +21,7 @@ export default function Footer() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-[13px] md:text-[14px] font-medium text-zinc-500 hover:text-brand-blue transition-colors whitespace-nowrap"
+              className="text-[13px] md:text-[14px] font-medium text-zinc-800 hover:text-brand-blue transition-colors whitespace-nowrap"
             >
               {link.name}
             </Link>
@@ -30,7 +30,7 @@ export default function Footer() {
 
         {/* Right Side: Copyright & Icon */}
         <div className="flex flex-col-reverse sm:flex-row items-center gap-6 md:gap-8">
-          <div className="text-[12px] md:text-[13px] font-medium text-zinc-400 text-center sm:text-right">
+          <div className="text-[12px] md:text-[13px] font-medium text-zinc-700 text-center sm:text-right">
             &copy; 2026 Think4ever&trade;. All rights reserved.
           </div>
         </div>

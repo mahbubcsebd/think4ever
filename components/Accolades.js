@@ -78,7 +78,7 @@ export default function Accolades() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-4 flex items-center gap-4 lg:self-start lg:mt-4"
           >
-            <span className="text-zinc-500 font-extrabold tracking-widest text-xs uppercase whitespace-nowrap">
+            <span className="text-zinc-800 font-extrabold tracking-widest text-xs uppercase whitespace-nowrap">
               Our Accolades
             </span>
             <span className="w-16 h-[1px] bg-zinc-300 inline-block" />
@@ -135,7 +135,7 @@ export default function Accolades() {
                   >
                     {/* Custom Vector Laurel Wreath SVG */}
                     <div className="w-48 h-48 relative flex items-center justify-center p-6 border border-transparent rounded-2xl group-hover:border-zinc-200/50 group-hover:bg-white/80 group-hover:shadow-lg group-hover:shadow-zinc-200/30 transition-all duration-500 transform group-hover:scale-115">
-                      <svg viewBox="0 0 100 100" className="w-full h-full text-zinc-400 group-hover:text-brand-blue transition-colors duration-500">
+                      <svg viewBox="0 0 100 100" className="w-full h-full text-zinc-700 group-hover:text-brand-blue transition-colors duration-500">
                         {/* Laurel Wreath */}
                         <path d="M25,65 Q15,45 25,25 Q18,35 22,50 Q18,55 25,65" fill="none" stroke="currentColor" strokeWidth="2.5" />
                         <path d="M75,65 Q85,45 75,25 Q82,35 78,50 Q82,55 75,65" fill="none" stroke="currentColor" strokeWidth="2.5" />
@@ -155,7 +155,7 @@ export default function Accolades() {
                           {award.label.split(" ")[0]} <br />
                           <span className="text-[12px] text-zinc-900">{award.label.split(" ")[1]}</span>
                         </span>
-                        <span className="text-[9px] font-black tracking-widest text-zinc-400 mt-2 uppercase">
+                        <span className="text-[9px] font-black tracking-widest text-zinc-700 mt-2 uppercase">
                           {award.title}
                         </span>
                         {/* Flag Icon */}
@@ -163,7 +163,7 @@ export default function Accolades() {
                       </div>
                     </div>
                     {/* Centered Year Footer */}
-                    <span className="mt-6 text-lg font-bold text-zinc-400 group-hover:text-zinc-950 group-hover:font-extrabold transition-all duration-300">
+                    <span className="mt-6 text-lg font-bold text-zinc-700 group-hover:text-zinc-950 group-hover:font-extrabold transition-all duration-300">
                       {award.year}
                     </span>
                   </div>
@@ -198,7 +198,7 @@ export default function Accolades() {
                         {/* Inner Texts */}
                         <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center relative z-10">
                           <span className={`text-[8px] font-bold tracking-widest leading-none ${
-                            isSpecial ? "text-zinc-700" : "text-zinc-400 group-hover:text-zinc-600"
+                            isSpecial ? "text-zinc-700" : "text-zinc-700 group-hover:text-zinc-900"
                           }`}>
                             {award.title}
                           </span>
@@ -208,12 +208,12 @@ export default function Accolades() {
                             {award.award}
                           </span>
                           <span className={`text-[10px] font-extrabold tracking-widest mt-2 ${
-                            isSpecial ? "text-amber-600" : "text-zinc-500 group-hover:text-zinc-800"
+                            isSpecial ? "text-amber-600" : "text-zinc-800 group-hover:text-zinc-800"
                           }`}>
                             {award.medal}
                           </span>
                           <span className={`text-[7px] font-bold mt-1 ${
-                            isSpecial ? "text-zinc-500" : "text-zinc-400"
+                            isSpecial ? "text-zinc-800" : "text-zinc-700"
                           }`}>
                             {award.year}
                           </span>
@@ -223,7 +223,7 @@ export default function Accolades() {
                       <span className={`mt-6 text-lg transition-all duration-300 ${
                         isSpecial
                           ? "text-zinc-950 font-extrabold font-sans"
-                          : "text-zinc-400 group-hover:text-zinc-950 group-hover:font-extrabold"
+                          : "text-zinc-700 group-hover:text-zinc-950 group-hover:font-extrabold"
                       }`}>
                         {award.year}
                       </span>

@@ -67,16 +67,16 @@ body {
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Gradient text: black at bottom → blue at top */
+/* Gradient text: cyan at top → royal blue at bottom */
 .text-gradient {
-  background: linear-gradient(180deg, #07a7e1 0%, #093cad 100%);
+  background: linear-gradient(180deg, #00d4ff 0%, #2962ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .btn-gradient {
-  background: linear-gradient(135deg, #07a7e1 0%, #093cad 100%);
+  background: linear-gradient(135deg, #00d4ff 0%, #2962ff 100%);
 }
 
 .btn-gradient-outline {
@@ -84,7 +84,7 @@ body {
   border: 1.5px solid transparent;
   background:
     linear-gradient(white, white) padding-box,
-    linear-gradient(135deg, #07a7e1 0%, #093cad 100%) border-box;
+    linear-gradient(135deg, #00d4ff 0%, #2962ff 100%) border-box;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 1;
 }
@@ -93,7 +93,7 @@ body {
   content: '';
   position: absolute;
   inset: -1.5px;
-  background: linear-gradient(135deg, #07a7e1 0%, #093cad 100%);
+  background: linear-gradient(135deg, #00d4ff 0%, #2962ff 100%);
   border-radius: 9999px;
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -105,16 +105,16 @@ body {
 }
 
 .btn-gradient-outline .btn-text {
-  background: linear-gradient(135deg, #07a7e1 0%, #093cad 100%);
+  background: linear-gradient(135deg, #00d4ff 0%, #2962ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  color: #093cad; /* Fallback and stroke basis for SVGs */
+  color: #2962ff; /* Fallback and stroke basis for SVGs */
 }
 
 .btn-gradient-outline .btn-text svg {
-  stroke: #093cad;
+  stroke: #2962ff;
   transition: stroke 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

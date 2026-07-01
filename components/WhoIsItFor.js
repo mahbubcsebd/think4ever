@@ -38,28 +38,28 @@ export default function WhoIsItFor() {
             ].map((row, idx) => (
               <div 
                 key={idx}
-                className="bg-white/70 backdrop-blur-sm rounded-2xl border border-zinc-200/60 p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-md transition-all duration-300 flex flex-col gap-4"
+                className="bg-white/90 backdrop-blur-xl shadow-xl shadow-[#093cad]/5 rounded-2xl border border-zinc-200/60 p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-md transition-all duration-300 flex flex-col gap-4"
               >
                 <div className="flex items-center justify-between border-b border-zinc-100 pb-3">
                   <h4 className="text-base font-bold"><GradientText>{row.action}</GradientText></h4>
-                  <span className="text-[10px] font-bold text-zinc-400 bg-zinc-100 px-2.5 py-0.5 rounded-md">
+                  <span className="text-[10px] font-bold text-zinc-700 bg-zinc-100 px-2.5 py-0.5 rounded-md">
                     0{idx + 1}
                   </span>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Use Cases</span>
-                  <p className="text-[14px] text-zinc-600 font-medium leading-relaxed">{row.useCases}</p>
+                  <span className="text-[10px] font-bold text-zinc-700 uppercase tracking-wider">Use Cases</span>
+                  <p className="text-[14px] text-zinc-900 font-medium leading-relaxed">{row.useCases}</p>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Who can use Think4Ever</span>
-                  <p className="text-[14px] text-zinc-500 font-normal leading-relaxed">{row.who}</p>
+                  <span className="text-[10px] font-bold text-zinc-700 uppercase tracking-wider">Who can use Think4Ever</span>
+                  <p className="text-[14px] text-zinc-800 font-normal leading-relaxed">{row.who}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Desktop Table view (hidden on mobile/tablet) */}
-          <div className="hidden md:block w-full overflow-x-auto rounded-xl border border-zinc-200/60 bg-white/70 backdrop-blur-sm shadow-xl">
+          <div className="hidden md:block w-full overflow-x-auto rounded-xl border border-zinc-200/60 bg-white/90 backdrop-blur-xl shadow-xl shadow-[#093cad]/5 shadow-xl">
             <table className="w-full min-w-[750px] border-collapse text-left">
               <thead>
                 <tr className="bg-gradient-to-r from-[#07A7E1]/5 to-[#093cad]/5 border-b border-zinc-200/60">
@@ -71,23 +71,23 @@ export default function WhoIsItFor() {
               <tbody className="divide-y divide-zinc-200/60">
                 <tr className="hover:bg-zinc-50/50 transition-colors">
                   <td className="p-6 text-[15px] font-bold align-top"><GradientText>Build</GradientText></td>
-                  <td className="p-6 text-[14px] text-zinc-600 font-medium leading-relaxed align-top">New applications, workflows, systems</td>
-                  <td className="p-6 text-[14px] text-zinc-500 font-normal leading-relaxed align-top">Developers, founders, product teams</td>
+                  <td className="p-6 text-[14px] text-zinc-900 font-medium leading-relaxed align-top">New applications, workflows, systems</td>
+                  <td className="p-6 text-[14px] text-zinc-800 font-normal leading-relaxed align-top">Developers, founders, product teams</td>
                 </tr>
                 <tr className="hover:bg-zinc-50/50 transition-colors">
                   <td className="p-6 text-[15px] font-bold align-top"><GradientText>Extend</GradientText></td>
-                  <td className="p-6 text-[14px] text-zinc-600 font-medium leading-relaxed align-top">Integration with or enhancement of existing systems</td>
-                  <td className="p-6 text-[14px] text-zinc-500 font-normal leading-relaxed align-top">Engineering teams</td>
+                  <td className="p-6 text-[14px] text-zinc-900 font-medium leading-relaxed align-top">Integration with or enhancement of existing systems</td>
+                  <td className="p-6 text-[14px] text-zinc-800 font-normal leading-relaxed align-top">Engineering teams</td>
                 </tr>
                 <tr className="hover:bg-zinc-50/50 transition-colors">
                   <td className="p-6 text-[15px] font-bold align-top"><GradientText>Modernize</GradientText></td>
-                  <td className="p-6 text-[14px] text-zinc-600 font-medium leading-relaxed align-top">Legacy re-factor or transformation</td>
-                  <td className="p-6 text-[14px] text-zinc-500 font-normal leading-relaxed align-top">Enterprise architects, CTOs, Distinguished Engineers, Tech Leads</td>
+                  <td className="p-6 text-[14px] text-zinc-900 font-medium leading-relaxed align-top">Legacy re-factor or transformation</td>
+                  <td className="p-6 text-[14px] text-zinc-800 font-normal leading-relaxed align-top">Enterprise architects, CTOs, Distinguished Engineers, Tech Leads</td>
                 </tr>
                 <tr className="hover:bg-zinc-50/50 transition-colors">
                   <td className="p-6 text-[15px] font-bold align-top"><GradientText>Co-Develop</GradientText></td>
-                  <td className="p-6 text-[14px] text-zinc-600 font-medium leading-relaxed align-top">Architect and Design in Think Platform and use your favorite tool to develop the code.</td>
-                  <td className="p-6 text-[14px] text-zinc-500 font-normal leading-relaxed align-top">Corporations and Developers already using or familiar with other tools.</td>
+                  <td className="p-6 text-[14px] text-zinc-900 font-medium leading-relaxed align-top">Architect and Design in Think Platform and use your favorite tool to develop the code.</td>
+                  <td className="p-6 text-[14px] text-zinc-800 font-normal leading-relaxed align-top">Corporations and Developers already using or familiar with other tools.</td>
                 </tr>
               </tbody>
             </table>
@@ -95,10 +95,10 @@ export default function WhoIsItFor() {
 
           {/* Subtext Scenario Details */}
           <div className="mt-8 flex flex-col gap-6">
-            <h3 className="text-xl font-bold text-[#09090D] tracking-tight border-b border-zinc-100 pb-3">
+            <h3 className="text-xl font-bold text-[#09090D] tracking-tight border-b border-zinc-300 pb-3">
               Co-Develop Scenarios
             </h3>
-            <ol className="flex flex-col divide-y divide-zinc-100/80">
+            <ol className="flex flex-col divide-y divide-zinc-300">
               {[
                 { title: 'Use T4E only', desc: 'Do everything inside Think4Ever and complete your SDLC.' },
                 { title: 'Use T4E to design and manage', desc: 'Processes, flows, roles, etc., and develop in other tools such as Claude Code/Codex/Other-Dev tools.' },
@@ -106,14 +106,14 @@ export default function WhoIsItFor() {
                 { title: 'Think API', desc: 'Third-party developers can build new solutions integrated with T4E Platform.' },
                 { title: 'Corporations use T4E API', desc: 'To integrate their internal process with their existing agents.' },
               ].map((item, idx) => (
-                <li key={idx} className="py-4 first:pt-0 last:pb-0 flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6 hover:bg-zinc-50/40 transition-colors rounded-lg px-4 -mx-4">
+                <li key={idx} className="py-4 first:pt-0 last:pb-0 flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6 hover:bg-zinc-50/40 transition-colors px-4 -mx-4">
                   <div className="flex items-center gap-4 shrink-0 sm:w-[260px]">
                     <span className="text-[14px] font-mono font-semibold text-[#89A4C4] shrink-0">
                       0{idx + 1}
                     </span>
                     <h4 className="text-[15px] font-bold text-zinc-800 leading-none">{item.title}</h4>
                   </div>
-                  <p className="text-[14px] text-zinc-500 leading-relaxed pl-8 sm:pl-0 sm:pt-0.5 flex-1">
+                  <p className="text-[14px] text-zinc-800 leading-relaxed pl-8 sm:pl-0 sm:pt-0.5 flex-1">
                     {item.desc}
                   </p>
                 </li>

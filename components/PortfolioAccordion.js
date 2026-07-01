@@ -52,7 +52,7 @@ export default function PortfolioAccordion() {
       <div className="max-w-7xl w-full mx-auto flex flex-col gap-10 z-10">
         {/* Title block */}
         <div>
-          <h2 className="text-sm font-extrabold uppercase tracking-widest text-zinc-400 mb-2">
+          <h2 className="text-sm font-extrabold uppercase tracking-widest text-zinc-700 mb-2">
             Featured Projects
           </h2>
           <h3 className="text-4xl md:text-6xl font-extrabold tracking-tight text-zinc-900 leading-tight">
@@ -214,7 +214,7 @@ export default function PortfolioAccordion() {
                                 {item.title}
                               </h4>
                               <div className="flex items-center gap-3 mt-4">
-                                <span className="text-zinc-600 text-sm font-semibold">
+                                <span className="text-zinc-900 text-sm font-semibold">
                                   {item.subtitle}
                                 </span>
                                 <span className="bg-brand-blue text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full">

@@ -87,11 +87,11 @@ export default function BuildMotionDeveloper() {
                 href="https://portal.think4ever.com"
                 className="group inline-flex items-center cursor-pointer select-none"
               >
-                <div className="w-11 h-11 rounded-full border border-zinc-300 group-hover:border-brand-blue flex items-center justify-center relative overflow-hidden transition-all duration-500 ease-out shrink-0">
+                <div className="w-11 h-11 rounded-full border border-[#093cad]/30 shadow-md shadow-[#093cad]/10 bg-white group-hover:border-brand-blue flex items-center justify-center relative overflow-hidden transition-all duration-500 ease-out shrink-0">
                   <span className="absolute inset-0 bg-[#093cad] rounded-full scale-0 group-hover:scale-100 transition-transform duration-500 ease-out origin-center" />
                   <span className="relative z-10 w-2 h-2 rounded-full bg-brand-blue group-hover:bg-white transition-colors duration-500 ease-out" />
                 </div>
-                <span className="font-semibold text-base text-zinc-950 relative z-10 ml-2">
+                <span className="font-semibold text-base text-[#093cad] tracking-tight relative z-10 ml-2">
                   Get Early Access
                 </span>
               </Link>

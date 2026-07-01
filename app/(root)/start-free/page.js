@@ -61,7 +61,7 @@ export default function StartFreePage() {
               Start Free. <br />
               <span className="bg-gradient-to-r from-[#07A7E1] to-[#093cad] bg-clip-text text-transparent">Build Instantly.</span>
             </h1>
-            <p className="text-zinc-500 text-base sm:text-lg leading-relaxed mt-2 max-w-md">
+            <p className="text-zinc-800 text-base sm:text-lg leading-relaxed mt-2 max-w-md">
               Turn your ideas into live systems in seconds. Explore the power of agentic development in our sandbox environment.
             </p>
           </div>
@@ -81,13 +81,13 @@ export default function StartFreePage() {
           </div>
 
           <div className="border-t border-zinc-100 pt-6 flex items-center gap-4">
-            <div className="flex items-center gap-2 text-xs text-zinc-400">
-              <Shield className="w-4 h-4 text-zinc-400" />
+            <div className="flex items-center gap-2 text-xs text-zinc-700">
+              <Shield className="w-4 h-4 text-zinc-700" />
               <span>No credit card required</span>
             </div>
             <div className="w-1.5 h-1.5 rounded-full bg-zinc-300" />
-            <div className="flex items-center gap-2 text-xs text-zinc-400">
-              <Code className="w-4 h-4 text-zinc-400" />
+            <div className="flex items-center gap-2 text-xs text-zinc-700">
+              <Code className="w-4 h-4 text-zinc-700" />
               <span>Sandbox Access</span>
             </div>
           </div>
@@ -102,12 +102,12 @@ export default function StartFreePage() {
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 <div className="flex flex-col gap-1">
                   <h2 className="text-xl sm:text-2xl font-bold text-zinc-950">Create Sandbox Workspace</h2>
-                  <p className="text-zinc-500 text-xs sm:text-sm">Set up your free sandbox to get started</p>
+                  <p className="text-zinc-800 text-xs sm:text-sm">Set up your free sandbox to get started</p>
                 </div>
 
                 <div className="flex flex-col gap-4 mt-2">
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider">Your Name</label>
+                    <label className="text-[11px] font-bold text-zinc-800 uppercase tracking-wider">Your Name</label>
                     <input
                       type="text"
                       required
@@ -119,7 +119,7 @@ export default function StartFreePage() {
                   </div>
 
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider">Email Address</label>
+                    <label className="text-[11px] font-bold text-zinc-800 uppercase tracking-wider">Email Address</label>
                     <input
                       type="email"
                       required
@@ -131,7 +131,7 @@ export default function StartFreePage() {
                   </div>
 
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider">Workspace Name</label>
+                    <label className="text-[11px] font-bold text-zinc-800 uppercase tracking-wider">Workspace Name</label>
                     <input
                       type="text"
                       required
@@ -149,7 +149,7 @@ export default function StartFreePage() {
                       id="agreement"
                       className="w-4 h-4 rounded border-zinc-300 text-[#093cad] focus:ring-[#07A7E1] mt-0.5 cursor-pointer"
                     />
-                    <label htmlFor="agreement" className="text-xs text-zinc-500 leading-normal select-none cursor-pointer">
+                    <label htmlFor="agreement" className="text-xs text-zinc-800 leading-normal select-none cursor-pointer">
                       I agree to the{' '}
                       <Link href="/privacy-policy" className="text-[#093cad] hover:underline font-semibold">
                         Terms of Service
@@ -177,7 +177,7 @@ export default function StartFreePage() {
                 </div>
                 <div className="flex flex-col gap-2">
                   <h3 className="text-xl sm:text-2xl font-bold text-zinc-950">Workspace Ready!</h3>
-                  <p className="text-zinc-500 text-sm max-w-sm">
+                  <p className="text-zinc-800 text-sm max-w-sm">
                     Hi {formData.name}, we've initialized your free project workspace <strong>{formData.workspace}</strong>. Check your inbox at <strong>{formData.email}</strong> to activate.
                   </p>
                 </div>

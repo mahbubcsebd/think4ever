@@ -178,7 +178,7 @@ export default function Hero() {
                 </div>
               </h1>
 
-              <p className="max-w-lg lg:max-w-xl xl:max-w-xl 2xl:max-w-lg text-sm md:text-base lg:text-sm xl:text-base 2xl:text-base text-zinc-500 leading-relaxed font-normal mt-2">
+              <p className="max-w-lg lg:max-w-xl xl:max-w-xl 2xl:max-w-lg text-sm md:text-base lg:text-sm xl:text-base 2xl:text-base text-zinc-800 leading-relaxed font-normal mt-2">
                 The first AI-native SDLC platform that keeps your architecture,
                 code, and every dependency connected — so a change anywhere
                 propagates everywhere.
@@ -195,7 +195,7 @@ export default function Hero() {
                 >
                   Start Free
                 </Link>
-                <span className="text-[11px] text-zinc-400 font-medium select-none text-center">
+                <span className="text-[11px] text-zinc-700 font-medium select-none text-center">
                   No credit card required
                 </span>
               </div>
@@ -208,7 +208,7 @@ export default function Hero() {
                 >
                   <span>Get Early Access</span>
                 </Link>
-                <span className="text-[11px] text-zinc-400 font-medium select-none text-center">
+                <span className="text-[11px] text-zinc-700 font-medium select-none text-center">
                   For Teams & Power Users
                 </span>
               </div>

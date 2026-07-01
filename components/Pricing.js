@@ -31,7 +31,7 @@ export default function Pricing() {
       name: 'Think New',
       price: '$25.00/month',
       subText: '',
-      subTextColor: 'text-zinc-500 italic text-[10px]',
+      subTextColor: 'text-zinc-800 italic text-[10px]',
       description: 'For solo developers, freelancers and startup founders',
       features: [
         'Included 2000 Orchestration Credits/Month',
@@ -48,7 +48,7 @@ export default function Pricing() {
       name: 'Team',
       price: '$250.00/month',
       subText: '',
-      subTextColor: 'text-zinc-500 italic text-[10px]',
+      subTextColor: 'text-zinc-800 italic text-[10px]',
       description:
         'For developer teams and multi-developer environments shipping together at speed.',
       features: [
@@ -67,7 +67,7 @@ export default function Pricing() {
       name: 'Enterprise',
       price: 'Custom',
       subText: '',
-      subTextColor: 'text-zinc-500 italic text-[10px]',
+      subTextColor: 'text-zinc-800 italic text-[10px]',
       description:
         'For organisations with sophisticated environments, larger scale, and tailored deployment models.',
       features: [
@@ -118,7 +118,7 @@ export default function Pricing() {
             {plans.map((plan, idx) => (
               <div
                 key={idx}
-                className={`group flex flex-col p-8 bg-white/40 backdrop-blur-xl transition-all duration-500 ease-out hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#093cad]/10 hover:z-20 hover:bg-white/60 relative origin-center border border-white/50 min-h-[500px]
+                className={`group flex flex-col p-8 bg-white/85 backdrop-blur-2xl shadow-xl shadow-[#093cad]/5 transition-all duration-500 ease-out hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#093cad]/10 hover:z-20 hover:bg-white relative origin-center border border-zinc-200/80 hover:border-[#093cad]/20 min-h-[500px]
                   ${getBorderRadius(idx)}
                   ${getMargins(idx)}
                 `}

@@ -55,7 +55,7 @@ export default function Testimonials() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="flex items-center gap-4 self-start"
         >
-          <span className="text-zinc-500 font-extrabold tracking-widest text-xs uppercase whitespace-nowrap">
+          <span className="text-zinc-800 font-extrabold tracking-widest text-xs uppercase whitespace-nowrap">
             Who Motivates Us
           </span>
           <span className="w-16 h-[1px] bg-zinc-300 inline-block" />
