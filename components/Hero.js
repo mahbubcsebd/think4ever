@@ -56,7 +56,8 @@ function OrbitalCircle() {
       className="
       absolute
       w-[946px] h-[946px]
-      border border-[#E0E0E0]
+      border-[1.5px] border-[#093cad]/20
+      shadow-[inset_0_0_60px_rgba(9,60,173,0.05),0_0_60px_rgba(9,60,173,0.05)]
       rounded-full
       top-[-262px] -right-[150px] lg:-right-[350px] xl:-right-[200px] 2xl:right-[50px]
       bottom-auto left-auto
@@ -230,7 +231,7 @@ export default function Hero() {
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0.3,
                 }}
-                className="w-full rounded-[20px] md:rounded-[24px] lg:rounded-[16px] xl:rounded-[16px] 2xl:rounded-[24px] overflow-hidden border border-zinc-200 shadow-2xl shadow-zinc-200/50"
+                className="w-full rounded-[20px] md:rounded-[24px] lg:rounded-[16px] xl:rounded-[16px] 2xl:rounded-[24px] overflow-hidden border-4 border-white shadow-[0_20px_50px_rgba(9,60,173,0.15)] ring-1 ring-black/5"
               >
                 <VideoPlayer
                   videoId="Lq-vza9_CzI"
@@ -253,7 +254,7 @@ export default function Hero() {
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0.4,
                 }}
-                className="w-full rounded-[20px] md:rounded-[24px] lg:rounded-[16px] xl:rounded-[16px] 2xl:rounded-[24px] overflow-hidden border border-zinc-200 shadow-2xl shadow-zinc-200/50"
+                className="w-full rounded-[20px] md:rounded-[24px] lg:rounded-[16px] xl:rounded-[16px] 2xl:rounded-[24px] overflow-hidden border-4 border-white shadow-[0_20px_50px_rgba(9,60,173,0.15)] ring-1 ring-black/5"
               >
                 <VideoPlayer
                   videoId="FY68DuwOf4Q"
