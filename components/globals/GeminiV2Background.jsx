@@ -41,48 +41,48 @@ export default function GeminiV2Background({ children }) {
         
         {/* Core Aurora Container with immense blur for organic blending and hue rotation for morphing colors */}
         <div 
-          className="absolute inset-0 opacity-80" 
+          className="absolute inset-0 opacity-90" 
           style={{ 
             animation: "aurora-hue 20s ease-in-out infinite",
             transform: "translateZ(0)" // hardware acceleration
           }}
         >
           
-          {/* Main Vibrant Cyan Core */}
+          {/* Gemini Cyan Core */}
           <div
             className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vh] rounded-[100%]"
             style={{
-              background: "radial-gradient(circle at center, rgba(0, 229, 255, 0.4) 0%, transparent 70%)",
+              background: "radial-gradient(circle at center, rgba(36, 193, 224, 0.55) 0%, transparent 70%)",
               animation: "aurora-1 15s ease-in-out infinite",
               transformOrigin: "center center",
             }}
           />
           
-          {/* Vibrant Royal Blue Sweep */}
+          {/* Google Royal Blue Sweep */}
           <div
             className="absolute top-[10%] right-[-10%] w-[55vw] h-[55vh] rounded-[100%]"
             style={{
-              background: "radial-gradient(circle at center, rgba(41, 98, 255, 0.35) 0%, transparent 70%)",
+              background: "radial-gradient(circle at center, rgba(66, 133, 244, 0.5) 0%, transparent 70%)",
               animation: "aurora-2 18s ease-in-out infinite",
               transformOrigin: "40% 60%",
             }}
           />
 
-          {/* Vivid Electric Blue Highlight */}
+          {/* Gemini Deep Blue Highlight */}
           <div
             className="absolute bottom-[-10%] left-[10%] w-[50vw] h-[50vh] rounded-[100%]"
             style={{
-              background: "radial-gradient(circle at center, rgba(0, 145, 255, 0.3) 0%, transparent 70%)",
+              background: "radial-gradient(circle at center, rgba(26, 115, 232, 0.45) 0%, transparent 70%)",
               animation: "aurora-3 14s ease-in-out infinite",
               transformOrigin: "60% 40%",
             }}
           />
 
-          {/* Vivid Purple/Magenta Magic Mix */}
+          {/* Soft Peach / Light Accent (Replacing Purple) */}
           <div
             className="absolute bottom-[10%] right-[10%] w-[65vw] h-[65vh] rounded-[100%]"
             style={{
-              background: "radial-gradient(circle at center, rgba(213, 0, 249, 0.25) 0%, transparent 70%)",
+              background: "radial-gradient(circle at center, rgba(234, 67, 53, 0.3) 0%, transparent 70%)",
               animation: "aurora-4 16s ease-in-out infinite",
               transformOrigin: "center center",
             }}
