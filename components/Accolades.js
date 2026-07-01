@@ -62,7 +62,7 @@ export default function Accolades() {
     >
       {/* Giant Background Watermark "ACCOLADES" - Positioned at bottom, lighter and faint */}
       <div className="absolute inset-x-0 bottom-[-5%] select-none pointer-events-none z-0 flex items-end justify-center overflow-hidden h-[50%]">
-        <span className="font-extrabold font-sans text-[24vw] uppercase tracking-tighter leading-none text-zinc-200/12 dark:text-zinc-800/5 whitespace-nowrap select-none">
+        <span className="font-extrabold font-sans text-[24vw] uppercase tracking-tighter leading-none text-black/5 whitespace-nowrap select-none">
           ACCOLADES
         </span>
       </div>

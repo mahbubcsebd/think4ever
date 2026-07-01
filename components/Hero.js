@@ -139,9 +139,8 @@ export default function Hero() {
         flex items-center justify-center
         text-[clamp(5rem,10vw,9rem)]
         font-black uppercase
-        text-zinc-200/30
+        text-black/5
         tracking-[-0.04em]
-        opacity-20
         whitespace-nowrap
         z-0
       "
