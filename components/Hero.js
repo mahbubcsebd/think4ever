@@ -56,7 +56,8 @@ function OrbitalCircle() {
       className="
       absolute
       w-[946px] h-[946px]
-      border border-[#E0E0E0]
+      border-[1.5px] border-[#093cad]/20
+      shadow-[inset_0_0_60px_rgba(9,60,173,0.05),0_0_60px_rgba(9,60,173,0.05)]
       rounded-full
       top-[-262px] -right-[150px] lg:-right-[350px] xl:-right-[200px] 2xl:right-[50px]
       bottom-auto left-auto
@@ -69,9 +70,7 @@ function OrbitalCircle() {
       <div className="absolute inset-0 flex justify-center z-10 max-md:rotate-[150deg] md:rotate-0">
         <div className="w-[20px] h-[20px] md:w-[28px] md:h-[28px] rounded-full bg-brand-blue flex items-center justify-center -translate-y-1/2 shadow-lg drop-shadow-md border-[2px] border-white">
           <div className="w-full h-full flex items-center justify-center max-md:-rotate-[150deg] md:-rotate-0">
-            <div
-              className="text-white flex items-center justify-center"
-            >
+            <div className="text-white flex items-center justify-center">
               <InfinityIcon
                 size="12"
                 strokeWidth={3}
@@ -83,17 +82,11 @@ function OrbitalCircle() {
       </div>
 
       {/* Ball 2 - Bottom Right (120 degrees) */}
-      <div
-        className="absolute inset-0 flex justify-center z-10 max-md:rotate-[90deg] md:rotate-[120deg]"
-      >
+      <div className="absolute inset-0 flex justify-center z-10 max-md:rotate-[90deg] md:rotate-[120deg]">
         <div className="w-[20px] h-[20px] md:w-[28px] md:h-[28px] rounded-full bg-brand-blue flex items-center justify-center -translate-y-1/2 shadow-lg drop-shadow-md border-[2px] border-white">
           {/* Static counter-rotation of 120deg */}
-          <div
-            className="w-full h-full flex items-center justify-center max-md:-rotate-[90deg] md:-rotate-[120deg]"
-          >
-            <div
-              className="text-white flex items-center justify-center"
-            >
+          <div className="w-full h-full flex items-center justify-center max-md:-rotate-[90deg] md:-rotate-[120deg]">
+            <div className="text-white flex items-center justify-center">
               <InfinityIcon
                 size="12"
                 strokeWidth={3}
@@ -105,17 +98,11 @@ function OrbitalCircle() {
       </div>
 
       {/* Ball 3 - Bottom Left (240 degrees) */}
-      <div
-        className="absolute inset-0 hidden md:flex justify-center z-10 md:rotate-[240deg]"
-      >
+      <div className="absolute inset-0 hidden md:flex justify-center z-10 md:rotate-[240deg]">
         <div className="w-[20px] h-[20px] md:w-[28px] md:h-[28px] rounded-full bg-brand-blue flex items-center justify-center -translate-y-1/2 shadow-lg drop-shadow-md border-[2px] border-white">
           {/* Static counter-rotation of 240deg */}
-          <div
-            className="w-full h-full flex items-center justify-center md:-rotate-[240deg]"
-          >
-            <div
-              className="text-white flex items-center justify-center"
-            >
+          <div className="w-full h-full flex items-center justify-center md:-rotate-[240deg]">
+            <div className="text-white flex items-center justify-center">
               <InfinityIcon
                 size="12"
                 strokeWidth={3}
@@ -136,7 +123,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center bg-white pt-24 pb-12 lg:pt-16 lg:pb-8 xl:pt-24 xl:pb-12 overflow-hidden"
+      className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center pt-24 pb-12 lg:pt-16 lg:pb-8 xl:pt-24 xl:pb-12 overflow-hidden"
     >
       {/* ── Orbital Circle Background ── */}
       <OrbitalCircle />
@@ -153,9 +140,8 @@ export default function Hero() {
         flex items-center justify-center
         text-[clamp(5rem,10vw,9rem)]
         font-black uppercase
-        text-zinc-200
+        text-black/5
         tracking-[-0.04em]
-        opacity-80
         whitespace-nowrap
         z-0
       "
@@ -193,7 +179,7 @@ export default function Hero() {
                 </div>
               </h1>
 
-              <p className="max-w-lg lg:max-w-xl xl:max-w-xl 2xl:max-w-lg text-sm md:text-base lg:text-sm xl:text-base 2xl:text-base text-zinc-500 leading-relaxed font-normal mt-2">
+              <p className="max-w-lg lg:max-w-xl xl:max-w-xl 2xl:max-w-lg text-sm md:text-base lg:text-sm xl:text-base 2xl:text-base text-zinc-800 leading-relaxed font-normal mt-2">
                 The first AI-native SDLC platform that keeps your architecture,
                 code, and every dependency connected — so a change anywhere
                 propagates everywhere.
@@ -210,7 +196,7 @@ export default function Hero() {
                 >
                   Start Free
                 </Link>
-                <span className="text-[11px] text-zinc-400 font-medium select-none text-center">
+                <span className="text-[11px] text-zinc-700 font-medium select-none text-center">
                   No credit card required
                 </span>
               </div>
@@ -223,7 +209,7 @@ export default function Hero() {
                 >
                   <span>Get Early Access</span>
                 </Link>
-                <span className="text-[11px] text-zinc-400 font-medium select-none text-center">
+                <span className="text-[11px] text-zinc-700 font-medium select-none text-center">
                   For Teams & Power Users
                 </span>
               </div>
@@ -245,7 +231,7 @@ export default function Hero() {
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0.3,
                 }}
-                className="w-full rounded-[20px] md:rounded-[24px] lg:rounded-[16px] xl:rounded-[16px] 2xl:rounded-[24px] overflow-hidden border border-zinc-200 shadow-2xl shadow-zinc-200/50"
+                className="w-full rounded-[20px] md:rounded-[24px] lg:rounded-[16px] xl:rounded-[16px] 2xl:rounded-[24px] overflow-hidden border-4 border-white shadow-[0_20px_50px_rgba(9,60,173,0.15)] ring-1 ring-black/5"
               >
                 <VideoPlayer
                   videoId="Lq-vza9_CzI"
@@ -268,7 +254,7 @@ export default function Hero() {
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0.4,
                 }}
-                className="w-full rounded-[20px] md:rounded-[24px] lg:rounded-[16px] xl:rounded-[16px] 2xl:rounded-[24px] overflow-hidden border border-zinc-200 shadow-2xl shadow-zinc-200/50"
+                className="w-full rounded-[20px] md:rounded-[24px] lg:rounded-[16px] xl:rounded-[16px] 2xl:rounded-[24px] overflow-hidden border-4 border-white shadow-[0_20px_50px_rgba(9,60,173,0.15)] ring-1 ring-black/5"
               >
                 <VideoPlayer
                   videoId="FY68DuwOf4Q"

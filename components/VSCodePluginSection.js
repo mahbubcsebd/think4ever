@@ -17,10 +17,10 @@ export default function VSCodePluginSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12 items-center w-full mt-8 md:mt-12">
           {/* Text Content & Buttons */}
           <div className="flex flex-col gap-6 pr-0 lg:pr-8">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-[#093cad] bg-[#eaf0ff] border border-[#dbeafe] w-fit">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[13px] font-bold text-[#093cad] bg-white shadow-md shadow-[#093cad]/10 border border-[#093cad]/20 w-fit tracking-wide">
               <Cpu className="w-3.5 h-3.5 text-[#093cad]" /> Exclusive Extension
             </span>
-            <p className="text-zinc-500 text-base sm:text-lg leading-relaxed max-w-xl">
+            <p className="text-zinc-800 text-base sm:text-lg leading-relaxed max-w-xl">
               The VS Code plugin brings the full T4E SDLC platform directly into your editor. 
               See your architecture map, track dependencies, and propagate changes — without leaving VS Code.
             </p>

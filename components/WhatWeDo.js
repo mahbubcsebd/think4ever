@@ -53,7 +53,7 @@ export default function WhatWeDo() {
             {cards.map((card, idx) => (
               <div
                 key={idx}
-                className="group flex bg-[#f8fafc]/50 rounded-3xl border border-zinc-200/60 overflow-hidden shadow-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.02] min-h-[320px] relative"
+                className="group flex bg-white/85 backdrop-blur-2xl rounded-3xl border border-zinc-200/80 overflow-hidden shadow-xl shadow-[#093cad]/5 transition-all duration-300 hover:bg-white hover:border-[#093cad]/20 hover:shadow-2xl hover:shadow-[#093cad]/15 hover:scale-[1.02] min-h-[320px] relative"
               >
                 {/* Card Content */}
                 <div className="flex-1 p-8 flex flex-col justify-between">
@@ -71,7 +71,7 @@ export default function WhatWeDo() {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-[14px] text-zinc-500 leading-[1.6] font-normal">
+                    <p className="text-[14px] text-zinc-800 leading-[1.6] font-normal">
                       {card.text}
                     </p>
                   </div>
@@ -105,7 +105,7 @@ export default function WhatWeDo() {
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          className="text-[15px] lg:text-[16px] text-zinc-500 leading-[1.6] font-normal max-w-2xl"
+          className="text-[15px] lg:text-[16px] text-zinc-800 leading-[1.6] font-normal max-w-2xl"
         >
           Most tools generate code then hand off. Think4ever holds your entire lifecycle — requirements, architecture, code, tests, and docs — as one living connected system. Change anything. Everything updates.
         </motion.p>

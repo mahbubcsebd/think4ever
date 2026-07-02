@@ -29,7 +29,7 @@ export default function About() {
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          className="text-base md:text-[17px] text-zinc-600 leading-relaxed font-normal"
+          className="text-base md:text-[17px] text-zinc-900 leading-relaxed font-normal"
         >
           A Platform that designs, builds, and deploys production-ready systems with &quot;total
           coherence and flexibility.&quot; In our platform AI agents handle much of the software
@@ -42,7 +42,7 @@ export default function About() {
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-          className="text-base md:text-[17px] text-zinc-600 leading-relaxed font-normal"
+          className="text-base md:text-[17px] text-zinc-900 leading-relaxed font-normal"
         >
           Built by a team with 20+ years of experience shipping software at scale. We built
           the tool we always needed.

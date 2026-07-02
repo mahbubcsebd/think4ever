@@ -93,7 +93,7 @@ export default function HowItWorks() {
             {cards.map((card, idx) => (
               <div
                 key={idx}
-                className={`group flex flex-col p-8 md:p-10 bg-white transition-all duration-500 ease-out hover:scale-[1.03] hover:shadow-2xl hover:shadow-zinc-200 hover:z-20 relative origin-center border border-[#E0E0E0] h-full
+                className={`group flex flex-col p-8 md:p-10 bg-white/85 backdrop-blur-2xl shadow-xl shadow-[#093cad]/5 transition-all duration-500 ease-out hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#093cad]/10 hover:bg-white hover:z-20 relative origin-center border border-zinc-200/80 hover:border-[#093cad]/20 h-full
                   ${idx === 0 ? 'rounded-t-[24px] lg:rounded-none lg:rounded-tl-[24px]' : ''}
                   ${idx === 1 ? '-mt-[1px] lg:mt-0 lg:-ml-[1px]' : ''}
                   ${idx === 2 ? '-mt-[1px] lg:mt-0 lg:-ml-[1px] lg:rounded-tr-[24px]' : ''}

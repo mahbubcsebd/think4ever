@@ -12,7 +12,7 @@ import Architecture from '@/components/Architecture';
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-white text-zinc-950 font-sans antialiased selection:bg-brand-blue selection:text-white">
+    <div className="flex flex-col min-h-screen text-zinc-950 font-sans antialiased selection:bg-brand-blue selection:text-white">
       {/* Main Single Page Sections */}
       <main className="flex-1">
         {/* Hero Section + embedded ProofBar above the fold */}

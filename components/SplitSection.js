@@ -21,7 +21,7 @@ export default function SplitSection({
         <div
           className={`absolute left-1/2 -translate-x-1/2 top-auto bottom-0 pointer-events-none z-0 select-none ${watermarkClassName}`}
         >
-          <span className="font-bold font-sans text-[24vw] uppercase tracking-tighter leading-none text-[#f5f5f5] whitespace-nowrap">
+          <span className="font-bold font-sans text-[24vw] uppercase tracking-tighter leading-none text-black/5 whitespace-nowrap">
             {watermarkText}
           </span>
         </div>
@@ -39,10 +39,10 @@ export default function SplitSection({
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center gap-6 lg:mt-[22px] lg:justify-end lg:pr-12"
             >
-              <span className="text-[#353B3E] font-medium text-[13px] md:text-[17px] leading-[1.6] md:leading-[24px] tracking-[4px] md:tracking-[8px] uppercase break-words md:whitespace-nowrap md:inline-flex md:items-center">
+              <span className="text-[#09090D] font-bold text-[13px] md:text-[17px] leading-[1.6] md:leading-[24px] tracking-[4px] md:tracking-[8px] uppercase break-words md:whitespace-nowrap md:inline-flex md:items-center">
                 {leftTitle}
               </span>
-              <span className="w-16 h-[1px] bg-zinc-300 inline-block" />
+              <span className="w-16 h-[1px] bg-zinc-400 inline-block" />
             </motion.div>
           )}
 

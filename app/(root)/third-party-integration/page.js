@@ -157,7 +157,7 @@ export default function ThirdPartyIntegrationPage() {
         <h1 className="text-[36px] sm:text-[48px] lg:text-[56px] leading-[1.1] font-bold text-zinc-950 tracking-tight">
           3rd Party Integration
         </h1>
-        <p className="text-zinc-500 text-base sm:text-lg leading-relaxed">
+        <p className="text-zinc-800 text-base sm:text-lg leading-relaxed">
           Connect your favorite developer environments, external AI clients, and
           code interfaces with the centralized Think4Ever platform.
         </p>
@@ -167,7 +167,7 @@ export default function ThirdPartyIntegrationPage() {
             <span className="text-[13px] font-bold text-zinc-900">
               Registered Users Only
             </span>
-            <p className="text-[11px] text-zinc-500 leading-relaxed">
+            <p className="text-[11px] text-zinc-800 leading-relaxed">
               These extensions are private and distributed exclusively to
               registered users via the workspace portal.
             </p>
@@ -187,7 +187,7 @@ export default function ThirdPartyIntegrationPage() {
                 <Puzzle className="w-3.5 h-3.5 text-[#093cad]" /> Model Context
                 Protocol
               </span>
-              <p className="text-zinc-500 text-base sm:text-lg leading-relaxed max-w-xl">
+              <p className="text-zinc-800 text-base sm:text-lg leading-relaxed max-w-xl">
                 Work with Claude Code or Codex or other Clients. Connect native
                 terminal assistants to your centralized project workspace using
                 the open-source Model Context Protocol (MCP) standard.
@@ -227,13 +227,13 @@ export default function ThirdPartyIntegrationPage() {
                   <span className="w-3 h-3 rounded-full bg-red-400" />
                   <span className="w-3 h-3 rounded-full bg-amber-400" />
                   <span className="w-3 h-3 rounded-full bg-emerald-400" />
-                  <span className="text-zinc-500 text-[11px] ml-2">
+                  <span className="text-zinc-800 text-[11px] ml-2">
                     config.json — Claude Desktop
                   </span>
                 </div>
                 <button
                   onClick={handleCopyMCP}
-                  className="flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-semibold text-zinc-500 hover:text-[#093cad] bg-white border border-zinc-200 hover:border-zinc-300 rounded-lg shadow-sm transition-all active:scale-95 cursor-pointer"
+                  className="flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-semibold text-zinc-800 hover:text-[#093cad] bg-white border border-zinc-200 hover:border-zinc-300 rounded-lg shadow-sm transition-all active:scale-95 cursor-pointer"
                 >
                   {copiedMCP ? (
                     <>
@@ -241,14 +241,14 @@ export default function ThirdPartyIntegrationPage() {
                     </>
                   ) : (
                     <>
-                      <Copy className="w-3.5 h-3.5 text-zinc-400" /> Copy Code
+                      <Copy className="w-3.5 h-3.5 text-zinc-700" /> Copy Code
                     </>
                   )}
                 </button>
               </div>
-              <p className="text-zinc-400">{`{`}</p>
-              <p className="pl-4 text-zinc-500">"mcpServers": {`{`}</p>
-              <p className="pl-8 text-zinc-500">"think4ever": {`{`}</p>
+              <p className="text-zinc-700">{`{`}</p>
+              <p className="pl-4 text-zinc-800">"mcpServers": {`{`}</p>
+              <p className="pl-8 text-zinc-800">"think4ever": {`{`}</p>
               <p className="pl-12 text-[#093cad]">
                 "command": <span className="text-emerald-600">"npx"</span>,
               </p>
@@ -263,9 +263,9 @@ export default function ThirdPartyIntegrationPage() {
                 "Authorization: Bearer tf_YOUR_TOKEN"
               </p>
               <p className="pl-12 text-[#093cad]">]</p>
-              <p className="pl-8 text-zinc-500">{`}`}</p>
-              <p className="pl-4 text-zinc-500">{`}`}</p>
-              <p className="text-zinc-400">{`}`}</p>
+              <p className="pl-8 text-zinc-800">{`}`}</p>
+              <p className="pl-4 text-zinc-800">{`}`}</p>
+              <p className="text-zinc-700">{`}`}</p>
             </motion.div>
           </div>
         }
@@ -293,7 +293,7 @@ export default function ThirdPartyIntegrationPage() {
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-[#093cad] bg-[#eaf0ff] border border-[#dbeafe] w-fit">
                 <Code className="w-3.5 h-3.5 text-[#093cad]" /> Editor Extension
               </span>
-              <p className="text-zinc-500 text-base sm:text-lg leading-relaxed max-w-xl">
+              <p className="text-zinc-800 text-base sm:text-lg leading-relaxed max-w-xl">
                 The VS Code plugin brings the full T4E SDLC platform directly
                 into your editor. See your architecture map, track dependencies,
                 and propagate changes — without leaving VS Code.
@@ -325,14 +325,14 @@ export default function ThirdPartyIntegrationPage() {
                   {steps.map((s, idx) => (
                     <React.Fragment key={s.number}>
                       {idx > 0 && (
-                        <ArrowRight className="w-3 text-zinc-400 mx-0.5" />
+                        <ArrowRight className="w-3 text-zinc-700 mx-0.5" />
                       )}
                       <button
                         onClick={() => setActiveStep(s.number)}
                         className={`w-7 h-7 rounded-full font-bold text-xs flex items-center justify-center border transition-all cursor-pointer ${
                           activeStep === s.number
                             ? 'bg-[#093cad] text-white border-[#093cad] shadow-md shadow-[#093cad]/20'
-                            : 'bg-white text-zinc-500 border-zinc-200 hover:border-zinc-300'
+                            : 'bg-white text-zinc-800 border-zinc-200 hover:border-zinc-300'
                         }`}
                       >
                         {s.number}
@@ -350,7 +350,7 @@ export default function ThirdPartyIntegrationPage() {
                   <h4 className="text-sm font-bold text-zinc-900">
                     {steps[activeStep - 1].title}
                   </h4>
-                  <p className="text-[12px] text-zinc-500 leading-relaxed mt-0.5">
+                  <p className="text-[12px] text-zinc-800 leading-relaxed mt-0.5">
                     {steps[activeStep - 1].desc}
                   </p>
                 </div>
@@ -391,7 +391,7 @@ export default function ThirdPartyIntegrationPage() {
                 <Terminal className="w-3.5 h-3.5 text-[#093cad]" /> Developer
                 API
               </span>
-              <p className="text-zinc-500 text-base sm:text-lg leading-relaxed max-w-xl">
+              <p className="text-zinc-800 text-base sm:text-lg leading-relaxed max-w-xl">
                 A professional, standard REST interface to programmatically
                 manage access tokens and seamlessly drive your project
                 configurations.
@@ -430,7 +430,7 @@ export default function ThirdPartyIntegrationPage() {
                 <span className="w-3 h-3 rounded-full bg-red-400" />
                 <span className="w-3 h-3 rounded-full bg-amber-400" />
                 <span className="w-3 h-3 rounded-full bg-emerald-400" />
-                <span className="text-zinc-500 text-[11px] ml-2">
+                <span className="text-zinc-800 text-[11px] ml-2">
                   REST — GET /api/v1/workspace/project/schema
                 </span>
               </div>
@@ -438,10 +438,10 @@ export default function ThirdPartyIntegrationPage() {
                 <span className="text-[#093cad]">GET</span>{' '}
                 https://portal.think4ever.com/api/v1/workspace/project/schema
               </p>
-              <p className="text-zinc-500">
+              <p className="text-zinc-800">
                 Headers: Authorization: Bearer tf_YOUR_TOKEN
               </p>
-              <p className="text-zinc-400 mt-2">{`{`}</p>
+              <p className="text-zinc-700 mt-2">{`{`}</p>
               <p className="pl-4 text-[#093cad]">
                 "status": <span className="text-emerald-600">"success"</span>,
               </p>
@@ -461,7 +461,7 @@ export default function ThirdPartyIntegrationPage() {
               <p className="pl-12 text-[#093cad]">]</p>
               <p className="pl-8 text-[#093cad]">{`}`}</p>
               <p className="pl-4 text-[#093cad]">{`}`}</p>
-              <p className="text-zinc-400">{`}`}</p>
+              <p className="text-zinc-700">{`}`}</p>
             </motion.div>
           </div>
         }
@@ -492,7 +492,7 @@ export default function ThirdPartyIntegrationPage() {
                 <span className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
                   OAuth Setup & Client Credentials
                 </span>
-                <p className="text-[13px] text-zinc-500 leading-relaxed">
+                <p className="text-[13px] text-zinc-800 leading-relaxed">
                   To connect your workspace to third-party tools, you need to
                   set up OAuth connections. Provide the{' '}
                   <strong>Client ID</strong> and <strong>Client Secret</strong>{' '}
@@ -526,7 +526,7 @@ export default function ThirdPartyIntegrationPage() {
                         href={app.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-zinc-400 hover:text-[#093cad] transition-colors p-1"
+                        className="text-zinc-700 hover:text-[#093cad] transition-colors p-1"
                         title={`Register at ${app.name}`}
                       >
                         <ExternalLink className="w-3.5 h-3.5" />
@@ -534,7 +534,7 @@ export default function ThirdPartyIntegrationPage() {
                     </div>
 
                     {/* Instructions */}
-                    <p className="text-[12px] text-zinc-500 leading-relaxed font-medium">
+                    <p className="text-[12px] text-zinc-800 leading-relaxed font-medium">
                       {app.desc}
                     </p>
 
@@ -544,7 +544,7 @@ export default function ThirdPartyIntegrationPage() {
                         {app.scopes.map((scope) => (
                           <span
                             key={scope}
-                            className="inline-flex px-2 py-0.5 rounded text-[10px] font-bold bg-zinc-50 border border-zinc-200 text-zinc-600 font-mono"
+                            className="inline-flex px-2 py-0.5 rounded text-[10px] font-bold bg-zinc-50 border border-zinc-200 text-zinc-900 font-mono"
                           >
                             {scope}
                           </span>
@@ -555,7 +555,7 @@ export default function ThirdPartyIntegrationPage() {
 
                   {/* Footer: Required Fields */}
                   <div className="border-t border-zinc-100 pt-4 mt-6 flex items-center justify-between">
-                    <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">
+                    <span className="text-[10px] font-bold text-zinc-700 uppercase tracking-wider">
                       Required values
                     </span>
                     <div className="flex gap-2">
@@ -588,7 +588,7 @@ export default function ThirdPartyIntegrationPage() {
             <Puzzle className="w-3.5 h-3.5 text-[#093cad]" /> Ecosystem Integration
           </span> */}
 
-          <p className="text-zinc-500 text-base sm:text-lg leading-relaxed max-w-xl">
+          <p className="text-zinc-800 text-base sm:text-lg leading-relaxed max-w-xl">
             Link external developer platforms like Jira, Figma, GitHub, and
             more. Once connected, you can manually map specific objects or let
             the AI automatically reference and orchestrate data across your
@@ -598,9 +598,9 @@ export default function ThirdPartyIntegrationPage() {
       </SplitSection>
 
       {/* Trademark Disclaimer Notice */}
-      <div className="max-w-[1400px] mx-auto px-4 md:px-16 pb-12 text-zinc-400 text-xs leading-relaxed font-normal">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-16 pb-12 text-zinc-700 text-xs leading-relaxed font-normal">
         <p>
-          <strong className="text-zinc-500 font-semibold">
+          <strong className="text-zinc-800 font-semibold">
             Trademark Notice:
           </strong>{' '}
           Claude Code™ is a trademark of Anthropic PBC. Cursor™ is a registered

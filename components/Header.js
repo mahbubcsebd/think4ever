@@ -255,10 +255,10 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col ${
           isOpen
-            ? 'h-[100dvh] overflow-hidden bg-white shadow-lg py-5'
+            ? 'h-[100dvh] overflow-hidden bg-white/80 backdrop-blur-2xl shadow-lg py-5'
             : scrolled
-              ? 'h-[72px] py-2.5 bg-white/98 shadow-[0_1px_24px_rgba(0,0,0,0.07)] backdrop-blur-md'
-              : 'h-[80px] py-5 bg-transparent'
+              ? 'h-[72px] justify-center bg-white/40 shadow-sm border-b border-white/50 backdrop-blur-xl'
+              : 'h-[80px] justify-center bg-transparent'
         }`}
       >
         {/* Inner container — keeps content aligned with rest of page */}
@@ -296,13 +296,13 @@ export default function Header() {
                         'flex items-center gap-1 text-sm font-semibold transition-colors cursor-pointer py-2',
                         active
                           ? 'text-[#093cad]'
-                          : 'text-zinc-600 hover:text-[#093cad]',
+                          : 'text-zinc-900 hover:text-[#093cad]',
                       )}
                     >
                       {item.label}
                       <ChevronDown
                         className={cn(
-                          'w-3.5 h-3.5 transition-transform duration-300 text-zinc-400 group-hover:text-[#093cad]',
+                          'w-3.5 h-3.5 transition-transform duration-300 text-zinc-700 group-hover:text-[#093cad]',
                           isDropdownOpen && 'rotate-180 text-[#093cad]'
                         )}
                       />
@@ -314,7 +314,7 @@ export default function Header() {
                         'text-sm font-semibold transition-colors py-2 block',
                         active
                           ? 'text-[#093cad]'
-                          : 'text-zinc-600 hover:text-[#093cad]',
+                          : 'text-zinc-900 hover:text-[#093cad]',
                       )}
                     >
                       {item.label}
@@ -361,14 +361,14 @@ export default function Header() {
                                   <div className="flex items-center gap-3">
                                     {Icon && (
                                       <div className="h-9 w-9 shrink-0 flex items-center justify-center rounded-lg bg-zinc-50 border border-zinc-100 group-hover/sub:bg-white group-hover/sub:shadow-sm transition-all aspect-square">
-                                        <Icon className="h-4.5 w-4.5 text-zinc-400 group-hover/sub:text-[#093cad]" />
+                                        <Icon className="h-4.5 w-4.5 text-zinc-700 group-hover/sub:text-[#093cad]" />
                                       </div>
                                     )}
                                     <div className="flex-1 min-w-0">
                                       <div className="text-[13px] font-bold leading-tight text-zinc-800 group-hover/sub:text-[#093cad] transition-colors mb-0.5">
                                         {subItem.title}
                                       </div>
-                                      <p className="text-[11px] leading-relaxed text-zinc-400 font-medium">
+                                      <p className="text-[11px] leading-relaxed text-zinc-700 font-medium">
                                         {subItem.desc}
                                       </p>
                                     </div>
@@ -400,7 +400,7 @@ export default function Header() {
             <button
               id="menu-toggle"
               onClick={toggleMenu}
-              className="w-10 h-10 rounded-full border border-zinc-200 bg-white/70 backdrop-blur-sm flex flex-col justify-center items-center gap-[5px] hover:bg-zinc-50 transition-all duration-300 relative z-[55] cursor-pointer lg:hidden"
+              className="w-10 h-10 rounded-full border border-zinc-200 bg-white/90 backdrop-blur-xl shadow-xl shadow-[#093cad]/5 flex flex-col justify-center items-center gap-[5px] hover:bg-zinc-50 transition-all duration-300 relative z-[55] cursor-pointer lg:hidden"
               aria-label="Toggle menu"
             >
               <span
@@ -505,7 +505,7 @@ export default function Header() {
                           </span>
                           {hasSubmenu && (
                             <span
-                              className="ml-4 transition-transform duration-300 text-zinc-400 group-hover:text-[#093cad]"
+                              className="ml-4 transition-transform duration-300 text-zinc-700 group-hover:text-[#093cad]"
                               style={{
                                 transform: isSubmenuOpen
                                   ? 'rotate(180deg)'
