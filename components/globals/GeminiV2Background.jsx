@@ -88,12 +88,11 @@ export default function GeminiV2Background({ children }) {
             }}
           />
           
-          {/* Center White Glow to ensure text readability and pop */}
+          {/* Static Center White Glow to permanently illuminate text and video area */}
           <div
-            className="absolute top-[20%] left-[20%] w-[60vw] h-[60vh] rounded-[100%]"
+            className="absolute top-[10%] left-[10%] w-[80vw] h-[80vh] rounded-[100%] pointer-events-none"
             style={{
-              background: "radial-gradient(circle, rgba(255, 255, 255, 1) 0%, transparent 60%)",
-              animation: "aurora-1 20s ease-in-out infinite reverse",
+              background: "radial-gradient(circle at center, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.5) 40%, transparent 75%)",
             }}
           />
         </div>
