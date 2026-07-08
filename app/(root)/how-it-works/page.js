@@ -13,6 +13,7 @@ import {
   Rocket,
   Settings,
   Shield,
+  Check,
 } from 'lucide-react';
 import Image from 'next/image';
 import { ZoomableImage } from '@/components/ZoomableImage';
@@ -28,122 +29,72 @@ const steps = [
     iconColor: 'text-blue-500',
     icon: GitBranch,
     title: 'Connect your repo',
-    description:
-      'Start with a central hub where teams configure project settings, manage API keys, and define the technical foundation. Use your existing stack, choose your preferred architecture, or let AI guide recommendations based on your goals.',
-    cardTitle: 'WHAT YOU CONFIGURE',
+    description: 'Paste a GitHub URL, drop a ZIP, or start from scratch. Sidekick reads your stack, maps your dependencies, and generates a structured architectural blueprint — in under 4 minutes. Zero config.',
+    cardTitle: 'WHAT YOU GET',
     cardItems: [
-      'Project settings and environment preferences',
-      'API keys and integration connections',
-      'Preferred tech stack — or AI-guided recommendations',
-      'Architecture and modernization goals',
+      'Architectural blueprint auto-generated from your input',
+      'Tech stack detected and mapped — 157+ supported',
+      'Or start from 299+ pre-built solution architectures',
     ],
     tag: 'BOTH PATHS',
-    screenshot: '/images/product/step-1.png',
+    screenshot: '/images/product/step-1.jpg',
   },
   {
     id: 2,
-    phase: 'FOUNDATION',
-    label: 'Define what to build',
+    phase: 'DESIGN',
+    label: 'Blueprint your system',
     badge: 'STEP 02',
     badgeColor: 'bg-green-50 text-green-600',
     iconColor: 'text-green-500',
-    icon: MessageSquare,
-    title: 'Define what to build',
-    description:
-      'Define application requirements in the way that works for your team. Type manually, chat with Sidekick, or speak to the voice assistant. Think4Ever transforms early ideas into structured business flows, technical foundations, and an architectural draft in minutes.',
-    cardTitle: 'INPUT MODES',
+    icon: Boxes,
+    title: 'Blueprint your system',
+    description: 'Every dependency, data model, business flow, and role — live and connected before a line of code is written. Click any node. See upstream and downstream impact instantly. Fix it before it breaks.',
+    cardTitle: 'WHAT YOU GET',
     cardItems: [
-      'Manual text entry',
-      'Chat with Sidekick AI assistant',
-      'Voice assistant input',
-      'Al-assisted requirement analysis and strengthening',
+      'Live architecture map — components, services, data models',
+      'Impact simulation — change anything, see what breaks first',
+      'One spec. Every agent reads from it.',
     ],
     tag: 'BOTH PATHS',
-    screenshot: '/images/product/step-2.png',
+    screenshot: '/images/product/step-2.jpg',
   },
   {
     id: 3,
-    phase: 'DESIGN',
-    label: 'Map your architecture',
+    phase: 'BUILD',
+    label: 'Build in Dev Mode',
     badge: 'STEP 03',
     badgeColor: 'bg-purple-50 text-purple-600',
     iconColor: 'text-purple-500',
-    icon: Boxes,
-    title: 'Map your architecture',
-    description:
-      'Think4Ever analyzes requirements to generate the core architectural pillars of the solution — the structural building blocks that define what the application does, how it behaves, and how the system is organized. Screens, components, services, and relationships visualized from day one.',
-    cardTitle: 'GENERATED OUTPUTS',
+    icon: MessageSquare,
+    title: 'Build in Dev Mode – build using Think coding agent or your favorite coding agent',
+    description: 'Natural language commands. Live file tree builds in real time. Use Cursor, Claude Code, Codex, or Windsurf — every agent reads from the same blueprint. No context lost between sessions.',
+    cardTitle: 'WHAT YOU GET',
     cardItems: [
-      'System concepts and structured concept cards',
-      'Architecture blueprints and visual concept diagram',
-      'App domains, modules, services, and system blocks',
-      'Database structures and screen flows',
+      'Split screen — chat panel + live file explorer',
+      'MCP-native — switch agents freely, blueprint stays',
+      'Goals mode — set a target, Think plans and tracks it',
     ],
     tag: 'BOTH PATHS',
-    screenshot: '/images/product/step-3.png',
+    screenshot: '/images/product/step-3.jpg',
   },
   {
     id: 4,
-    phase: 'DESIGN',
-    label: 'See dependencies',
+    phase: 'DEPLOY',
+    label: 'Ship it',
     badge: 'STEP 04',
     badgeColor: 'bg-red-50 text-red-600',
     iconColor: 'text-red-500',
-    icon: Eye,
-    title: 'See dependencies',
-    description:
-      'Click any node in the concept diagram and instantly see upstream and downstream implications across your system. Frontend to backend. Data to process. Rules to integrations. Make proactive choices before risk becomes rework.',
-    cardTitle: 'IMPACT VISIBILITY COVERS',
-    cardItems: [
-      'Frontend and backend dependencies',
-      'Data and process connections',
-      'Rules and integration relationships',
-      'Visual warnings and impact markers',
-    ],
-    tag: 'EXISTING CODE',
-    screenshot: '/images/product/step-4.png',
-  },
-  {
-    id: 5,
-    phase: 'DESIGN',
-    label: 'Model your data',
-    badge: 'STEP 05',
-    badgeColor: 'bg-cyan-50 text-cyan-600',
-    iconColor: 'text-cyan-500',
-    icon: Database,
-    title: 'Model your data',
-    description:
-      'Think4Ever generates dynamic business flows — interactive process visualizations that show how work actually moves through the system. Each step can be explored in detail. Each dependency can be understood before implementation begins.',
-    cardTitle: 'DATA LAYER COVERS',
-    cardItems: [
-      'Entity cards with animated relationship arrows',
-      'Schemas, fields, and object dependencies',
-      'Visual ERD with full system data context',
-      'Centralized data governance in one view',
-    ],
-    tag: 'BOTH PATHS',
-    screenshot: '/images/product/step-6.png',
-  },
-  {
-    id: 6,
-    phase: 'BUILD',
-    label: 'Ship to production',
-    badge: 'STEP 06',
-    badgeColor: 'bg-blue-50 text-[#093cad]',
-    iconColor: 'text-[#093cad]',
     icon: Rocket,
-    title: 'Ship to production',
-    description:
-      'Generate code, run tests, deploy. Docs auto-generated and versioned with every release.',
-    cardTitle: 'CI/CD & DEPLOYMENT',
+    title: 'Ship it',
+    description: 'Run tests, deploy, done. Docs auto-generated and versioned with every release. Post-deployment agents keep monitoring. Your blueprint stays in sync after you ship.',
+    cardTitle: 'WHAT YOU GET',
     cardItems: [
-      'Generate code automatically',
-      'Run verification tests',
-      'Deploy to cloud environments',
-      'Auto-generated and versioned documentation',
+      'Automated QA, security checks, CI/CD',
+      'Docs auto-generated and versioned every release',
+      'Post-deployment agents — blueprint stays live',
     ],
     tag: 'BOTH PATHS',
-    screenshot: '/images/product/step-8.png',
+    screenshot: '/images/product/step-4.jpg',
   },
 ];
 
@@ -270,7 +221,7 @@ const ProductPage = () => {
                 </h2>
 
                 {/* Description */}
-                <p className="text-gray-500 text-[14px] sm:text-[15px] leading-[1.6] sm:leading-[1.75] mb-6 sm:mb-8 max-w-2xl">
+                <p className="text-zinc-700 font-medium text-[15px] sm:text-[16px] lg:text-[17px] leading-[1.7] sm:leading-[1.8] mb-6 sm:mb-8 max-w-2xl">
                   {current.description}
                 </p>
 
@@ -296,9 +247,9 @@ const ProductPage = () => {
                     {current.cardItems.map((item, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start gap-3 text-[14px] text-gray-600 leading-relaxed"
+                        className="flex items-start gap-3 text-[14px] sm:text-[15px] text-zinc-800 font-medium leading-relaxed"
                       >
-                        <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-[#07A7E1] shrink-0" />
+                        <Check className="mt-0.5 w-4 h-4 text-[#07A7E1] shrink-0" strokeWidth={3} />
                         {item}
                       </li>
                     ))}

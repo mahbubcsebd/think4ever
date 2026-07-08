@@ -1,5 +1,13 @@
 'use client';
 
+import {
+  FigmaIcon,
+  GithubIcon,
+  JiraIcon,
+  LinearIcon,
+  NotionIcon,
+  SlackIcon,
+} from '@/components/BrandIcons';
 import GradientText from '@/components/GradientText';
 import SplitSection from '@/components/SplitSection';
 import { ZoomableImage } from '@/components/ZoomableImage';
@@ -16,14 +24,6 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import {
-  JiraIcon,
-  GithubIcon,
-  SlackIcon,
-  NotionIcon,
-  LinearIcon,
-  FigmaIcon,
-} from '@/components/BrandIcons';
 
 const OAUTH_INTEGRATIONS = [
   {
@@ -374,7 +374,7 @@ export default function ThirdPartyIntegrationPage() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="text-[28px] sm:text-[40px] md:text-[60px] font-bold text-[#09090D] leading-[1.1] md:leading-[65px] tracking-tight"
         >
-          Think4ever lives <br />
+          Think4Ever lives <br />
           <GradientText>where</GradientText> you code.
         </motion.h2>
       </SplitSection>

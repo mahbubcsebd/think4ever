@@ -13,50 +13,34 @@ const steps = [
   {
     id: 1,
     title: 'Connect your repo',
-    desc: 'Drop your repo or start fresh. T4E maps your stack, dependencies and entry points automatically.',
+    desc: 'Paste a GitHub URL, drop a ZIP, or start from scratch. Sidekick reads your stack, maps your dependencies, and generates a structured architectural blueprint — in under 4 minutes. Zero config.',
     tag: 'BOTH PATHS',
     icon: GitBranch,
     num: '01',
   },
   {
     id: 2,
-    title: 'Define what to build',
-    desc: 'Type, talk or paste a ticket. AI clarifies until the spec is unambiguous. No lost context between ticket and code.',
+    title: 'Blueprint your system',
+    desc: 'Every dependency, data model, business flow, and role — live and connected before a line of code is written. Click any node. See upstream and downstream impact instantly. Fix it before it breaks.',
     tag: 'BOTH PATHS',
-    icon: MessageSquare,
+    icon: Boxes,
     num: '02',
   },
   {
     id: 3,
-    title: 'Map your architecture',
-    desc: 'Live system map. Every module, service and dependency. Clickable, navigable, always current.',
+    title: 'Build in Dev Mode',
+    desc: 'Build using Think coding agent or your favorite coding agent. Natural language commands. Live file tree builds in real time. Use Cursor, Claude Code, Codex, or Windsurf — every agent reads from the same blueprint.',
     tag: 'BOTH PATHS',
-    icon: Boxes,
+    icon: MessageSquare,
     num: '03',
   },
   {
     id: 4,
-    title: 'See dependencies',
-    desc: 'Click any node. See every upstream and downstream impact before you write a line.',
-    tag: 'EXISTING CODE',
-    icon: Eye,
-    num: '04',
-  },
-  {
-    id: 5,
-    title: 'Model your data',
-    desc: 'Visual ERD synced across every stage. Change a schema — docs, code and tests update with it.',
-    tag: 'BOTH PATHS',
-    icon: Database,
-    num: '05',
-  },
-  {
-    id: 6,
-    title: 'Ship to production',
-    desc: 'Generate code, run tests, deploy. Docs auto-generated and versioned with every release.',
+    title: 'Ship it',
+    desc: 'Run tests, deploy, done. Docs auto-generated and versioned with every release. Post-deployment agents keep monitoring. Your blueprint stays in sync after you ship.',
     tag: 'BOTH PATHS',
     icon: Rocket,
-    num: '06',
+    num: '04',
   },
 ];
 
@@ -83,18 +67,18 @@ const StepCard = ({ step, isActive, onClick, idx }) => {
   let borderClasses = 'border-zinc-200/80 ';
   
   // Mobile borders (all rows except last get a bottom border)
-  if (idx !== 5) {
+  if (idx !== 3) {
     borderClasses += 'border-b ';
   }
   
-  // Desktop borders
-  if (idx === 0 || idx === 1) {
+  // Desktop borders (2x2 grid)
+  if (idx === 0) {
     borderClasses += 'md:border-r md:border-b';
-  } else if (idx === 2) {
+  } else if (idx === 1) {
     borderClasses += 'md:border-b md:border-r-0';
-  } else if (idx === 3 || idx === 4) {
+  } else if (idx === 2) {
     borderClasses += 'md:border-r md:border-b-0';
-  } else if (idx === 5) {
+  } else if (idx === 3) {
     borderClasses += 'md:border-r-0 md:border-b-0';
   }
 
@@ -145,7 +129,7 @@ const StepCard = ({ step, isActive, onClick, idx }) => {
 export const Diagram = ({ activeIndex = 0, onStepClick = () => {} }) => {
   return (
     <div className="w-full bg-white max-w-[1100px] mx-auto px-4">
-      <div className="border border-zinc-200/80 rounded-2xl md:rounded-3xl overflow-hidden bg-white shadow-xl shadow-zinc-200/30 grid grid-cols-1 md:grid-cols-3">
+      <div className="border border-zinc-200/80 rounded-2xl md:rounded-3xl overflow-hidden bg-white shadow-xl shadow-zinc-200/30 grid grid-cols-1 md:grid-cols-2">
         {steps.map((step, idx) => (
           <div key={step.id} className="h-full">
             <StepCard

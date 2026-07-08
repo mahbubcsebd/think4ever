@@ -1,4 +1,6 @@
 import Hero from '@/components/Hero';
+import ProblemStatement from '@/components/ProblemStatement';
+import FourCapabilities from '@/components/FourCapabilities';
 import HowItWorks from '@/components/HowItWorks';
 import ModernizeMotion from '@/components/ModernizeMotion';
 import WhatWeDo from '@/components/WhatWeDo';
@@ -17,6 +19,12 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section + embedded ProofBar above the fold */}
         <Hero />
+
+        {/* Problem Statement Section */}
+        <ProblemStatement />
+
+        {/* Four Capabilities Section */}
+        <FourCapabilities />
 
         {/* Commented out standalone ProofBar (since it is now embedded inside Hero) */}
         {/* <ProofBar /> */}

@@ -35,12 +35,12 @@ export default function ProofBar({ className = "px-4 md:px-12 pt-12 md:pt-16 bg-
           </div>
           <div className="flex-1 py-8 px-4 text-center hover:bg-zinc-50/50 transition-colors">
             <div className="text-[36px] md:text-[44px] font-extrabold mb-2 tracking-tight leading-none">
-              <GradientText>Zero drift</GradientText>
+              <GradientText>299+</GradientText>
             </div>
             <div className="text-[14px] md:text-[15px] text-zinc-600 font-medium leading-snug max-w-[200px] mx-auto">
-              Code, docs and architecture
+              Pre-built solution
               <br />
-              always in sync
+              architectures
             </div>
           </div>
         </motion.div>
