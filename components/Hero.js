@@ -178,7 +178,7 @@ export default function Hero() {
               flex flex-wrap items-center gap-x-3 md:gap-x-4 gap-y-1 sm:gap-y-2
             "
               >
-                {/* <span className="inline-flex items-center gap-x-3">
+                <span className="inline-flex items-center gap-x-3">
                   <BreathingBlob className="shrink-0" /> From Code or
                 </span>
                 <span className="inline-flex items-center gap-2 md:gap-3">
@@ -190,15 +190,7 @@ export default function Hero() {
                 </span>
                 <div className="w-full xl:w-[280px] 2xl:w-full">
                   <MotionTextLoop />
-                </div> */}
-                <span className="block w-full">
-                  From concept or code
-                  <ArrowRight
-                    className="w-[0.6em] h-[0.6em] text-black shrink-0 inline-block align-middle mx-2 md:mx-3 mb-1"
-                    strokeWidth={3}
-                  />
-                  to complete system coherence.
-                </span>
+                </div>
               </h1>
 
               <p className="max-w-lg lg:max-w-xl xl:max-w-xl 2xl:max-w-lg text-sm md:text-base lg:text-sm xl:text-base 2xl:text-base text-zinc-500 leading-relaxed font-normal mt-2">
