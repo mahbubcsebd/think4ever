@@ -165,7 +165,7 @@ export default function Hero() {
 
       {/* ── Page Container ── */}
       <div className="container mx-auto px-4 md:px-12 max-w-[1400px] w-full z-20 relative flex flex-col justify-start gap-4">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] xl:grid-cols-[1.4fr_1fr] 2xl:grid-cols-[1.1fr_1fr] gap-8 lg:gap-8 xl:gap-8 2xl:gap-12 items-center py-4 lg:py-2 xl:py-2 2xl:py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] xl:grid-cols-[1.4fr_1fr] 2xl:grid-cols-[1.3fr_1fr] gap-8 lg:gap-8 xl:gap-8 2xl:gap-12 items-center py-4 lg:py-2 xl:py-2 2xl:py-6">
           {/* Left Side: Text Content */}
           <div className="flex flex-col gap-5 lg:gap-4 xl:gap-4 2xl:gap-6">
             {/* Headline */}
@@ -175,28 +175,21 @@ export default function Hero() {
               text-[28px] sm:text-[40px] md:text-[54px] lg:text-[46px] xl:text-[48px] 2xl:text-[72px]
               leading-[1.08]
               font-bold text-black
-              flex flex-wrap items-center gap-x-3 md:gap-x-4 gap-y-1 sm:gap-y-2
+              flex flex-col gap-1 sm:gap-2
             "
               >
-                <span className="inline-flex items-center gap-x-3">
-                  <BreathingBlob className="shrink-0" /> From Code or
+                <span className="inline-flex items-center gap-x-3 md:gap-x-4 sm:whitespace-nowrap">
+                  <BreathingBlob className="shrink-0" /> Design in Think.
                 </span>
-                <span className="inline-flex items-center gap-2 md:gap-3">
-                  Concept
-                  <ArrowRight
-                    className="w-[0.6em] h-[0.6em] text-black shrink-0"
-                    strokeWidth={3}
-                  />
+                <span className="text-gradient sm:whitespace-nowrap">
+                  Code anywhere
                 </span>
-                <div className="w-full xl:w-[280px] 2xl:w-full">
-                  <MotionTextLoop />
-                </div>
               </h1>
 
               <p className="max-w-lg lg:max-w-xl xl:max-w-xl 2xl:max-w-lg text-sm md:text-base lg:text-sm xl:text-base 2xl:text-base text-zinc-500 leading-relaxed font-normal mt-2">
-                The first AI-native SDLC platform that keeps your architecture,
-                code, and every dependency connected — so a change anywhere
-                propagates everywhere.
+                Build your system architecture in Think4Ever's bimodal workspace.
+                Stream live context directly to other vibe-coding platforms and
+                IDEs via our native MCP server.
               </p>
             </div>
 
@@ -208,7 +201,7 @@ export default function Hero() {
                   href="https://portal.think4ever.com"
                   className="w-full sm:w-auto text-center px-8 py-3 lg:py-2.5 xl:py-2.5 2xl:py-3 bg-[#093cad] text-white font-semibold rounded-full shadow-lg shadow-[#093cad]/10 hover:opacity-95 hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-300 whitespace-nowrap cursor-pointer text-sm"
                 >
-                  Start Free
+                  Start Designing for Free
                 </Link>
                 <span className="text-[11px] text-zinc-400 font-medium select-none text-center">
                   No credit card required
