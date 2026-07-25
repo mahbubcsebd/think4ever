@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import DesignHarness from '@/components/DesignHarness';
 import BimodalWorkflow from '@/components/BimodalWorkflow';
 import ProblemStatement from '@/components/ProblemStatement';
 import FourCapabilities from '@/components/FourCapabilities';
@@ -20,6 +21,9 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section + embedded ProofBar above the fold */}
         <Hero />
+
+        {/* Design spec harness section */}
+        <DesignHarness />
 
         {/* Bimodal Workspace & MCP Integration Section */}
         <BimodalWorkflow />
