@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import VideoPlayer from './VideoPlayer';
 
-const rotatingWords = ['Prototype.', 'Refactor.', 'Scale.', 'Build.', 'Ship.'];
+const rotatingWords = ['Code anywhere', 'Code in Think'];
 
 function MotionTextLoop() {
   const [index, setIndex] = useState(0);
@@ -181,16 +181,23 @@ export default function Hero() {
                 <span className="inline-flex items-center gap-x-3 md:gap-x-4 sm:whitespace-nowrap">
                   <BreathingBlob className="shrink-0" /> Design in Think.
                 </span>
-                <span className="text-gradient sm:whitespace-nowrap">
-                  Code anywhere
+                <span className="relative block h-[1.2em] overflow-hidden w-full">
+                  <MotionTextLoop />
                 </span>
               </h1>
 
-              <p className="max-w-lg lg:max-w-xl xl:max-w-xl 2xl:max-w-lg text-sm md:text-base lg:text-sm xl:text-base 2xl:text-base text-zinc-500 leading-relaxed font-normal mt-2">
-                Build your system architecture in Think4Ever's bimodal workspace.
-                Stream live context directly to other vibe-coding platforms and
-                IDEs via our native MCP server.
-              </p>
+              <div className="max-w-lg lg:max-w-xl xl:max-w-xl 2xl:max-w-lg text-sm md:text-base lg:text-sm xl:text-base 2xl:text-base text-zinc-500 leading-relaxed font-normal mt-2 flex flex-col gap-3">
+                <p>
+                  Build your system architecture in Think4Ever's bimodal workspace.
+                  Build using Think coding agent or your favorite coding agent.
+                  Stream live context directly to other vibe-coding platforms and
+                  IDEs via our native MCP server.
+                </p>
+                <p>
+                  Use Cursor, Claude Code, Codex, or Windsurf — every agent reads
+                  from the same blueprint.
+                </p>
+              </div>
             </div>
 
             {/* CTA */}
