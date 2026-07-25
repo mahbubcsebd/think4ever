@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import DesignHarness from '@/components/DesignHarness';
+import DesignArtifacts from '@/components/DesignArtifacts';
 import BimodalWorkflow from '@/components/BimodalWorkflow';
 import ProblemStatement from '@/components/ProblemStatement';
 import FourCapabilities from '@/components/FourCapabilities';
@@ -24,6 +25,9 @@ export default function Home() {
 
         {/* Design spec harness section */}
         <DesignHarness />
+
+        {/* Design artifacts governance section */}
+        <DesignArtifacts />
 
         {/* Bimodal Workspace & MCP Integration Section */}
         <BimodalWorkflow />
